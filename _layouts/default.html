@@ -7,10 +7,7 @@
   {% if site.github.pages_hostname == "github.io" %}
   <link href="{{ site.github.baseurl }}{{ '/css/FourD_CSS/vmtHelp.css' | absolute_url }}" rel="stylesheet" type="text/css"/>
   {% else %}
-  <!--
   <link href="{{ 'css/FourD_CSS/vmtHelp.css' | absolute_url }}" rel="stylesheet" type="text/css"/>
-  -->
-  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   {% endif %}
   
   <body>
@@ -23,10 +20,7 @@
           <img src="{{ site.github.baseurl }}{{ 'assets/logos/logoInv.png' | relative_url }}" id="logo_image" 
             style="width: 80%; max-width: 100px;"/>
           {% else %}
-          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
-          <!--
           <img src="{{ 'assets/logos/logoInv.png' | relative_url }}" id="logo_image" style="width: 80%; max-width: 100px;"/>
-          -->
           {% endif %}
           <div class="titleHead">
             <h4 class="revision"><font color="white">{{ site.title }}</span></font></h4>
@@ -38,33 +32,6 @@
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
           <h1>{{ page.title }}</h1>
-          <!--
-          <div style="font-size: 10px;">
-            <p>site.github.baseurl is: {{ site.github.baseurl }}</p>
-            
-            
-            {% if site.github.pages_hostname == "github.io" %}
-            <p>CSS LINK IS: {{ site.github.baseurl }}{{ '/css/FourD_CSS/vmtHelp.css' | absolute_url }}</p>
-            {% else %}
-            <p>CSS LINK IS: {{ 'css/FourD_CSS/vmtHelp.css' | absolute_url }}</p>
-            {% endif %}
-            
-            {% if site.github.pages_hostname == "github.io" %}
-            <p>LOGO LINK IS: {{ site.github.baseurl }}{{ 'assets/logos/logoInv.png' | relative_url }}</p>
-            {% else %}
-            <p>LOGO LINK IS: {{ 'assets/logos/logoInv.png' | relative_url }}</p>
-            {% endif %}
-            
-            
-            {% if site.github.pages_hostname == "github.io" %}
-            <p>DOC HOME LINK: {{ site.github.baseurl }}{{ 'index.html' | relative_url }}</p>
-            {% else %}
-            <p>DOC HOME LINK: {{ 'index.html' | absolute_url }}</p>
-            {% endif %}
-            
-            <p>REPOS URL IS: {{ site.github.repository_url }}</p>
-          </div>
-          -->
           {{ content }}
           
         </article>
@@ -92,8 +59,7 @@
                         {% if site.github.pages_hostname == "github.io" %}
                         <li><a href="{{ site.github.baseurl }}{{ entry.dir | relative_url }}">{{ entry.page }}</a></li>
                         {% else %}
-                        <li><a href="{{ entry.dir }}">{{ entry.page }}</a></li>
-                      <!-- <li><a href="{{ entry.dir | absolute_url }}">{{ entry.page }}</a></li> -->
+                        <li><a href="{{ entry.dir | absolute_url }}">{{ entry.page }}</a></li> 
                         {% endif %}
                         <ul>
                           

@@ -26,21 +26,28 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1></h1>
-          <table>
-  <thead>
-    <tr>
-      <th>Enum</th>
-      <th>values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>severity</td>
-      <td>{CRITICAL, MAJOR, MINOR, NORMAL}</td>
-    </tr>
-  </tbody>
-</table>
+          <h1>Enabling the Data Exporter</h1>
+          <p>To support the Data Exporter, Turbonomic provides an extractor component 
+that can stream data to a standard format. You can load that data into search and analytics 
+services such as Elasticsearch.</p>
+
+<p>To enable the Data Exporter, you must:</p>
+
+<ul>
+  <li>
+    <p>Enable the extractor component.<br />
+The extractor is a component that runs as part your Turbonomic 
+installation. The extractor is not enabled by default.</p>
+  </li>
+  <li>
+    <p>Deploy a connector that delivers the extractor’s stream to your data service.<br />
+The extractor publishes Turbonomic data as Kafka topics. The connector 
+enables your data service to consume the data topic. This document includes a deployment file 
+for a sample Elasticsearch connector.</p>
+  </li>
+</ul>
+
+<p>​</p>
 
           
         </article>

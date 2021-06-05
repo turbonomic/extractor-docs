@@ -5,10 +5,7 @@
   <title page-title>Data Extractor Schema</title>
   
   
-  <!--
   <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
-  -->
-  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -18,10 +15,7 @@
         <div class="bannerbar" >
           
           
-          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
-          <!--
           <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
-          -->
           
           <div class="titleHead">
             <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
@@ -32,56 +26,21 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>Data Extractor Schema</h1>
-          <!--
-          <div style="font-size: 10px;">
-            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
-            
-            
-            
-            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
-            
-            
-            
-            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
-            
-            
-            
-            
-            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
-            
-            
-            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
-          </div>
-          -->
-          <p>This document describes the tables in the Turbonomic Embedded Reporting data schema.</p>
+          <h1>Data Exporter Schema</h1>
+          <p>This document describes the Turbonomic Data Exporter.</p>
 
-<p>The Turbonomic platform includes an Embedded Reporting component 
-that you can choose to enable when you install the platform. Embedded Reporting stores a 
-history of your managed environment and then presents selective snapshots of this history 
-via a set of standard dashboards and reports.</p>
+<p>The Turbonomic platform includes a Data Exporter component 
+that you can choose to enable when you install the platform. The Data Exporter streams 
+ Turbonomic data to a standard format. You can then 
+ load that data into search and analytics services such as Elasticsearch.</p>
 
-<p>Dashboards and charts in Turbonomic are powered by the Grafana® 
-observability platform. With Grafana, it's easy to navigate the existing dashboards, and 
-to make your own charts and dashboards with no coding required. You can also create custom 
-custom reports via SQL queries against the Embedded Reports database.</p>
-
-<p>To compose custom reports, navigate to the Reports view, then explore the Timescale 
-database. From there, you can assemble queries to populate your custom reports. To help 
-you build these queries, this document describes the schema tables, and provides some 
-sample queries against them.</p>
-
-<p>The Embedded Reports feature uses a TimescaleDB service to manage the reporting data. 
-The default installation of Turbonomic includes its own installation of 
-TimescaleDB.  This document also includes instructions to deploy an external TimescaleDB service. 
-You can use this as an alternative to the default deployment. 
-
-
+<p>With the Data Exporter you can build custom tracking of changes to your environment, 
+ and follow the details as Turbonomic keeps your applications 
+ healthy.</p>
 
 <p>For general information information about Turbonomic, 
 see the full Turbonomic documentation 
 <a href="https://docs.turbonomic.com/">HERE</a>.</p>
-</p>
 
           
         </article>
@@ -105,23 +64,7 @@ see the full Turbonomic documentation
                     <ul>
                     
                         
-                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
-                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
-                        
-                        <ul>
-                          
-                          
-                          
-                        </ul>
-                    
-                    </ul>
-                  
-                  <h5 style="margin-bottom:1px;">Reference Material</h5>
-                    <ul>
-                    
-                        
-                        <li><a href="page/enum.html">Enum Reference</a></li>
-                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> 
                         
                         <ul>
                           
@@ -135,22 +78,17 @@ see the full Turbonomic documentation
                     <ul>
                     
                         
-                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
-                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
-                            
-                          
-                            
-                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
@@ -162,8 +100,7 @@ see the full Turbonomic documentation
                     <ul>
                     
                         
-                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
-                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

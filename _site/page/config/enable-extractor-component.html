@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>Enabling the Extractor Component</h1>
+          <p>The first step to enabling the Data Exporter is to enable the extractor component. To enable the extractor:</p>
+
+<ol>
+  <li>
+    <p>Open an SSH terminal session to your Turbonomic instance.<br />
+Log in with the System Administrator that you set up when you installed Turbonomic:</p>
+
+    <p>Username: <code class="language-plaintext highlighter-rouge">turbo</code><br />
+ Password: <code class="language-plaintext highlighter-rouge">[your_private_password]</code></p>
+  </li>
+  <li>
+    <p>Edit the cr.yaml file to enable the extractor component.<br />
+In the same SSH session, open the cr.yaml file for editing. For example:<br />
+<code class="language-plaintext highlighter-rouge">vi /opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml</code></p>
+  </li>
+  <li>
+    <p>Edit the entry for the extractor component.</p>
+
+    <blockquote>
+      <p><strong>NOTE:</strong> If you have enabled Embedded Reporting, then the extractor component will 
+already be enabled (set to <code class="language-plaintext highlighter-rouge">true</code>).</p>
+
+      <p>You should uderstand that it is possible to enable the Data Exporter without enabling 
+Embedded Reports, just as it is possible to enable Embedded Reports without enabling 
+the Data Exporter.<br />
+ Search for the extractor entry in the cr.yaml file. It should appear as:</p>
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> extractor:
+   enabled: false
+</code></pre></div>      </div>
+      <p>Change the entry to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+    </blockquote>
+  </li>
+  <li>Edit the entry for the extractor properties.<br />
+Search for the extractor entry in the cr.yaml file. It should appear as:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> properties:
+   extractor:
+     enableDataExtraction: false
+</code></pre></div>    </div>
+    <p>Change the entry to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+  </li>
+  <li>Save and apply your changes to the platform.<br />
+After you save your changes, use <code class="language-plaintext highlighter-rouge">kubectl</code> to apply the changes:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply -f \
+/opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml  
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify that the extractor component is running.<br />
+Give the platform enough time to restart the components. Then execute the command:<br />
+<code class="language-plaintext highlighter-rouge">kubectl get pods -n turbonomic</code></p>
+
+    <p>You should see output similar to the following:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                         READY   STATUS    RESTARTS 
+...
+extractor-5f41dd61c4-4d6lq                   1/1     Running   0   
+...
+</code></pre></div>    </div>
+    <p>Look for an entry for the <code class="language-plaintext highlighter-rouge">extractor</code> component. If the entry is present, ready, and running, then the 
+extractor component is installed and running.</p>
+  </li>
+</ol>
+
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> 
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

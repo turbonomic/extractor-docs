@@ -10,33 +10,24 @@ toc:
 #      dir: page/entity.html
 
 
-  - title: Reference Material
-    subItems:
-    - page: Enum Reference
-      url: enum.html
-      dir: page/enum.html
-
-#  - title: Andy's Original Timescale Doc
+#  - title: Reference Material
 #    subItems:
-#    - page: Using an External Timescale Database with Embedded Reporting
-#      url: external-timescale-ORIGINAL.html
-#      dir: page/config/external-timescale-ORIGINAL.html
+#    - page: Enum Reference
+#      url: enum.html
+#      dir: page/enum.html
       
   - title: Configuration
     subItems:
-    - page: Configuring an External TimescaleDB
-      url: external-timescale.html
-      dir: page/config/external-timescale.html
+    - page: Enabling the Data Exporter
+      url: enabling-exporter.html
+      dir: page/config/enabling-exporter.html
       subSubItems: # So far, you can nest two levels down for topic links
-      - page: Creating an External TimescaleDB
-        url: external-timescale-dbService.html
-        dir: page/config/external-timescale-dbService.html
-      - page: Manual Provisioning of Users and Databases
-        url: external-timescale-manuallyAdd.html
-        dir: page/config/external-timescale-manuallyAdd.html
-      - page: Automatic Provisioning of Users and Databases
-        url: external-timescale-autoProvision.html
-        dir: page/config/external-timescale-autoProvision.html
+      - page: Enabling the the Extractor Component
+        url: enable-extractor-component.html
+        dir: page/config/enable-extractor-component.html
+      - page: Deploying a Connector
+        url: deploy-connector.html
+        dir: page/config/deploy-connector.html
         
   - title: Appendix
     subItems:
