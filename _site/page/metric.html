@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <!--
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  -->
+  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          <!--
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          -->
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>metric Table</h1>
+          <!--
+          <div style="font-size: 10px;">
+            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
+            
+            
+            
+            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
+            
+            
+            
+            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
+            
+            
+            
+            
+            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
+            
+            
+            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
+          </div>
+          -->
+          <p>This table contains metric values for entities that appeared in the topology. Most metrics are values associated with commodities bought or sold by the entity. Bought and sold commodities appear in separate records - one for the buyer and one for the seller. In addition to topology metrics, this table contains headroom properties, which are generated daily by headroom plans.</p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>metric</title></head><body><h2 class="genData">metric table</h2>
+	
+	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
+		<tr><td><p>time</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Timestamp on the topology from
+				which this metric was obtained. For
+				headroom metrics this is the time at
+				which the headroom plan was
+				created.</p></td>
+		</tr>
+		<tr><td><p>entity_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Oid of the entity to which the metric
+				applies.</p></td>
+		</tr>
+		<tr><td><p>type</p></td>
+			<td><p><a href="enum/metric_type.html">metric_type</a></p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The type of the metric.</p></td>
+		</tr>
+		<tr><td><p>provider_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Oid of the seller of this commodity.
+			</p></td>
+		</tr>
+		<tr><td><p>key</p></td>
+			<td><p>text</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>The commodity key. This value can
+				be null if no key is present.</p></td>
+		</tr>
+		<tr><td><p>current</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Current utilization of the commodity on the selling entity</p></td>
+		</tr>
+		<tr><td><p>capacity</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Capacity of the commodity on the selling
+				entity</p></td>
+		</tr>
+		<tr><td><p>utilization</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Utilization of the commodity on the selling
+				entity.
+			</p></td>
+		</tr>
+		<tr><td><p>consumed</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Amount of the commodity currently
+				used by the buying entity</p></td>
+		</tr>
+		<tr><td><p>peak_current</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Peak amount of the
+				commodity of the selling entity</p></td>
+		</tr>
+		<tr><td><p>peak_consumed</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Peak amount of the commodity
+				currently used by the buying entity
+			</p></td>
+		</tr>
+		<tr><td><p>entity_type</p></td>
+			<td><p><a href="enum/entity_type.html">entity_type</a></p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The type of the entity in the entity_oid column.</p></td>
+		</tr>
+	</tbody></table>
+</body></html>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<h3 id="vmem-utilization-for-a-virtual-machine-over-time">VMem utilization for a Virtual Machine over time:</h3>
+
+<p>This query returns all the VM memory metrics collected for a specified virtual machine for a given time interval. The time interval is truncated to the hour.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT m.time, avg(m.utilization) AS avg_util
+  FROM  metric m,
+    scope_to($__timeFrom()::timestamptz - INTERVAL '24 hour',  date_trunc('hour', $__timeTo()::timestamptz),
+      'VIRTUAL_MACHINE', ARRAY[0]::bigint[], '0' = '0') s
+  WHERE m.entity_oid = s.oid
+    and m.time BETWEEN s.from_time AND s.to_time
+    AND m.type = 'VMEM'
+    AND m.provider_oid IS NULL
+    AND m.time BETWEEN $__timeFrom()::timestamptz - interval '24 hour' AND date_trunc('hour', $__timeTo()::timestamptz)
+  GROUP BY 1
+</code></pre></div></div>
+
+<h3 id="storage-amount-of-physical-machines-running-on-a-cluster">Storage Amount of Physical Machines Running On a Cluster:</h3>
+
+<p>This query returns the max values of storage amounts for all the physical machines running in a cluster. Note that the only parameter given to the query other than the time range, is the <code class="language-plaintext highlighter-rouge">cluster_id</code>. We then have an internal function in Postgres that is able to translate the <code class="language-plaintext highlighter-rouge">cluster_id</code> to all the oids of the physical machines.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT
+     date_trunc('day', m.time) as time,
+     m.entity_oid,
+     MAX(current) FILTER (WHERE m.type = 'STORAGE_AMOUNT') as stor_used,
+     MAX(capacity) FILTER (WHERE m.type = 'STORAGE_AMOUNT') as stor_cap,
+     MAX(current) FILTER (WHERE m.type = 'STORAGE_PROVISIONED') as stor_prov
+   FROM
+     metric m,
+     scope_to($__timeFrom(), $__timeTo(), 'STORAGE', ARRAY[$CluserId+0]::bigint[], $CluserId = '0') s
+   WHERE
+     m.entity_oid = s.oid
+     AND m.time BETWEEN s.from_time AND s.to_time
+     AND m.type in ('STORAGE_AMOUNT', 'STORAGE_PROVISIONED')
+     AND m.time between $__timeFrom() and $__timeTo()
+  GROUP BY 1, 2
+</code></pre></div></div>
+
+<h3 id="physical-machine-average-memory-utilization----week-over-week-by-day">Physical Machine Average Memory Utilization  - Week Over Week By Day:</h3>
+
+<p>Returns the average daily memory utilization for virtual machines both for the current week and the past week.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WITH metrics AS (
+  SELECT m.time, m.utilization
+    FROM metric m,
+    scope_to($__timeFrom()::timestamptz - INTERVAL '7 day', $__timeTo(), 'PHYSICAL_MACHINE', ARRAY[0]::bigint[], '0' = '0') s
+    WHERE
+      m.entity_oid = s.oid
+      AND m.time BETWEEN s.from_time AND s.to_time
+      AND m.type = 'MEM'
+      AND m.time BETWEEN ($__timeFrom()::TIMESTAMPTZ - interval '7 day') AND date_trunc('day', $__timeTo()::TIMESTAMPTZ)
+    GROUP BY m.time, m.entity_oid, m.utilization
+),
+DATA AS (
+  SELECT m.time, avg(m.utilization) AS avg_util
+  FROM metrics m
+  GROUP BY m.time
+)
+SELECT
+  INTERVAL '1 DAY' + CASE
+    WHEN time BETWEEN date_trunc('day', $__timeFrom()::TIMESTAMPTZ - interval '7 day')
+      AND date_trunc('day', $__timeTo()::TIMESTAMPTZ - interval '7 day')
+    THEN date_trunc('day', time + interval '7 day')
+    ELSE date_trunc('day', time)
+  END as "time",
+  CASE
+    WHEN time BETWEEN date_trunc('day', $__timeFrom()::TIMESTAMPTZ - interval '7 day')
+      AND date_trunc('day', $__timeTo()::TIMESTAMPTZ - interval '7 day')
+    THEN 'Previous Week'
+    ELSE 'Week Ending ' || DATE($__timeTo()::TIMESTAMPTZ)::TEXT
+  END as metric,
+  avg(avg_util)
+FROM data
+GROUP BY 1, 2
+ORDER BY 1, 2
+</code></pre></div></div>
+
+<h3 id="representation-of-powered-off-virtual-machines">Representation of Powered Off Virtual Machines:</h3>
+
+<p>Ideally, metrics of a turned off Virtual Machine will still be written on the table, assuming that the probe will send them in the entity dto. Most used values for commodities will have NULL values, we do this, instead of having 0’s, in order not to affect potential averages over time, while the capacity should have the same value, independent of the state of the machine. Still, some used values for commodities won’t be NULL, such as storage, since those are consumed by the machine even in a powered off state.</p>
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Reference Material</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/enum.html">Enum Reference</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <!--
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  -->
+  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          <!--
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          -->
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>scope Table</h1>
+          <!--
+          <div style="font-size: 10px;">
+            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
+            
+            
+            
+            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
+            
+            
+            
+            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
+            
+            
+            
+            
+            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
+            
+            
+            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
+          </div>
+          -->
+          <p>The Scope table tracks the association of two entities as they are related in each other’s scope. The <code class="language-plaintext highlighter-rouge">seed_oid</code> identifies the containing entity (the entity that defines the scope), and the <code class="language-plaintext highlighter-rouge">scoped_oid</code> identifies the entity that is within the given scope. This table is updated with each market cycle.</p>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>scope</title></head><body><h2 class="genData">scope table</h2>
+	
+	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
+		<tr><td><p>seed_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>true</p></td>
+			<td><p>oid of the entity whose scope is the subject of this record.</p></td>
+		</tr>
+		<tr><td><p>scoped_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>true</p></td>
+			<td><p>oid of the entity that is part of that scope.</p></td>
+		</tr>
+		<tr><td><p>scoped_type</p></td>
+			<td><p><a href="enum/entity_type.html">entity_type</a></p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The type of entity.</p></td>
+		</tr>
+		<tr><td><p>start</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>true</p></td>
+			<td><p>A timestamp for the first topology in which this relationship appeared. This covers the initial appearance, or a
+				reappearance after the relationship was temporarily broken.</p></td>
+		</tr>
+		<tr><td><p>finish</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>A timestamp of last topology in which this relationship appeared. A value of 9999-12-31T23:59:59 means
+				the relationship is not yet known to have terminated.</p></td>
+		</tr>
+	</tbody></table>
+</body></html>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="example-1">Example 1:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>seed_oid</th>
+      <th>scoped_oid</th>
+      <th>scoped_type</th>
+      <th>start</th>
+      <th>finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>111</td>
+      <td>999</td>
+      <td>PHYSICAL_MACHINE</td>
+      <td>2021-01-01T05:00:00Z</td>
+      <td>9999-12-31T23:59:59</td>
+    </tr>
+    <tr>
+      <td>999</td>
+      <td>111</td>
+      <td>COMPUTE_CLUSTER</td>
+      <td>2021-01-01T05:00:00Z</td>
+      <td>9999-12-31T23:59:59</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The first row indicates that cluster_1 (oid: 111) contains Physical Machine_1 (oid: 999). The <code class="language-plaintext highlighter-rouge">start</code> time indicates the first time the
+entity was discovered. This relationship is ongoing and this is represented by a <code class="language-plaintext highlighter-rouge">finish</code> timestamp of 9999-12-31T23:59:59.
+Row 2 shows that Physical Machine_1 is contained by Cluster_1.</p>
+
+<h3 id="example-2">Example 2:</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>seed_oid</th>
+      <th>scoped_oid</th>
+      <th>scoped_type</th>
+      <th>start</th>
+      <th>finish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>111</td>
+      <td>999</td>
+      <td>PHYSICAL_MACHINE</td>
+      <td>2021-01-01T05:00:00Z</td>
+      <td>2021-01-31T05:00:00Z</td>
+    </tr>
+    <tr>
+      <td>999</td>
+      <td>111</td>
+      <td>COMPUTE_CLUSTER</td>
+      <td>2021-01-01T05:00:00Z</td>
+      <td>2021-01-31T05:00:00Z</td>
+    </tr>
+    <tr>
+      <td>222</td>
+      <td>999</td>
+      <td>PHYSICAL_MACHINE</td>
+      <td>2021-01-31T05:00:00Z</td>
+      <td>9999-12-31T23:59:59</td>
+    </tr>
+    <tr>
+      <td>999</td>
+      <td>222</td>
+      <td>COMPUTE_CLUSTER</td>
+      <td>2021-01-31T05:00:00Z</td>
+      <td>9999-12-31T23:59:59</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These records show that Physical_Machine_1 moved to Cluster_2 (oid: 2222) on January 31. Note that the timestamp for the end of the relationship with Cluster_1 is the same as the timestamp for the start of the relationship with Cluster_2.</p>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<h3 id="count-physical-machines-in-clusters-over-a-given-time-interval">Count Physical Machines in Clusters Over A Given Time Interval</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>WITH all_relationships AS (
+    select 
+        e.name cluster_name, s.seed_oid cluster_oid, s.scoped_oid pm_oid
+    FROM 
+        entity e
+    JOIN scope s on e.oid = s.seed_oid 
+        and s.scoped_type ='PHYSICAL_MACHINE'
+    WHERE e.type = 'COMPUTE_CLUSTER'
+        AND ('2021-02-01T05:00:00Z','2021-02-18T04:59:59Z') OVERLAPS (s.start, s.finish) 
+), non_duplicate_relationships AS (
+--    The same relationships between 2 entities can exist in given time interval if they move in and out of each others scopes
+--    We account for these duplicates entries at varying time intervals
+    select *
+    from all_relationships
+    GROUP BY cluster_name, cluster_oid, pm_oid
+)
+select cluster_name, count(*)
+from non_duplicate_relationships
+group by cluster_name
+</code></pre></div></div>
+
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Reference Material</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/enum.html">Enum Reference</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

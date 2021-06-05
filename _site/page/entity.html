@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <!--
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  -->
+  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          <!--
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          -->
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>entity Table</h1>
+          <!--
+          <div style="font-size: 10px;">
+            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
+            
+            
+            
+            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
+            
+            
+            
+            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
+            
+            
+            
+            
+            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
+            
+            
+            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
+          </div>
+          -->
+          <p>The Entity table contains information about which entities appear in the 
+topologies and when. Table gets updated with each market cycle.</p>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>entity</title></head><body><h2 class="genData">entity table</h2>
+	This table lists a bunch of columns that have different information in them. 
+		We want to say something about htem, but don't know what to say.
+	
+	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
+		<tr><td><p>oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>true</p></td>
+			<td><p>Unique entity identifier</p>
+			</td>
+		</tr>
+		<tr><td><p>type</p></td>
+			<td><p><a href="enum/entity_type.html">entity_type</a></p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Type of entity. This field supports both entity and group types.</p>
+			</td>
+		</tr>
+		<tr><td><p>name</p></td>
+			<td><p>text</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Entity’s current display name. 
+				While display names may change over time, the data tracks 
+				only the most recent display name.</p>
+			</td>
+		</tr>
+		<tr><td><p>environment</p></td>
+			<td><p><a href="enum/environment_type.html">environment_type</a></p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>The kind of environment the entity exists in:</p>
+				<p><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>environment_type</title></head><body><h2 class="genData">environment_type type</h2>
+	
+	<ul>
+		<li>CLOUD
+			
+		</li>
+		<li>HYBRID
+			
+		</li>
+		<li>ON_PREM
+			
+		</li>
+		<li>UNKNOWN_ENV
+			
+		</li>
+	</ul>
+</body></html></p>
+			</td>
+		</tr>
+		<tr><td><p>attrs</p></td>
+			<td><p>jsonb</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>Information that is specific for the given entity type.</p>
+				<p><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>attr_type</title></head><body><h2 class="genData">attr_type type</h2>
+	
+	<ul>
+		<li>ENTITY_STATE
+			
+		</li>
+		<li>NUM_VCPU
+			
+		</li>
+		<li>VOLUME_ATTACHED
+			
+		</li>
+	</ul>
+</body></html></p>
+			</td>
+		</tr>
+		<tr><td><p>first_seen</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>A topology timestamp for when this entity first appeared.</p>
+			</td>
+		</tr>
+		<tr><td><p>last_seen</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>A topology timestamp for when this entity last 
+				appeared.</p>
+				<p>A value of 9999-12-31T23:59:59 means the entity still exists 
+				in latest market cycle.</p>
+				</td>
+		</tr>
+	</tbody></table>
+</body></html>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<h3 id="count-entities-that-meet-specific-criteria">Count entities that meet specific criteria:</h3>
+<p>For a given time interval, count the number of <code class="language-plaintext highlighter-rouge">PHYSICAL_MACHINE</code> entities that have 4 CPUS.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select count(*)
+from entity e
+where e.type = 'PHYSICAL_MACHINE'
+    and attrs-&gt;'num_cpus'= '4'
+    and ('2021-02-01T05:00:00Z','2021-02-18T04:59:59Z') OVERLAPS (e.first_seen, e.last_seen)
+</code></pre></div></div>
+
+<h3 id="find-clusters-that-were-configured-for-a-given-time-range">Find clusters that were configured for a given time range:</h3>
+<p>Queries like this are common to generate values for grafana variables that you can run reports against.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT name, oid
+FROM entity
+WHERE
+  entity.type = 'COMPUTE_CLUSTER'
+  AND ('2021-02-01T05:00:00Z','2021-02-18T04:59:59Z') OVERLAPS (first_seen, last_seen)
+ORDER BY 1
+</code></pre></div></div>
+
+<p>For example, here’s a list of variables that a user is choosing:</p>
+
+<p><img src="/assets/ReportByVariable.png" alt="Report Variables" /></p>
+
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Reference Material</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/enum.html">Enum Reference</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <!--
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  -->
+  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          <!--
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          -->
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>wasted_file Table</h1>
+          <!--
+          <div style="font-size: 10px;">
+            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
+            
+            
+            
+            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
+            
+            
+            
+            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
+            
+            
+            
+            
+            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
+            
+            
+            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
+          </div>
+          -->
+          <p>This table stores the paths to the current wasted files in the environment, as well as properties of the files such as last modification or file size.</p>
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>wasted_file</title></head><body><h2 class="genData">wasted_file table</h2>
+	
+	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
+		<tr><td><p>path</p></td>
+			<td><p>text</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The path of the file</p></td>
+		</tr>
+		<tr><td><p>file_size_kb</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The size of the file
+			</p></td>
+		</tr>
+		<tr><td><p>modification_time</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Last time the file was modified</p></td>
+		</tr>
+		<tr><td><p>storage_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The oid of the storage which contains the
+				file
+			</p></td>
+		</tr>
+		<tr><td><p>storage_name</p></td>
+			<td><p>text</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>Name of the storage (denormalized
+				for reporting)</p></td>
+		</tr>
+	</tbody></table>
+</body></html>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<h3 id="get-information-about-storage-files-for-a-data-store">Get information about storage files for a data store:</h3>
+
+<p>The query returns the storage name, the file path, the site of the file and the last modified time for each file of a data store. The query accepts the $storage_oid as a parameter.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT storage_name as "Datastore",
+       path as "File Path",
+       file_size_kb as "File Size",
+       modification_time as "Last Modified Time"
+  FROM wasted_file
+ WHERE file_size_kb &gt;= 0
+   AND ARRAY[storage_oid]::text[] &amp;&amp; Array['$storage_oid']::text[]
+ ORDER BY 3 DESC
+</code></pre></div></div>
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Reference Material</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/enum.html">Enum Reference</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>

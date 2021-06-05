@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Extractor Schema</title>
+  
+  
+  <!--
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  -->
+  <link href="./css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="./assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          <!--
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          -->
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>historical_entity_attrs Table</h1>
+          <!--
+          <div style="font-size: 10px;">
+            <p>site.github.baseurl is: /pages/turbonomic/extractor-docs</p>
+            
+            
+            
+            <p>CSS LINK IS: http://localhost:4000/css/FourD_CSS/vmtHelp.css</p>
+            
+            
+            
+            <p>LOGO LINK IS: /assets/logos/logoInv.png</p>
+            
+            
+            
+            
+            <p>DOC HOME LINK: http://localhost:4000/index.html</p>
+            
+            
+            <p>REPOS URL IS: https://github.com/turbonomic/extractor-docs</p>
+          </div>
+          -->
+          <p>This table tracks the historical attributes associated with an entity. Each row represents the value of a particular attribute of an entity at a particular point in time. New rows are written when the value of a property changes between topologies, and at regular intervals (e.g. daily) to keep a recent value available within a reasonable time range.</p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>historical_entity_attrs</title></head><body><h2 class="genData">historical_entity_attrs table</h2>
+	
+	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
+		<tr><td><p>time</p></td>
+			<td><p>timestamp with time zone</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The time this attribute was recorded.</p></td>
+		</tr>
+		<tr><td><p>entity_oid</p></td>
+			<td><p>bigint</p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The oid of the entity the attribute
+				pertains to.</p></td>
+		</tr>
+		<tr><td><p>type</p></td>
+			<td><p><a href="enum/attr_type.html">attr_type</a></p></td>
+			<td><p>false</p></td>
+			<td><p>false</p></td>
+			<td><p>The attribute type.</p></td>
+		</tr>
+		<tr><td><p>bool_value</p></td>
+			<td><p>boolean</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is boolean, this is the
+				boolean value.</p></td>
+		</tr>
+		<tr><td><p>int_value</p></td>
+			<td><p>int</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is an integer, this is
+				the integer value. If the attribute is
+				an enum, this is the oid of the
+				enum in the pg_enum table (to
+				guard against name or order
+				changes). The int_value should be
+				castable to the enum via a custom
+				cast (e.g. int	_value::entity_state =
+				'POWERED_ON').</p></td>
+		</tr>
+		<tr><td><p>long_value</p></td>
+			<td><p>bigint</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a long, this is the
+				long value.
+			</p></td>
+		</tr>
+		<tr><td><p>double_value</p></td>
+			<td><p>double precision</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a double, this is the
+				double value.
+			</p></td>
+		</tr>
+		<tr><td><p>string_value</p></td>
+			<td><p>text</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a string, this is the
+				string value.
+			</p></td>
+		</tr>
+		<tr><td><p>int_arr_value</p></td>
+			<td><p>int[]</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a list of ints, this is
+				the value. If the attribute is a list of
+				enums, these are the OIDs of the
+				enums in the pg_enum table (to
+				guard against name or order
+				changes).</p></td>
+		</tr>
+		<tr><td><p>long_arr_value</p></td>
+			<td><p>bigint[]</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a list of longs, this
+				is the value.</p></td>
+		</tr>
+		<tr><td><p>string_arr_value</p></td>
+			<td><p>text[]</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a list of strings, this
+				is the value.</p></td>
+		</tr>
+		<tr><td><p>double_arr_value</p></td>
+			<td><p>float8[]</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a list of doubles,
+				this is the value.</p></td>
+		</tr>
+		<tr><td><p>json_value</p></td>
+			<td><p>jsonb</p></td>
+			<td><p>true</p></td>
+			<td><p>false</p></td>
+			<td><p>If the attribute is a JSON object, this
+				is the value.</p></td>
+		</tr>
+	</tbody></table>
+</body></html>
+
+<h2 id="sample-use-cases">Sample Use Cases</h2>
+
+<h3 id="get-all-powered-on-entities">Get All Powered On Entities:</h3>
+
+<p>This query returns all the entities in the historical_entity_attrs that do not have a powered_off state given a certain time range.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select *
+from historical_entity_attrs h1
+where h1.type = 'ENTITY_STATE' and h1.int_value::entity_state != 'POWERED_OFF' AND h1.time between $__timeFrom() and $__timeTo()
+</code></pre></div></div>
+
+<h3 id="gap-filling-data">Gap-filling data:</h3>
+
+<p>Data in this table are not written at every broadcast. Because of this, if we ask for those data in a time range, we might only get few data points. Consider this query in which we get the values for one entity in a time range:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT * FROM historical_entity_attrs h1
+where h1.type = 'ENTITY_STATE'
+    and entity_oid ='73864029152384'
+    and time between (timestamptz '2021-03-01T01:00:00Z' - interval '24 hour') and '2021-03-03T04:59:59Z'
+    order by time;
+</code></pre></div></div>
+
+<p><img src="/assets/historical_entity_attrs_1.png" alt="Historical Entity Result" /></p>
+
+<p>In order to  solve this problem we use a timescaledb function that fills the time ranges with data, as if those data were written at a constant interval. This means that if we want data every interval <code class="language-plaintext highlighter-rouge">t</code> but we only have data at <code class="language-plaintext highlighter-rouge">t1</code> and <code class="language-plaintext highlighter-rouge">t4</code>, with this function we can generate data at <code class="language-plaintext highlighter-rouge">t2</code> and <code class="language-plaintext highlighter-rouge">t3</code> with the same value of <code class="language-plaintext highlighter-rouge">t1</code>. The function that we use is called <code class="language-plaintext highlighter-rouge">time_bucket_gapfill</code> and here’s a sample query. Notice how in the result we have data points at a constant interval of 10 minutes:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT 
+  time_bucket_gapfill('10 min', time) AS minutes,
+  locf(max(h1.int_value::entity_state))
+FROM historical_entity_attrs h1
+where h1.type = 'ENTITY_STATE'
+--     AND h1.int_value::entity_state = 'POWERED_ON'
+    and entity_oid ='73864029152384'
+    and time between (timestamptz '2021-03-01T01:00:00Z' - interval '24 hour') and '2021-03-03T04:59:59Z'
+GROUP BY minutes
+</code></pre></div></div>
+
+<p><img src="/assets/historical_entity_attrs_2.png" alt="Bucket Gap Function Result" /></p>
+
+<h3 id="casting-entity-states-to-integers">Casting Entity States to Integers:</h3>
+
+<p>Entity States are internally represented as integers. This means that a property such as <code class="language-plaintext highlighter-rouge">POWERED_OFF</code> is stored as a number. In order to work with this the queries need to cast the integer to the corresponding entity state. This is done with the following cast, supported by Postgres: <code class="language-plaintext highlighter-rouge">int_value::entity_state </code>.
+So for example, take a look at the two queries below, the first one without the cast, and the second query with it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT time, entity_oid, entity_state FROM historical_entity_attrs h1
+where h1.type = 'ENTITY_STATE'
+    and entity_oid ='73864029152384'
+    and time between (timestamptz '2021-03-01T01:00:00Z' - interval '24 hour') and '2021-03-03T04:59:59Z'
+    order by time;
+</code></pre></div></div>
+
+<p><img src="/assets/entity_to_integer_1.png" alt="Entity to Integer Result" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT time, entity_oid, int_value::entity_state FROM historical_entity_attrs h1
+where h1.type = 'ENTITY_STATE'
+    and entity_oid ='73864029152384'
+    and time between (timestamptz '2021-03-01T01:00:00Z' - interval '24 hour') and '2021-03-03T04:59:59Z'
+    order by time;
+</code></pre></div></div>
+
+<p><img src="/assets/entity_to_integer_2.png" alt="Entity to Integer Result" /></p>
+
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/wasted_file.html">completed_action Table</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Reference Material</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/enum.html">Enum Reference</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/enum.html">Enum Reference</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/config/external-timescale.html">Configuring an External TimescaleDB</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/config/external-timescale.html">Configuring an External TimescaleDB</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-dbService.html">Creating an External TimescaleDB</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-manuallyAdd.html">Manual Provisioning of Users and Databases</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/external-timescale-autoProvision.html">Automatic Provisioning of Users and Databases</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="page/appendix/yamlTips.html">YAML File Editing Tips</a></li>
+                      <!-- <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> -->
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+  </body>
+  
+</html>
