@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--Generated on 2021-03-17T21:43:34.198-04:00-->
+<GeneratedDoc name="related_types" type="type">
+	<Intro/>
+	<Items>
+		<Item name="COMPUTE_CLUSTER">
+			<Field name="Notes"><p>A cluster of VMs</p></Field>
+		</Item>
+		<Item name="STORAGE_CLUSTER">
+			<Field name="Notes"><p>A cluster of datastores</p></Field>
+		</Item>
+		<Item name="K8S_CLUSTER_GROUP">
+			<Field name="Notes">A Kubernetes cluster group</Field>
+		</Item>
+		<Item name="RESOURCE_GROUP">
+			<Field name="Notes"/>
+		</Item>
+		<Item name="BILLING_FAMILY">
+			<Field name="Notes"><p>A group of cloud targets that are all managed under the same billing agreement</p></Field>
+		</Item>
+		<Item name="GROUP">
+			<Field name="Notes"><p>A discovered or user-defined group of entities. Can be a group of groups.</p></Field>
+		</Item>
+	</Items>
+</GeneratedDoc>

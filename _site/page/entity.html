@@ -26,129 +26,729 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>entity Table</h1>
-          <p>The Entity table contains information about which entities appear in the 
-topologies and when. Table gets updated with each market cycle.</p>
+          <h1>Entity Object</h1>
+          <p>The extractor sends JSON documents to Kafka for individual entities. Each object has 
+two top-level fields:</p>
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>entity</title></head><body><h2 class="genData">entity table</h2>
-	This table lists a bunch of columns that have different information in them. 
-		We want to say something about htem, but don't know what to say.
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">timestamp</code>: When the entity was broadcast</li>
+  <li><code class="language-plaintext highlighter-rouge">entity</code>: The object that describes the given entity.</li>
+</ul>
+
+<h2 id="sample-entity-object">Sample Entity Object</h2>
+<details>
+<summary>Click to Show/Hide:</summary>
+
+<pre>
+{
+  "timestamp": "2021-01-15T19:17:13",
+  "entity": {
+    "environment": "ON_PREM",
+    "name": "test-rdm-shared2",
+    "attrs": {
+      "guest_os_type": "WINDOWS",
+      "connected_networks": [
+        "VM Network"
+      ],
+      "num_cpus": 1
+    },
+    "state": "POWERED_OFF",
+    "oid": 73754533904736,
+    "type": "VIRTUAL_MACHINE",
+    "related": {
+      "PHYSICAL_MACHINE": [
+        {
+          "name": "hp-esx46.corp.vmturbo.com",
+          "oid": 73754533901584
+        }
+      ],
+      "COMPUTE_CLUSTER": [
+        {
+          "name": "Datacenter DC7/Cluster01",
+          "oid": 284907641559697
+        }
+      ],
+      "DATACENTER": [
+        {
+          "name": "Datacenter DC7",
+          "oid": 73754533900625
+        }
+      ],
+      "VIRTUAL_DATACENTER": [
+        {
+          "name": "Resources-Cluster01",
+          "oid": 73754533901777
+        }
+      ],
+      "VIRTUAL_VOLUME": [
+        {
+          "name": "Vol-test-rdm-shared2-QSGRID01:DC7DS2",
+          "oid": 73754533909440
+        },
+        {
+          "name": "Vol-test-rdm-shared2-test-rdm-shared1 : [QSGRID01:DC7DS2] test-rdm-shared1/test-rdm-shared1_1.vmdk",
+          "oid": 73754533909439
+        }
+      ],
+      "STORAGE": [
+        {
+          "name": "test-rdm-shared1 : [QSGRID01:DC7DS2] test-rdm-shared1/test-rdm-shared1_1.vmdk",
+          "oid": 73754533901780
+        },
+        {
+          "name": "QSGRID01:DC7DS2",
+          "oid": 73754533900756
+        }
+      ],
+      "DISK_ARRAY": [
+        {
+          "name": "test-rdm-shared1",
+          "oid": 73754533901786
+        },
+        {
+          "name": "DiskArray-QSGRID01:DC7DS2",
+          "oid": 73754533900667
+        }
+      ]
+    },
+    "metric": {
+      "STORAGE_AMOUNT": {
+        "consumed": 3
+      },
+      "MEM_ALLOCATION": {
+        "consumed": 0
+      },
+      "CPU_PROVISIONED": {
+        "consumed": 2600
+      },
+      "VCPU": {
+        "current": 0,
+        "capacity": 2600,
+        "utilization": 0
+      },
+      "BALLOONING": {
+        "consumed": 0
+      },
+      "STORAGE_PROVISIONED": {
+        "consumed": 15367.5751953125
+      },
+      "SWAPPING": {
+        "consumed": 0
+      },
+      "IO_THROUGHPUT": {
+        "consumed": 0
+      },
+      "MEM": {
+        "consumed": 0
+      },
+      "NET_THROUGHPUT": {
+        "consumed": 0
+      },
+      "MEM_PROVISIONED": {
+        "consumed": 4194304
+      },
+      "VMEM": {
+        "current": 0,
+        "capacity": 4194304,
+        "utilization": 0
+      },
+      "STORAGE_ACCESS": {
+        "consumed": 0
+      },
+      "CPU_ALLOCATION": {
+        "consumed": 0
+      },
+      "STORAGE_LATENCY": {
+        "consumed": 0
+      },
+      "CPU": {
+        "consumed": 0
+      }
+    }
+  }
+}
+</pre>
+</details>
+
+<h2 id="common-entity-object-fields">Common Entity Object Fields</h2>
+<p>Every <code class="language-plaintext highlighter-rouge">entity</code> object includes the following fields:</p>
+<details>
+<summary>Click to Show/Hide:</summary>
+<html><body>
 	
-	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
-		<tr><td><p>oid</p></td>
-			<td><p>bigint</p></td>
-			<td><p>false</p></td>
-			<td><p>true</p></td>
-			<td><p>Unique entity identifier</p>
-			</td>
-		</tr>
-		<tr><td><p>type</p></td>
-			<td><p><a href="enum/entity_type.html">entity_type</a></p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>Type of entity. This field supports both entity and group types.</p>
-			</td>
-		</tr>
-		<tr><td><p>name</p></td>
-			<td><p>text</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>Entity’s current display name. 
+	
+	<ul>
+		<li><p><code>oid</code>: 
+			
+			
+			
+			Unique entity identifier
+			
+		</p></li>
+		<li><p><code>type</code>: 
+			
+			
+			
+			Type of entity. This field supports both entity and group types.
+			
+		</p></li>
+		<li><p><code>name</code>: 
+			
+			
+			
+			Entity’s current display name. 
 				While display names may change over time, the data tracks 
-				only the most recent display name.</p>
-			</td>
-		</tr>
-		<tr><td><p>environment</p></td>
-			<td><p><a href="enum/environment_type.html">environment_type</a></p></td>
-			<td><p>true</p></td>
-			<td><p>false</p></td>
-			<td><p>The kind of environment the entity exists in:</p>
-				<p><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>environment_type</title></head><body><h2 class="genData">environment_type type</h2>
+				only the most recent display name.
+			
+		</p></li>
+		<li><p><code>environment</code>: 
+			
+			
+			
+			The kind of environment the entity exists in.
+			
+		</p></li>
+		<li><p><code>attrs</code>: 
+			
+			
+			
+			Information that is specific for the given entity type.
+				<html><body>
 	
 	<ul>
-		<li>CLOUD
+		<li><p><code>ENTITY_STATE</code>:
 			
-		</li>
-		<li>HYBRID
+		</p></li>
+		<li><p><code>NUM_VCPU</code>:
 			
-		</li>
-		<li>ON_PREM
+		</p></li>
+		<li><p><code>VOLUME_ATTACHED</code>:
 			
-		</li>
-		<li>UNKNOWN_ENV
-			
-		</li>
+		</p></li>
 	</ul>
-</body></html></p>
-			</td>
-		</tr>
-		<tr><td><p>attrs</p></td>
-			<td><p>jsonb</p></td>
-			<td><p>true</p></td>
-			<td><p>false</p></td>
-			<td><p>Information that is specific for the given entity type.</p>
-				<p><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>attr_type</title></head><body><h2 class="genData">attr_type type</h2>
-	
-	<ul>
-		<li>ENTITY_STATE
-			
-		</li>
-		<li>NUM_VCPU
-			
-		</li>
-		<li>VOLUME_ATTACHED
-			
-		</li>
-	</ul>
-</body></html></p>
-			</td>
-		</tr>
-		<tr><td><p>first_seen</p></td>
-			<td><p>timestamp with time zone</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>A topology timestamp for when this entity first appeared.</p>
-			</td>
-		</tr>
-		<tr><td><p>last_seen</p></td>
-			<td><p>timestamp with time zone</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>A topology timestamp for when this entity last 
-				appeared.</p>
-				<p>A value of 9999-12-31T23:59:59 means the entity still exists 
-				in latest market cycle.</p>
-				</td>
-		</tr>
-	</tbody></table>
 </body></html>
+			
+		</p></li>
+		<li><p><code>first_seen</code>: 
+			
+			
+			
+			A topology timestamp for when this entity first appeared.
+			
+		</p></li>
+		<li><p><code>last_seen</code>: 
+			
+			
+			
+			A topology timestamp for when this entity last 
+				appeared.
+				A value of 9999-12-31T23:59:59 means the entity still exists 
+				in latest market cycle.
+				
+		</p></li>
+	</ul>
+</body></html>
+</details>
 
-<h2 id="sample-use-cases">Sample Use Cases</h2>
+<h2 id="supported-entity-types">Supported Entity Types:</h2>
+<p>Turbonomic can export data for the following types of entities.</p>
+<details>
+<summary>Click to Show/Hide::</summary>
+<html><body>
+	
+	<ul>
+		<li><p><code>ACTION_MANAGER</code>:
+			
+		</p></li>
+		<li><p><code>APPLICATION</code>:
+			
+		</p></li>
+		<li><p><code>APPLICATION_COMPONENT</code>:
+			
+		</p></li>
+		<li><p><code>APPLICATION_SERVER</code>:
+			
+		</p></li>
+		<li><p><code>AVAILABILITY_ZONE</code>:
+			
+		</p></li>
+		<li><p><code>BILLING_FAMILY</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS_ACCOUNT</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS_APPLICATION</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS_ENTITY</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS_TRANSACTION</code>:
+			
+		</p></li>
+		<li><p><code>BUSINESS_USER</code>:
+			
+		</p></li>
+		<li><p><code>CHASSIS</code>:
+			
+		</p></li>
+		<li><p><code>CLOUD_COMMITMENT</code>:
+			
+		</p></li>
+		<li><p><code>CLOUD_SERVICE</code>:
+			
+		</p></li>
+		<li><p><code>COMPUTE_CLUSTER</code>:
+			
+		</p></li>
+		<li><p><code>COMPUTE_RESOURCE</code>:
+			
+		</p></li>
+		<li><p><code>COMPUTE_TIER</code>:
+			
+		</p></li>
+		<li><p><code>CONTAINER</code>:
+			
+		</p></li>
+		<li><p><code>CONTAINER_PLATFORM_CLUSTER</code>:
+			
+		</p></li>
+		<li><p><code>CONTAINER_POD</code>:
+			
+		</p></li>
+		<li><p><code>CONTAINER_SPEC</code>:
+			
+		</p></li>
+		<li><p><code>DATABASE</code>:
+			
+		</p></li>
+		<li><p><code>DATABASE_SERVER</code>:
+			
+		</p></li>
+		<li><p><code>DATABASE_SERVER_TIER</code>:
+			
+		</p></li>
+		<li><p><code>DATABASE_TIER</code>:
+			
+		</p></li>
+		<li><p><code>DATACENTER</code>:
+			
+		</p></li>
+		<li><p><code>DESIRED_RESERVED_INSTANCE</code>:
+			
+		</p></li>
+		<li><p><code>DESKTOP_POOL</code>:
+			
+		</p></li>
+		<li><p><code>DISK_ARRAY</code>:
+			
+		</p></li>
+		<li><p><code>DISTRIBUTED_VIRTUAL_PORTGROUP</code>:
+			
+		</p></li>
+		<li><p><code>DPOD</code>:
+			
+		</p></li>
+		<li><p><code>GROUP</code>:
+			
+		</p></li>
+		<li><p><code>HCI_PHYSICAL_MACHINE</code>:
+			
+		</p></li>
+		<li><p><code>HYPERVISOR_SERVER</code>:
+			
+		</p></li>
+		<li><p><code>INFRASTRUCTURE</code>:
+			
+		</p></li>
+		<li><p><code>INTERNET</code>:
+			
+		</p></li>
+		<li><p><code>IO_MODULE</code>:
+			
+		</p></li>
+		<li><p><code>IP</code>:
+			
+		</p></li>
+		<li><p><code>K8S_CLUSTER</code>:
+			
+		</p></li>
+		<li><p><code>LICENSING_SERVICE</code>:
+			
+		</p></li>
+		<li><p><code>LOAD_BALANCER</code>:
+			
+		</p></li>
+		<li><p><code>LOGICAL_POOL</code>:
+			
+		</p></li>
+		<li><p><code>MAC</code>:
+			
+		</p></li>
+		<li><p><code>MOVER</code>:
+			
+		</p></li>
+		<li><p><code>NAMESPACE</code>:
+			
+		</p></li>
+		<li><p><code>NETWORK</code>:
+			
+		</p></li>
+		<li><p><code>NETWORKING_ENDPOINT</code>:
+			
+		</p></li>
+		<li><p><code>OPERATOR</code>:
+			
+		</p></li>
+		<li><p><code>PHYSICAL_MACHINE</code>:
+			
+		</p></li>
+		<li><p><code>PORT</code>:
+			
+		</p></li>
+		<li><p><code>PROCESSOR_POOL</code>:
+			
+		</p></li>
+		<li><p><code>REGION</code>:
+			
+		</p></li>
+		<li><p><code>RESERVED_INSTANCE</code>:
+			
+		</p></li>
+		<li><p><code>RESERVED_INSTANCE_SPECIFICATION</code>:
+			
+		</p></li>
+		<li><p><code>RESOURCE_GROUP</code>:
+			
+		</p></li>
+		<li><p><code>RIGHT_SIZER</code>:
+			
+		</p></li>
+		<li><p><code>SAVINGS</code>:
+			
+		</p></li>
+		<li><p><code>SERVICE</code>:
+			
+		</p></li>
+		<li><p><code>SERVICE_ENTITY_TEMPLATE</code>:
+			
+		</p></li>
+		<li><p><code>SERVICE_PROVIDER</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_CLUSTER</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_CONTROLLER</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_TIER</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_VOLUME</code>:
+			
+		</p></li>
+		<li><p><code>SWITCH</code>:
+			
+		</p></li>
+		<li><p><code>THIS_ENTITY</code>:
+			
+		</p></li>
+		<li><p><code>THREE_TIER_APPLICATION</code>:
+			
+		</p></li>
+		<li><p><code>VIEW_POD</code>:
+			
+		</p></li>
+		<li><p><code>VIRTUAL_APPLICATION</code>:
+			
+		</p></li>
+		<li><p><code>VIRTUAL_DATACENTER</code>:
+			
+		</p></li>
+		<li><p><code>VIRTUAL_MACHINE</code>:
+			
+		</p></li>
+		<li><p><code>VIRTUAL_VOLUME</code>:
+			
+		</p></li>
+		<li><p><code>VLAN</code>:
+			
+		</p></li>
+		<li><p><code>VM_SPEC</code>:
+			
+		</p></li>
+		<li><p><code>VPOD</code>:
+			
+		</p></li>
+		<li><p><code>WEB_SERVER</code>:
+			
+		</p></li>
+		<li><p><code>WORKLOAD_CONTROLLER</code>:
+			
+		</p></li>
+		<li><p><code>_NONE_</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+</details>
 
-<h3 id="count-entities-that-meet-specific-criteria">Count entities that meet specific criteria:</h3>
-<p>For a given time interval, count the number of <code class="language-plaintext highlighter-rouge">PHYSICAL_MACHINE</code> entities that have 4 CPUS.</p>
+<h2 id="supported-metric-types">Supported Metric Types:</h2>
+<p>Turbonomic tracks different metrics for different types of entities. 
+For a given entity object, you will get the metric data that is appropriate for that entity. 
+This list is all the metric types that the Data Exporter supports.</p>
+<details>
+<summary>Click to Show/Hide::</summary>
+<html><body>
+	MetricType is a really cool type. Some of its really cool features are:
+- #1
+- #2
+	<ul>
+		<li><p><code>ACTIVE_SESSIONS</code>:
+			Active Sessions Notes
+		</p></li>
+		<li><p><code>BALLOONING</code>:
+			Ballooning Notes
+		</p></li>
+		<li><p><code>BUFFER_COMMODITY</code>:
+			
+		</p></li>
+		<li><p><code>CONNECTION</code>:
+			
+		</p></li>
+		<li><p><code>COOLING</code>:
+			
+		</p></li>
+		<li><p><code>CPU</code>:
+			Here are **some notes** on the `CPU` value.
+		</p></li>
+		<li><p><code>CPU_ALLOCATION</code>:
+			
+		</p></li>
+		<li><p><code>CPU_HEADROOM</code>:
+			
+		</p></li>
+		<li><p><code>CPU_PROVISIONED</code>:
+			
+		</p></li>
+		<li><p><code>CPU_READY</code>:
+			
+		</p></li>
+		<li><p><code>DB_CACHE_HIT_RATE</code>:
+			
+		</p></li>
+		<li><p><code>DB_MEM</code>:
+			
+		</p></li>
+		<li><p><code>DTU</code>:
+			
+		</p></li>
+		<li><p><code>EXTENT</code>:
+			
+		</p></li>
+		<li><p><code>FLOW</code>:
+			
+		</p></li>
+		<li><p><code>FLOW_ALLOCATION</code>:
+			
+		</p></li>
+		<li><p><code>HEAP</code>:
+			
+		</p></li>
+		<li><p><code>IMAGE_CPU</code>:
+			
+		</p></li>
+		<li><p><code>IMAGE_MEM</code>:
+			
+		</p></li>
+		<li><p><code>IMAGE_STORAGE</code>:
+			
+		</p></li>
+		<li><p><code>IO_THROUGHPUT</code>:
+			
+		</p></li>
+		<li><p><code>MEM</code>:
+			
+		</p></li>
+		<li><p><code>MEM_ALLOCATION</code>:
+			
+		</p></li>
+		<li><p><code>MEM_HEADROOM</code>:
+			
+		</p></li>
+		<li><p><code>MEM_PROVISIONED</code>:
+			
+		</p></li>
+		<li><p><code>NET_THROUGHPUT</code>:
+			
+		</p></li>
+		<li><p><code>POOL_CPU</code>:
+			
+		</p></li>
+		<li><p><code>POOL_MEM</code>:
+			
+		</p></li>
+		<li><p><code>POOL_STORAGE</code>:
+			
+		</p></li>
+		<li><p><code>PORT_CHANEL</code>:
+			
+		</p></li>
+		<li><p><code>POWER</code>:
+			
+		</p></li>
+		<li><p><code>Q16_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q1_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q2_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q32_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q3_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q4_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q5_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q64_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q6_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q7_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>Q8_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>QN_VCPU</code>:
+			
+		</p></li>
+		<li><p><code>REMAINING_GC_CAPACITY</code>:
+			
+		</p></li>
+		<li><p><code>RESPONSE_TIME</code>:
+			
+		</p></li>
+		<li><p><code>SLA_COMMODITY</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_ACCESS</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_ALLOCATION</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_AMOUNT</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_HEADROOM</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_LATENCY</code>:
+			
+		</p></li>
+		<li><p><code>STORAGE_PROVISIONED</code>:
+			
+		</p></li>
+		<li><p><code>SWAPPING</code>:
+			
+		</p></li>
+		<li><p><code>THREADS</code>:
+			
+		</p></li>
+		<li><p><code>TOTAL_HEADROOM</code>:
+			
+		</p></li>
+		<li><p><code>TOTAL_SESSIONS</code>:
+			
+		</p></li>
+		<li><p><code>TRANSACTION</code>:
+			
+		</p></li>
+		<li><p><code>TRANSACTION_LOG</code>:
+			
+		</p></li>
+		<li><p><code>VCPU</code>:
+			
+		</p></li>
+		<li><p><code>VCPU_LIMIT_QUOTA</code>:
+			
+		</p></li>
+		<li><p><code>VCPU_REQUEST</code>:
+			
+		</p></li>
+		<li><p><code>VCPU_REQUEST_QUOTA</code>:
+			
+		</p></li>
+		<li><p><code>VMEM</code>:
+			
+		</p></li>
+		<li><p><code>VMEM_LIMIT_QUOTA</code>:
+			
+		</p></li>
+		<li><p><code>VMEM_REQUEST</code>:
+			
+		</p></li>
+		<li><p><code>VMEM_REQUEST_QUOTA</code>:
+			
+		</p></li>
+		<li><p><code>VSTORAGE</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+</details>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>select count(*)
-from entity e
-where e.type = 'PHYSICAL_MACHINE'
-    and attrs-&gt;'num_cpus'= '4'
-    and ('2021-02-01T05:00:00Z','2021-02-18T04:59:59Z') OVERLAPS (e.first_seen, e.last_seen)
-</code></pre></div></div>
-
-<h3 id="find-clusters-that-were-configured-for-a-given-time-range">Find clusters that were configured for a given time range:</h3>
-<p>Queries like this are common to generate values for grafana variables that you can run reports against.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT name, oid
-FROM entity
-WHERE
-  entity.type = 'COMPUTE_CLUSTER'
-  AND ('2021-02-01T05:00:00Z','2021-02-18T04:59:59Z') OVERLAPS (first_seen, last_seen)
-ORDER BY 1
-</code></pre></div></div>
-
-<p>For example, here’s a list of variables that a user is choosing:</p>
-
-<p><img src="/assets/ReportByVariable.png" alt="Report Variables" /></p>
+<h2 id="supported-related-entity-types">Supported Related Entity Types:</h2>
+<p>Related entities are entities that are connected to the given entity in the supply chain. 
+For example, a VM entity can have containers and applications running on it, while it 
+uses disk space from related storage. For a given object, the data includes all the related 
+entities. The supported related types can be any of the supported entities, or any of 
+the group types listed here.</p>
+<details>
+<summary>Click to Show/Hide::</summary>
+<html><body>
+	
+	<ul>
+		<li><p><code>COMPUTE_CLUSTER</code>:
+			A cluster of VMs
+		</p></li>
+		<li><p><code>STORAGE_CLUSTER</code>:
+			A cluster of datastores
+		</p></li>
+		<li><p><code>K8S_CLUSTER_GROUP</code>:
+			A Kubernetes cluster group
+		</p></li>
+		<li><p><code>RESOURCE_GROUP</code>:
+			
+		</p></li>
+		<li><p><code>BILLING_FAMILY</code>:
+			A group of cloud targets that are all managed under the same billing agreement
+		</p></li>
+		<li><p><code>GROUP</code>:
+			A discovered or user-defined group of entities. Can be a group of groups.
+		</p></li>
+	</ul>
+</body></html>
+</details>
 
 
           
@@ -173,7 +773,7 @@ ORDER BY 1
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> 
+                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
@@ -226,7 +826,6 @@ ORDER BY 1
         </span>
       </div>
     </div>
-    
   </body>
   
 </html>

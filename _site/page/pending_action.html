@@ -30,79 +30,79 @@
           <p>This table lists the latest actions that have been recommended by the market. The table repopulates at a configurable interval (not necessarily every 10-minute market cycle). When it repopulates, all actions are replaced with the latest action recommendations.</p>
 
 <p>This table does not include actions that are in progress.</p>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>pending_action</title></head><body><h2 class="genData">pending_action table</h2>
+<html><body>
 	
-	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
-		<tr><td><p>recommendation_time</p></td>
-			<td><p>timestamp with time zone</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The time the action was
+	<ul>
+		<li><p><code>recommendation_time</code>: 
+			
+			
+			
+			The time the action was
 				recommended.
-			</p></td>
-		</tr>
-		<tr><td><p>action_oid</p></td>
-			<td><p>bigint</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>oid of the action in the system.
-			</p></td>
-		</tr>
-		<tr><td><p>type</p></td>
-			<td><p><a href="enum/action_type.html">action_type</a></p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The type of the action.</p></td>
-		</tr>
-		<tr><td><p>severity</p></td>
-			<td><p><a href="enum/severity.html">severity</a></p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The severity of the action.</p></td>
-		</tr>
-		<tr><td><p>category</p></td>
-			<td><p><a href="enum/action_category.html">action_category</a></p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The category of the action.</p></td>
-		</tr>
-		<tr><td><p>target_entity_id</p></td>
-			<td><p>bigint</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The oid of the target entity.</p></td>
-		</tr>
-		<tr><td><p>involved_entities</p></td>
-			<td><p>bigint[]</p></td>
-			<td><p>true</p></td>
-			<td><p>false</p></td>
-			<td><p>The oids of the involved entities
-				(includes the target entity).</p></td>
-		</tr>
-		<tr><td><p>description</p></td>
-			<td><p>text</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The text description of the action.</p></td>
-		</tr>
-		<tr><td><p>savings</p></td>
-			<td><p>double precision</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>Savings (or, if negative, investment) of the action.</p></td>
-		</tr>
-		<tr><td><p>attrs</p></td>
-			<td><p>jsonb</p></td>
-			<td><p>true</p></td>
-			<td><p>false</p></td>
-			<td><p>Additional (often type-specific) information
-				for the action.</p> <p>For example, in
+			
+		</p></li>
+		<li><p><code>action_oid</code>: 
+			
+			
+			
+			oid of the action in the system.
+			
+		</p></li>
+		<li><p><code>type</code>: 
+			
+			
+			
+			The type of the action.
+		</p></li>
+		<li><p><code>severity</code>: 
+			
+			
+			
+			The severity of the action.
+		</p></li>
+		<li><p><code>category</code>: 
+			
+			
+			
+			The category of the action.
+		</p></li>
+		<li><p><code>target_entity_id</code>: 
+			
+			
+			
+			The oid of the target entity.
+		</p></li>
+		<li><p><code>involved_entities</code>: 
+			
+			
+			
+			The oids of the involved entities
+				(includes the target entity).
+		</p></li>
+		<li><p><code>description</code>: 
+			
+			
+			
+			The text description of the action.
+		</p></li>
+		<li><p><code>savings</code>: 
+			
+			
+			
+			Savings (or, if negative, investment) of the action.
+		</p></li>
+		<li><p><code>attrs</code>: 
+			
+			
+			
+			Additional (often type-specific) information
+				for the action. For example, in
 					resizes this will contain the
 					commodity type and from/to
 					amounts.
-				</p></td>
-		</tr>
-	</tbody></table>
+				
+		</p></li>
+	</ul>
 </body></html>
 
 <h2 id="sample-use-cases">Sample Use Cases</h2>
@@ -131,7 +131,7 @@
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> 
+                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
@@ -184,7 +184,6 @@
         </span>
       </div>
     </div>
-    
   </body>
   
 </html>

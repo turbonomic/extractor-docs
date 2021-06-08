@@ -29,42 +29,42 @@
           <h1>scope Table</h1>
           <p>The Scope table tracks the association of two entities as they are related in each other’s scope. The <code class="language-plaintext highlighter-rouge">seed_oid</code> identifies the containing entity (the entity that defines the scope), and the <code class="language-plaintext highlighter-rouge">scoped_oid</code> identifies the entity that is within the given scope. This table is updated with each market cycle.</p>
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>scope</title></head><body><h2 class="genData">scope table</h2>
+<html><body>
 	
-	<table><tbody><tr><th><p>Column Name</p></th><th><p>Type</p></th><th><p>Nullable</p></th><th><p>Primary</p></th><th><p>Description</p></th></tr>
-		<tr><td><p>seed_oid</p></td>
-			<td><p>bigint</p></td>
-			<td><p>false</p></td>
-			<td><p>true</p></td>
-			<td><p>oid of the entity whose scope is the subject of this record.</p></td>
-		</tr>
-		<tr><td><p>scoped_oid</p></td>
-			<td><p>bigint</p></td>
-			<td><p>false</p></td>
-			<td><p>true</p></td>
-			<td><p>oid of the entity that is part of that scope.</p></td>
-		</tr>
-		<tr><td><p>scoped_type</p></td>
-			<td><p><a href="enum/entity_type.html">entity_type</a></p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>The type of entity.</p></td>
-		</tr>
-		<tr><td><p>start</p></td>
-			<td><p>timestamp with time zone</p></td>
-			<td><p>false</p></td>
-			<td><p>true</p></td>
-			<td><p>A timestamp for the first topology in which this relationship appeared. This covers the initial appearance, or a
-				reappearance after the relationship was temporarily broken.</p></td>
-		</tr>
-		<tr><td><p>finish</p></td>
-			<td><p>timestamp with time zone</p></td>
-			<td><p>false</p></td>
-			<td><p>false</p></td>
-			<td><p>A timestamp of last topology in which this relationship appeared. A value of 9999-12-31T23:59:59 means
-				the relationship is not yet known to have terminated.</p></td>
-		</tr>
-	</tbody></table>
+	<ul>
+		<li><p><code>seed_oid</code>: 
+			
+			
+			
+			oid of the entity whose scope is the subject of this record.
+		</p></li>
+		<li><p><code>scoped_oid</code>: 
+			
+			
+			
+			oid of the entity that is part of that scope.
+		</p></li>
+		<li><p><code>scoped_type</code>: 
+			
+			
+			
+			The type of entity.
+		</p></li>
+		<li><p><code>start</code>: 
+			
+			
+			
+			A timestamp for the first topology in which this relationship appeared. This covers the initial appearance, or a
+				reappearance after the relationship was temporarily broken.
+		</p></li>
+		<li><p><code>finish</code>: 
+			
+			
+			
+			A timestamp of last topology in which this relationship appeared. A value of 9999-12-31T23:59:59 means
+				the relationship is not yet known to have terminated.
+		</p></li>
+	</ul>
 </body></html>
 
 <h2 id="examples">Examples</h2>
@@ -197,7 +197,7 @@ group by cluster_name
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/wasted_file.html">completed_action Table</a></li> 
+                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
@@ -250,7 +250,6 @@ group by cluster_name
         </span>
       </div>
     </div>
-    
   </body>
   
 </html>
