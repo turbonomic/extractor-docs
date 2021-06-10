@@ -1,0 +1,89 @@
+<pre>
+{
+  "timestamp": "2020-12-07T18:20:10Z",
+  "action": {
+    "oid": "144118995513593",
+    "creationTime": "2020-12-07T18:13:10Z",
+    "type": "MOVE",
+    "state": "READY",
+    "mode": "MANUAL",
+    "category": "PERFORMANCE_ASSURANCE",
+    "severity": "CRITICAL",
+    "description": "Move Virtual Machine hp-esx59 from hp-bl433.eng.vmturbo.com to hp-bl435.eng.vmturbo.com",
+    "explanation": "Q2 VCPU Congestion",
+    "target": {
+      "oid": 73741823907376,
+      "name": "hp-esx59",
+      "type": "VirtualMachine"
+    },
+    "moveInfo": {
+      "from": {
+        "oid": "73741823904848",
+        "name": "hp-bl433.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      },
+      "to": {
+        "oid": "73741823904864",
+        "name": "hp-bl435.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      }
+    },
+    "related": {
+      "PHYSICAL_MACHINE": [
+        {
+          "name": "hp-bl433.eng.vmturbo.com",
+          "oid": 73741823904848
+        }
+      ],
+      "DATACENTER": [
+        {
+          "name": "GTDC",
+          "oid": 73599609177857
+        }
+      ],
+      "VIRTUAL_DATACENTER": [
+        {
+          "name": "Resources-NACGTDHORDSKBZ",
+          "oid": 73599609178290
+        }
+      ],
+      "STORAGE": [
+        {
+          "name": "XIO-GTDBZVOLDS01",
+          "oid": 73599609177895
+        }
+      ],
+      "DISK_ARRAY": [
+        {
+          "name": "DiskArray-XIO-GTDBZVOLDS01",
+          "oid": 73599609177870
+        }
+      ],
+      "APPLICATION_COMPONENT": [
+        {
+          "name": "GuestLoad[H04BZFT02UAT005]",
+          "oid": 73599609183789
+        }
+      ],
+      "COMPUTE_CLUSTER": [
+        {
+          "name": "GTDC/NACGTDHORDSKBZ",
+          "oid": 284705842023005
+        }
+      ],
+      "STORAGE_CLUSTER": [
+        {
+          "name": "storageCluster1",
+          "oid": 284705842023006
+        }
+      ],
+      "K8S_CLUSTER": [
+        {
+          "name": "k8sCluster1",
+          "oid": 284705842023007
+        }
+      ]
+    }
+  }
+}
+</pre>

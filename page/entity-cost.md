@@ -102,12 +102,12 @@ the following for on-demand compute costs:
 }
 ```
 
-This gives two sources for the on-demand compute cost. The total cost is zero because the 
+This gives two sources for the category cost. The total is zero because the 
 `ON_DEMAND_RATE` is canceled out by the `RI_INVENTORY_DISCOUNT`.
 
 The cost in the sample listing matches this Workload Cost Breakdown chart:
 
-* The total of $5.17 is the product of `entity.cost.total` (which is 0.0070848083` per hour) times 
+* The total of $5.17 is the product of `entity.cost.total` (which is $0.0070848083 per hour) times 
   the hours per month (730).
 * The cost breakdown in the chart matches the the costs for the same categories; `ON_DEMAND_COMPUTE`, 
   `STORAGE`, `RI_COMPUTE`, and `RESERVED_LICENSE`.

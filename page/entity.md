@@ -3,8 +3,8 @@ layout: default
 title: Entity Object
 ---
 
-Every 10 minutes, the extractor sends JSON data to Kafka for individual entities. Each object has 
-two top-level fields:
+Every 10 minutes, the extractor sends JSON data to Kafka for individual entities. Each 
+entity object has two top-level fields:
 
 * `timestamp`: When the entity was broadcast
 * `entity`: The object that describes the given entity.

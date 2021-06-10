@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <!-- Page title set in pageTitle directive -->
+  <title page-title>Data Exporter</title>
+  
+  
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  
+  
+  <body>
+    
+    <div id="angularThing" ng-controller="TopicCtrl as mainCtrl">
+      <nav class='banner'>
+        <div class="bannerbar" >
+          
+          
+          <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
+          
+          <div class="titleHead">
+            <h4 class="revision"><font color="white">Data Exporter</span></font></h4>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div id="topicDiv">
+        <article id ='topicArt' class="topic">
+          <h1>Action Object</h1>
+          <p>The extractor sends action data to Kafka:</p>
+<ul>
+  <li>Every 6 hours for pending actions.</li>
+  <li>Immediatly after an action completes, whether completion is success or failure.</li>
+</ul>
+
+<p>Each action object has 
+two top-level fields:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">timestamp</code>: When the action object was broadcast.</li>
+  <li><code class="language-plaintext highlighter-rouge">action</code>: The data that describes the given action.</li>
+</ul>
+
+<h2 id="sample-action-object">Sample Action Object</h2>
+<details>
+<summary>Click to Show/Hide:</summary>
+<pre>
+{
+  "timestamp": "2020-12-07T18:20:10Z",
+  "action": {
+    "oid": "144118995513593",
+    "creationTime": "2020-12-07T18:13:10Z",
+    "type": "MOVE",
+    "state": "READY",
+    "mode": "MANUAL",
+    "category": "PERFORMANCE_ASSURANCE",
+    "severity": "CRITICAL",
+    "description": "Move Virtual Machine hp-esx59 from hp-bl433.eng.vmturbo.com to hp-bl435.eng.vmturbo.com",
+    "explanation": "Q2 VCPU Congestion",
+    "target": {
+      "oid": 73741823907376,
+      "name": "hp-esx59",
+      "type": "VirtualMachine"
+    },
+    "moveInfo": {
+      "from": {
+        "oid": "73741823904848",
+        "name": "hp-bl433.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      },
+      "to": {
+        "oid": "73741823904864",
+        "name": "hp-bl435.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      }
+    },
+    "related": {
+      "PHYSICAL_MACHINE": [
+        {
+          "name": "hp-bl433.eng.vmturbo.com",
+          "oid": 73741823904848
+        }
+      ],
+      "DATACENTER": [
+        {
+          "name": "GTDC",
+          "oid": 73599609177857
+        }
+      ],
+      "VIRTUAL_DATACENTER": [
+        {
+          "name": "Resources-NACGTDHORDSKBZ",
+          "oid": 73599609178290
+        }
+      ],
+      "STORAGE": [
+        {
+          "name": "XIO-GTDBZVOLDS01",
+          "oid": 73599609177895
+        }
+      ],
+      "DISK_ARRAY": [
+        {
+          "name": "DiskArray-XIO-GTDBZVOLDS01",
+          "oid": 73599609177870
+        }
+      ],
+      "APPLICATION_COMPONENT": [
+        {
+          "name": "GuestLoad[H04BZFT02UAT005]",
+          "oid": 73599609183789
+        }
+      ],
+      "COMPUTE_CLUSTER": [
+        {
+          "name": "GTDC/NACGTDHORDSKBZ",
+          "oid": 284705842023005
+        }
+      ],
+      "STORAGE_CLUSTER": [
+        {
+          "name": "storageCluster1",
+          "oid": 284705842023006
+        }
+      ],
+      "K8S_CLUSTER": [
+        {
+          "name": "k8sCluster1",
+          "oid": 284705842023007
+        }
+      ]
+    }
+  }
+}
+</pre>
+</details>
+
+<h2 id="common-entity-object-fields">Common Entity Object Fields</h2>
+<p>Every <code class="language-plaintext highlighter-rouge">action</code> object includes the following fields:</p>
+<details>
+<summary>Click to Show/Hide:</summary>
+<ul>
+<li><p><code>oid</code>: The action object identifier.</p></li>
+<li><p><code>creationTime</code>: When Turbonomic created the action.</p></li>
+<li><p><code>type</code>: The action type. Can be one of:</p>
+<html><body>
+	
+	<ul>
+		<li><p><code>ACTIVATE</code>:
+			
+		</p></li>
+		<li><p><code>ALLOCATE</code>:
+			
+		</p></li>
+		<li><p><code>BUY_RI</code>:
+			
+		</p></li>
+		<li><p><code>DEACTIVATE</code>:
+			
+		</p></li>
+		<li><p><code>DELETE</code>:
+			
+		</p></li>
+		<li><p><code>MOVE</code>:
+			
+		</p></li>
+		<li><p><code>NONE</code>:
+			
+		</p></li>
+		<li><p><code>PROVISION</code>:
+			
+		</p></li>
+		<li><p><code>RECONFIGURE</code>:
+			
+		</p></li>
+		<li><p><code>RESIZE</code>:
+			
+		</p></li>
+		<li><p><code>SCALE</code>:
+			
+		</p></li>
+		<li><p><code>START</code>:
+			
+		</p></li>
+		<li><p><code>SUSPEND</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+</li>
+<li><p><code>state</code>: The state the action is in at the time the JASON object is created. Can be one of:</p></li>
+<html><body>
+	
+	<ul>
+		<li><p><code>ACCEPTED</code>:
+			
+		</p></li>
+		<li><p><code>CLEARED</code>:
+			
+		</p></li>
+		<li><p><code>FAILED</code>:
+			
+		</p></li>
+		<li><p><code>FAILING</code>:
+			
+		</p></li>
+		<li><p><code>IN_PROGRESS</code>:
+			
+		</p></li>
+		<li><p><code>POST_IN_PROGRESS</code>:
+			
+		</p></li>
+		<li><p><code>PRE_IN_PROGRESS</code>:
+			
+		</p></li>
+		<li><p><code>QUEUED</code>:
+			
+		</p></li>
+		<li><p><code>READY</code>:
+			
+		</p></li>
+		<li><p><code>REJECTED</code>:
+			
+		</p></li>
+		<li><p><code>SUCCEEDED</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+<li><p><code>mode</code>: The mode for the action execution. Can be one of:</p>
+<ul>
+<li><p><code>AUTOMATIC</code></p></li>
+<li><p><code>MANUAL</code></p></li>
+<li><p><code>RECOMMEND</code></p></li>
+</ul>
+</li>
+<li><p><code>category</code>: The category of action. Can be one of:</p>
+<html><body>
+	
+	<ul>
+		<li><p><code>COMPLIANCE</code>:
+			
+		</p></li>
+		<li><p><code>EFFICIENCY_IMPROVEMENT</code>:
+			
+		</p></li>
+		<li><p><code>PERFORMANCE_ASSURANCE</code>:
+			
+		</p></li>
+		<li><p><code>PREVENTION</code>:
+			
+		</p></li>
+		<li><p><code>UNKNOWN</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+</li>
+<li><p><code>severity</code>: The severity of the action.  Can be one of:</p>
+<html><body>
+	
+	<ul>
+		<li><p><code>CRITICAL</code>:
+			
+		</p></li>
+		<li><p><code>MAJOR</code>:
+			
+		</p></li>
+		<li><p><code>MINOR</code>:
+			
+		</p></li>
+		<li><p><code>NORMAL</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+</li>
+
+<li><p><code>description</code>: The description that Turbonomic generates for the action.</p></li>
+<li><p><code>explanation</code>: The condition that the action is addressing.  For example, `Q2 VCPU Congestion`.</p></li>
+<li><p><code>target</code>: The entity that the action operates on.</p></li>
+<li><p><code>related</code>: An array of entities or groups that are related to the target entity.</p></li>
+<li><p>Action Info: Information to describe the action. Depending on the type of action, can be one of:</p>
+    <ul>
+    <li><p><code>moveInfo</code></p></li>
+    <li><p><code>resizeInfo</code></p></li>
+    <li><p><code>deleteInfo</code></p></li>
+    <li><p><code>buyRiInfo</code></p></li>
+    </ul>
+<p>For example, a <code>moveInfo</code> field describes the FROM and TO for the move:</p>
+<pre>
+    "moveInfo": {
+      "from": {
+        "oid": "73741823904848",
+        "name": "hp-bl433.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      },
+      "to": {
+        "oid": "73741823904864",
+        "name": "hp-bl435.eng.vmturbo.com",
+        "type": "PHYSICAL_MACHINE"
+      }
+    }
+</pre>
+</li>
+</ul>
+
+</details>
+
+
+          
+        </article>
+      </div>
+      </section>
+      
+      <div id="navList">
+        
+        <span>
+          <div id="toc">
+            
+            <article class="navList" style="top:10px;">
+              <div id="tocresult" tabIdex="-1" >
+                <ul>
+                  
+                  
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  
+                  
+                  <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Configuration</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        
+                        <ul>
+                          
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                            
+                          
+                            
+                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                            
+                          
+                          
+                        </ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                  <h5 style="margin-bottom:1px;">Appendix</h5>
+                    <ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        
+                        <ul>
+                          
+                          
+                          
+                        </ul>
+                    
+                    </ul>
+                  
+                </ul>
+              </div>
+            </article>
+          </div>
+        </span>
+      </div>
+    </div>
+  </body>
+  
+</html>
