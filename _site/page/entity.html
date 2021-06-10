@@ -2,7 +2,7 @@
 <html lang="en">
   
   <!-- Page title set in pageTitle directive -->
-  <title page-title>Data Extractor Schema</title>
+  <title page-title>Data Exporter</title>
   
   
   <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
           <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
           
           <div class="titleHead">
-            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+            <h4 class="revision"><font color="white">Data Exporter</span></font></h4>
           </div>
         </div>
       </nav>
@@ -27,7 +27,7 @@
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
           <h1>Entity Object</h1>
-          <p>The extractor sends JSON documents to Kafka for individual entities. Each object has 
+          <p>Every 10 minutes, the extractor sends JSON data to Kafka for individual entities. Each object has 
 two top-level fields:</p>
 
 <ul>
@@ -250,10 +250,10 @@ two top-level fields:</p>
 </body></html>
 </details>
 
-<h2 id="supported-entity-types">Supported Entity Types:</h2>
+<h2 id="entity-types">Entity Types:</h2>
 <p>Turbonomic can export data for the following types of entities.</p>
 <details>
-<summary>Click to Show/Hide::</summary>
+<summary>Click to Show/Hide:</summary>
 <html><body>
 	
 	<ul>
@@ -501,12 +501,12 @@ two top-level fields:</p>
 </body></html>
 </details>
 
-<h2 id="supported-metric-types">Supported Metric Types:</h2>
+<h2 id="metric-types">Metric Types:</h2>
 <p>Turbonomic tracks different metrics for different types of entities. 
 For a given entity object, you will get the metric data that is appropriate for that entity. 
 This list is all the metric types that the Data Exporter supports.</p>
 <details>
-<summary>Click to Show/Hide::</summary>
+<summary>Click to Show/Hide:</summary>
 <html><body>
 	MetricType is a really cool type. Some of its really cool features are:
 - #1
@@ -717,14 +717,14 @@ This list is all the metric types that the Data Exporter supports.</p>
 </body></html>
 </details>
 
-<h2 id="supported-related-entity-types">Supported Related Entity Types:</h2>
+<h2 id="related-entity-types">Related Entity Types:</h2>
 <p>Related entities are entities that are connected to the given entity in the supply chain. 
 For example, a VM entity can have containers and applications running on it, while it 
 uses disk space from related storage. For a given object, the data includes all the related 
 entities. The supported related types can be any of the supported entities, or any of 
 the group types listed here.</p>
 <details>
-<summary>Click to Show/Hide::</summary>
+<summary>Click to Show/Hide:</summary>
 <html><body>
 	
 	<ul>
@@ -778,6 +778,10 @@ the group types listed here.</p>
                         <ul>
                           
                           
+                            
+                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                            
+                          
                           
                         </ul>
                     
@@ -799,6 +803,15 @@ the group types listed here.</p>
                             
                           <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
+                          
+                          
+                        </ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        
+                        <ul>
+                          
                           
                           
                         </ul>

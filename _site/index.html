@@ -2,7 +2,7 @@
 <html lang="en">
   
   <!-- Page title set in pageTitle directive -->
-  <title page-title>Data Extractor Schema</title>
+  <title page-title>Data Exporter</title>
   
   
   <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
           <img src="/assets/logos/logoInv.png" id="logo_image" style="width: 80%; max-width: 100px;"/>
           
           <div class="titleHead">
-            <h4 class="revision"><font color="white">Data Extractor Schema</span></font></h4>
+            <h4 class="revision"><font color="white">Data Exporter</span></font></h4>
           </div>
         </div>
       </nav>
@@ -26,23 +26,34 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>The (!PRODUCT_NAME!) Data Exporter</h1>
-          <p>The (Turbonomic) Data Exporter</p>
-
-<p>This document describes the Turbonomic Data Exporter.</p>
-
-<p>The Turbonomic platform includes a Data Exporter component 
-that you can choose to enable when you install the platform. The Data Exporter streams 
- Turbonomic data to a standard format. You can then 
- load that data into search and analytics services such as Elasticsearch.</p>
-
-<p>With the Data Exporter you can build custom tracking of changes to your environment, 
+          <h1>Using the Data Exporter</h1>
+          <p>The Turbonomic platform includes the Data Exporter, which 
+you can choose to enable when you install the platform. The Data Exporter streams 
+ Turbonomic data about entities and actions as JSON documents that it 
+ then publishes to a Kafka topic. 
+ 
+ The exporter publishes at different frequencies, depending on the type of data:
+ 
+ * Entity data: Published every 10 minutes.
+ 
+ * Actions data:
+   * Pending actions: Published every 6 hours. You can configure this via the `actionExtractionIntervalMins` variable.
+   * Executed actions: Published immediately after the action completes, either with success or failure.
+ 
+ You can load the exported data into search and analytics services such as Elasticsearch, and use thoose 
+ services to visualize or analyze the entities and actions n your Turbonomic 
+ environment.
+ 
+ With the Data Exporter you can build custom tracking of changes to your environment, 
  and follow the details as Turbonomic keeps your applications 
- healthy.</p>
+ healthy.
 
-<p>For general information information about Turbonomic, 
+
+<p>This document describes the Turbonomic Data Exporter. 
+For general information information about Turbonomic, 
 see the full Turbonomic documentation 
 <a href="https://docs.turbonomic.com/">HERE</a>.</p>
+</p>
 
           
         </article>
@@ -71,6 +82,10 @@ see the full Turbonomic documentation
                         <ul>
                           
                           
+                            
+                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                            
+                          
                           
                         </ul>
                     
@@ -92,6 +107,15 @@ see the full Turbonomic documentation
                             
                           <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
+                          
+                          
+                        </ul>
+                    
+                        
+                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        
+                        <ul>
+                          
                           
                           
                         </ul>

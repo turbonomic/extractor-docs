@@ -26,8 +26,67 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>Deploying a Connector</h1>
-          <p>The extractor publishes Turbonomic data as Kafka topics. To load 
+          <h1>Increasing the Elasticsearch Field Limit</h1>
+          <p>For exports to Elasticsearch, it is possible that you will encounter the following error:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Elasticsearch: Limit of total fields [1000] has been exceeded</code></p>
+
+<p>In the connector’s logstash logs, you might see an error similar to the following:</p>
+
+<details>
+<summary>Expand to see the sample error:</summary>
+<pre>[2021-05-28T17:16:15,252][INFO ][o.e.a.b.TransportShardBulkAction] [node1] [turbonomic6][0] mapping update reje
+cted by primary
+java.lang.IllegalArgumentException: Limit of total fields [1000] has been exceeded
+        at org.elasticsearch.index.mapper.MappingLookup.checkFieldLimit(MappingLookup.java:200) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.MappingLookup.checkLimits(MappingLookup.java:192) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.DocumentMapper.validate(DocumentMapper.java:152) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.MapperService.newDocumentMapper(MapperService.java:429) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.MapperService.applyMappings(MapperService.java:407) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.MapperService.mergeAndApplyMappings(MapperService.java:390) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.index.mapper.MapperService.merge(MapperService.java:384) ~[elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.bulk.TransportShardBulkAction.executeBulkItemRequest(TransportShardBulkAction.java:281) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.bulk.TransportShardBulkAction$2.doRun(TransportShardBulkAction.java:164) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.bulk.TransportShardBulkAction.performOnPrimary(TransportShardBulkAction.java:209) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.bulk.TransportShardBulkAction.dispatchedShardOperationOnPrimary(TransportShardBulkAction.java:115) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.bulk.TransportShardBulkAction.dispatchedShardOperationOnPrimary(TransportShardBulkAction.java:74) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.action.support.replication.TransportWriteAction$1.doRun(TransportWriteAction.java:168) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.common.util.concurrent.ThreadContext$ContextPreservingAbstractRunnable.doRun(ThreadContext.java:732) [elasticsearch-7.12.0.jar:7.12.0]
+        at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:26) [elasticsearch-7.12.0.jar:7.12.0]
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+        at java.lang.Thread.run(Thread.java:834) [?:?]</pre>
+</details>
+
+<p>If you encounter this error, Elastic search might not ingest the full set of data. For example, Elasticsearch might not 
+show some entities that you can see in the Turbonomic user interface.</p>
+
+<p>This error occurs when the number of fields in a single JSON object exceeds the default limit of 1000. 
+For information about this limit, see 
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/mapping-settings-limit.html">
+Mapping limit settings</a> in the Elasticsearch documentation.
+</p>
+
+<p>To correct this issue, you can increase the field limit:</p>
+<ul>
+<li><p>In Kibana:</p>
+<p>Got to <b>Index Management &gt; Settings</b> and in crease the limit. For more information, 
+see 
+<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/index-mgmt.html#view-edit-indices">
+Index management</a> in the Elasticsearch documentation.</p>
+</li>
+<li>
+<p>Directly in Elasticsearch</p>
+<p>You can execute the following command:</p>
+<pre>curl -X PUT -H "Content-Type: application/json" -d "{\"index.mapping.total_fields.limit\": 2000}" \
+http://{elasticsearch_ip}:9200/{index_name}/_settings</pre>
+<p>Wjere <code>{elasticsearch_ip}</code> is the IP address of your Elasticsearch, 
+and <code>{index_name}</code>  is the name of the index that exceeds the field limit.</p>
+</li>
+</ul>
+
+<p>The extractor publishes Turbonomic data as Kafka topics. To load 
 this data into a search and analysis service, you must deploy a connector to that service. 
 For example, if you want to load the data into Elasticsearch, then you must deploy an 
 Easticsearch connector.</p>

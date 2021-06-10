@@ -4,6 +4,10 @@ toc:
     - page: Entity Object
       url: entity.html
       dir: page/entity.html
+      subSubItems: # So far, you can nest two levels down for topic links
+      - page: Entity Cost Data
+        url: entity-cost.html
+        dir: page/entity-cost.html
 #    - page: entity Table
 #      url: entity.html
 #      dir: page/entity.html
@@ -27,6 +31,9 @@ toc:
       - page: Deploying a Connector
         url: deploy-connector.html
         dir: page/config/deploy-connector.html
+    - page: Increasing the Elasticsearch Field Limit
+      url: increase-field-limit.html
+      dir: page/config/increase-field-limit.html
         
   - title: Appendix
     subItems:

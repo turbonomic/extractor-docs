@@ -18,8 +18,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Data Extractor Schema
-shortName: Data Extractor Schema
+title: Data Exporter
+shortName: Data Exporter
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Documentation for the Data Extractor schema
@@ -44,7 +44,9 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
+  - xslt/
+  - xml/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
