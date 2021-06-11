@@ -6,14 +6,15 @@
 			
 			
 			
-			Unique entity identifier
+			Unique entity identifier.
 			
 		</p></li>
 		<li><p><code>type</code>: 
 			
 			
 			
-			Type of entity. This field supports both entity and group types.
+			Type of entity. This field supports both entity and group types. 
+				See <a href="enum/entity_type.html">entity_type</a>.
 			
 		</p></li>
 		<li><p><code>name</code>: 
@@ -29,7 +30,16 @@
 			
 			
 			
-			The kind of environment the entity exists in.
+			The kind of environment the entity exists in. Can be one of:
+				{% include genFiles/environment_type.html %}
+			
+		</p></li>
+		<li><p><code>state</code>: 
+			
+			
+			
+			The current state of the entity. Can be one of:
+				{% include genFiles/entity_state.html %}
 			
 		</p></li>
 		<li><p><code>attrs</code>: 
@@ -37,25 +47,30 @@
 			
 			
 			Information that is specific for the given entity type.
+			This can be null for an entity that has no attributes. Can be one of:
 				{% include genFiles/attr_type.html %}
 			
 		</p></li>
-		<li><p><code>first_seen</code>: 
+		<li><p><code>metric</code>: 
 			
 			
 			
-			A topology timestamp for when this entity first appeared.
+			A list of metrics for the entity. Can be empty for 
+				an entity with no commodities. See <a href="metric.html">metric</a>.
 			
 		</p></li>
-		<li><p><code>last_seen</code>: 
+		
+		<li><p><code>related</code>: 
 			
 			
 			
-			A topology timestamp for when this entity last 
-				appeared.
-				A value of 9999-12-31T23:59:59 means the entity still exists 
-				in latest market cycle.
-				
+			Entities that are connected to this entity in the supply chain. 
+				Can include any <a href="enum/entity_type.html">entity_type</a>, or any of the following:
+				{% include genFiles/related_types.html %}
+			
 		</p></li>
+		
+		
+		
 	</ul>
 </body></html>

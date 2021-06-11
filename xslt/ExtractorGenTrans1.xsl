@@ -6,6 +6,8 @@
     
     <xsl:output method="html"  indent="no"/>
     
+    <xsl:template match="*[@target='EmbeddedReports']"/>
+    
     <xsl:template match="GeneratedDoc">
         <xsl:element name="html">
             <xsl:element name="body">

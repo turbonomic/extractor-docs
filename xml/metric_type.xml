@@ -1,15 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--Generated on 2021-03-17T21:43:34.190-04:00-->
 <GeneratedDoc name="metric_type" type="type">
-	<Intro>MetricType is a really cool type. Some of its really cool features are:
-- #1
-- #2</Intro>
+	<Intro></Intro>
 	<Items>
 		<Item name="ACTIVE_SESSIONS">
-			<Field name="Notes">Active Sessions Notes</Field>
+			<Field name="Notes"></Field>
 		</Item>
 		<Item name="BALLOONING">
-			<Field name="Notes">Ballooning Notes</Field>
+			<Field name="Notes"></Field>
 		</Item>
 		<Item name="BUFFER_COMMODITY">
 			<Field name="Notes"/>
@@ -21,7 +19,7 @@
 			<Field name="Notes"/>
 		</Item>
 		<Item name="CPU">
-			<Field name="Notes">Here are **some notes** on the `CPU` value.</Field>
+			<Field name="Notes"></Field>
 		</Item>
 		<Item name="CPU_ALLOCATION">
 			<Field name="Notes"/>

@@ -8,14 +8,15 @@
 			<Field name="Type">bigint</Field>
 			<Field name="Nullable">false</Field>
 			<Field name="Primary">true</Field>
-			<Field name="Description"><p>Unique entity identifier</p>
+			<Field name="Description"><p>Unique entity identifier.</p>
 			</Field>
 		</Item>
 		<Item name="type">
-			<Field name="Type"><a href="enum/entity_type.html">entity_type</a></Field>
+			<Field name="Type">entity_type</Field>
 			<Field name="Nullable">false</Field>
 			<Field name="Primary">false</Field>
-			<Field name="Description"><p>Type of entity. This field supports both entity and group types.</p>
+			<Field name="Description"><p>Type of entity. This field supports both entity and group types. 
+				See <a href="enum/entity_type.html">entity_type</a>.</p>
 			</Field>
 		</Item>
 		<Item name="name">
@@ -28,28 +29,57 @@
 			</Field>
 		</Item>
 		<Item name="environment">
-			<Field name="Type"><a href="enum/environment_type.html">environment_type</a></Field>
+			<Field name="Type">environment_type</Field>
 			<Field name="Nullable">true</Field>
 			<Field name="Primary">false</Field>
-			<Field name="Description"><p>The kind of environment the entity exists in.</p>
+			<Field name="Description"><p>The kind of environment the entity exists in. Can be one of:</p>
+				{% include genFiles/environment_type.html %}
+			</Field>
+		</Item>
+		<Item name="state" target="Extractor">
+			<Field name="Type">entity_state</Field>
+			<Field name="Nullable">true</Field>
+			<Field name="Primary">false</Field>
+			<Field name="Description"><p>The current state of the entity. Can be one of:</p>
+				{% include genFiles/entity_state.html %}
 			</Field>
 		</Item>
 		<Item name="attrs">
 			<Field name="Type">jsonb</Field>
 			<Field name="Nullable">true</Field>
 			<Field name="Primary">false</Field>
-			<Field name="Description"><p>Information that is specific for the given entity type.</p>
+			<Field name="Description"><p>Information that is specific for the given entity type.
+			This can be null for an entity that has no attributes. Can be one of:</p>
 				<p>{% include genFiles/attr_type.html %}</p>
 			</Field>
 		</Item>
-		<Item name="first_seen">
+		<Item name="metric" target="Extractor">
+			<Field name="Type">List of <code>metric</code></Field>
+			<Field name="Nullable">false</Field>
+			<Field name="Primary">false</Field>
+			<Field name="Description"><p>A list of metrics for the entity. Can be empty for 
+				an entity with no commodities. See <a href="metric.html">metric</a>.</p>
+			</Field>
+		</Item>
+		
+		<Item name="related">
+			<Field name="Type">related_type</Field>
+			<Field name="Nullable">true</Field>
+			<Field name="Primary">false</Field>
+			<Field name="Description"><p>Entities that are connected to this entity in the supply chain. 
+				Can include any <a href="enum/entity_type.html">entity_type</a>, or any of the following:</p>
+				{% include genFiles/related_types.html %}
+			</Field>
+		</Item>
+		
+		<Item name="first_seen" target="EmbeddedReports">
 			<Field name="Type">timestamp with time zone</Field>
 			<Field name="Nullable">false</Field>
 			<Field name="Primary">false</Field>
 			<Field name="Description"><p>A topology timestamp for when this entity first appeared.</p>
 			</Field>
 		</Item>
-		<Item name="last_seen">
+		<Item name="last_seen" target="EmbeddedReports">
 			<Field name="Type">timestamp with time zone</Field>
 			<Field name="Nullable">false</Field>
 			<Field name="Primary">false</Field>

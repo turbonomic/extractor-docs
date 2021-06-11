@@ -182,14 +182,15 @@ entity object has two top-level fields:</p>
 			
 			
 			
-			Unique entity identifier
+			Unique entity identifier.
 			
 		</p></li>
 		<li><p><code>type</code>: 
 			
 			
 			
-			Type of entity. This field supports both entity and group types.
+			Type of entity. This field supports both entity and group types. 
+				See <a href="enum/entity_type.html">entity_type</a>.
 			
 		</p></li>
 		<li><p><code>name</code>: 
@@ -205,7 +206,54 @@ entity object has two top-level fields:</p>
 			
 			
 			
-			The kind of environment the entity exists in.
+			The kind of environment the entity exists in. Can be one of:
+				<html><body>
+	
+	<ul>
+		<li><p><code>CLOUD</code>:
+			
+		</p></li>
+		<li><p><code>HYBRID</code>:
+			
+		</p></li>
+		<li><p><code>ON_PREM</code>:
+			
+		</p></li>
+		<li><p><code>UNKNOWN_ENV</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
+			
+		</p></li>
+		<li><p><code>state</code>: 
+			
+			
+			
+			The current state of the entity. Can be one of:
+				<html><body>
+	
+	<ul>
+		<li><p><code>FAILOVER</code>:
+			
+		</p></li>
+		<li><p><code>MAINTENANCE</code>:
+			
+		</p></li>
+		<li><p><code>POWERED_OFF</code>:
+			
+		</p></li>
+		<li><p><code>POWERED_ON</code>:
+			
+		</p></li>
+		<li><p><code>SUSPENDED</code>:
+			
+		</p></li>
+		<li><p><code>UNKNOWN</code>:
+			
+		</p></li>
+	</ul>
+</body></html>
 			
 		</p></li>
 		<li><p><code>attrs</code>: 
@@ -213,6 +261,7 @@ entity object has two top-level fields:</p>
 			
 			
 			Information that is specific for the given entity type.
+			This can be null for an entity that has no attributes. Can be one of:
 				<html><body>
 	
 	<ul>
@@ -229,23 +278,49 @@ entity object has two top-level fields:</p>
 </body></html>
 			
 		</p></li>
-		<li><p><code>first_seen</code>: 
+		<li><p><code>metric</code>: 
 			
 			
 			
-			A topology timestamp for when this entity first appeared.
+			A list of metrics for the entity. Can be empty for 
+				an entity with no commodities. See <a href="metric.html">metric</a>.
 			
 		</p></li>
-		<li><p><code>last_seen</code>: 
+		
+		<li><p><code>related</code>: 
 			
 			
 			
-			A topology timestamp for when this entity last 
-				appeared.
-				A value of 9999-12-31T23:59:59 means the entity still exists 
-				in latest market cycle.
-				
+			Entities that are connected to this entity in the supply chain. 
+				Can include any <a href="enum/entity_type.html">entity_type</a>, or any of the following:
+				<html><body>
+	
+	<ul>
+		<li><p><code>COMPUTE_CLUSTER</code>:
+			A cluster of VMs
 		</p></li>
+		<li><p><code>STORAGE_CLUSTER</code>:
+			A cluster of datastores
+		</p></li>
+		<li><p><code>K8S_CLUSTER_GROUP</code>:
+			A Kubernetes cluster group
+		</p></li>
+		<li><p><code>RESOURCE_GROUP</code>:
+			
+		</p></li>
+		<li><p><code>BILLING_FAMILY</code>:
+			A group of cloud targets that are all managed under the same billing agreement
+		</p></li>
+		<li><p><code>GROUP</code>:
+			A discovered or user-defined group of entities. Can be a group of groups.
+		</p></li>
+	</ul>
+</body></html>
+			
+		</p></li>
+		
+		
+		
 	</ul>
 </body></html>
 </details>
@@ -508,15 +583,13 @@ This list is all the metric types that the Data Exporter supports.</p>
 <details>
 <summary>Click to Show/Hide:</summary>
 <html><body>
-	MetricType is a really cool type. Some of its really cool features are:
-- #1
-- #2
+	
 	<ul>
 		<li><p><code>ACTIVE_SESSIONS</code>:
-			Active Sessions Notes
+			
 		</p></li>
 		<li><p><code>BALLOONING</code>:
-			Ballooning Notes
+			
 		</p></li>
 		<li><p><code>BUFFER_COMMODITY</code>:
 			
@@ -528,7 +601,7 @@ This list is all the metric types that the Data Exporter supports.</p>
 			
 		</p></li>
 		<li><p><code>CPU</code>:
-			Here are **some notes** on the `CPU` value.
+			
 		</p></li>
 		<li><p><code>CPU_ALLOCATION</code>:
 			
