@@ -1,0 +1,1766 @@
+---
+enums:
+  action_category:
+    intro: null
+    items:
+      COMPLIANCE:
+        Notes: "The entity violates placement or access policies, or the entity is mis-configured in some way."
+      EFFICIENCY_IMPROVEMENT:
+        Notes: "For an entity with underutilized resources, the recommended action consolidates operations."
+      PERFORMANCE_ASSURANCE:
+        Notes: "Analysis detects conditions that directly put QoS at risk."
+      PREVENTION:
+        Notes: "Analysis detects conditions that can move your environment out of the desired state."
+      UNKNOWN:
+        Notes: "The cause for the action recommendation is unknown."
+  action_mode:
+    intro: null
+    items:
+      AUTOMATIC:
+        Notes: null
+      DISABLED:
+        Notes: null
+      EXTERNAL_APPROVAL:
+        Notes: null
+      MANUAL:
+        Notes: null
+      RECOMMEND:
+        Notes: null
+  action_state:
+    intro: null
+    items:
+      ACCEPTED:
+        Notes: null
+      CLEARED:
+        Notes: null
+      FAILED:
+        Notes: null
+      FAILING:
+        Notes: null
+      IN_PROGRESS:
+        Notes: null
+      POST_IN_PROGRESS:
+        Notes: null
+      PRE_IN_PROGRESS:
+        Notes: null
+      QUEUED:
+        Notes: null
+      READY:
+        Notes: null
+      REJECTED:
+        Notes: null
+      SUCCEEDED:
+        Notes: null
+  action_type:
+    intro: null
+    items:
+      ACTIVATE:
+        Notes: null
+      ALLOCATE:
+        Notes: null
+      BUY_RI:
+        Notes: null
+      DEACTIVATE:
+        Notes: null
+      DELETE:
+        Notes: null
+      MOVE:
+        Notes: null
+      NONE:
+        Notes: null
+      PROVISION:
+        Notes: null
+      RECONFIGURE:
+        Notes: null
+      RESIZE:
+        Notes: null
+      SCALE:
+        Notes: null
+      START:
+        Notes: null
+      SUSPEND:
+        Notes: null
+  attr_type:
+    intro: null
+    items:
+      ENTITY_STATE:
+        Notes: null
+      NUM_VCPU:
+        Notes: null
+      VOLUME_ATTACHED:
+        Notes: null
+  cost_category:
+    intro: null
+    items:
+      IP:
+        Notes: null
+      ON_DEMAND_COMPUTE:
+        Notes: null
+      ON_DEMAND_LICENSE:
+        Notes: null
+      RESERVED_LICENSE:
+        Notes: null
+      RI_COMPUTE:
+        Notes: null
+      SPOT:
+        Notes: null
+      STORAGE:
+        Notes: null
+      TOTAL:
+        Notes: null
+  cost_source:
+    intro: null
+    items:
+      BUY_RI_DISCOUNT:
+        Notes: null
+      ENTITY_UPTIME_DISCOUNT:
+        Notes: null
+      ON_DEMAND_RATE:
+        Notes: null
+      RI_INVENTORY_DISCOUNT:
+        Notes: null
+      TOTAL:
+        Notes: null
+      UNCLASSIFIED:
+        Notes: null
+  entity_state:
+    intro: null
+    items:
+      FAILOVER:
+        Notes: null
+      MAINTENANCE:
+        Notes: null
+      POWERED_OFF:
+        Notes: null
+      POWERED_ON:
+        Notes: null
+      SUSPENDED:
+        Notes: null
+      UNKNOWN:
+        Notes: null
+  entity_type:
+    intro: null
+    items:
+      ACTION_MANAGER:
+        Notes: null
+      APPLICATION:
+        Notes: null
+      APPLICATION_COMPONENT:
+        Notes: null
+      APPLICATION_SERVER:
+        Notes: null
+      AVAILABILITY_ZONE:
+        Notes: null
+      BILLING_FAMILY:
+        Notes: null
+      BUSINESS:
+        Notes: null
+      BUSINESS_ACCOUNT:
+        Notes: null
+      BUSINESS_APPLICATION:
+        Notes: null
+      BUSINESS_ENTITY:
+        Notes: null
+      BUSINESS_TRANSACTION:
+        Notes: null
+      BUSINESS_USER:
+        Notes: null
+      CHASSIS:
+        Notes: null
+      CLOUD_COMMITMENT:
+        Notes: null
+      CLOUD_SERVICE:
+        Notes: null
+      COMPUTE_CLUSTER:
+        Notes: null
+      COMPUTE_RESOURCE:
+        Notes: null
+      COMPUTE_TIER:
+        Notes: null
+      CONTAINER:
+        Notes: null
+      CONTAINER_PLATFORM_CLUSTER:
+        Notes: null
+      CONTAINER_POD:
+        Notes: null
+      CONTAINER_SPEC:
+        Notes: null
+      DATABASE:
+        Notes: null
+      DATABASE_SERVER:
+        Notes: null
+      DATABASE_SERVER_TIER:
+        Notes: null
+      DATABASE_TIER:
+        Notes: null
+      DATACENTER:
+        Notes: null
+      DESIRED_RESERVED_INSTANCE:
+        Notes: null
+      DESKTOP_POOL:
+        Notes: null
+      DISK_ARRAY:
+        Notes: null
+      DISTRIBUTED_VIRTUAL_PORTGROUP:
+        Notes: null
+      DPOD:
+        Notes: null
+      GROUP:
+        Notes: null
+      HCI_PHYSICAL_MACHINE:
+        Notes: null
+      HYPERVISOR_SERVER:
+        Notes: null
+      INFRASTRUCTURE:
+        Notes: null
+      INTERNET:
+        Notes: null
+      IO_MODULE:
+        Notes: null
+      IP:
+        Notes: null
+      K8S_CLUSTER:
+        Notes: null
+      LICENSING_SERVICE:
+        Notes: null
+      LOAD_BALANCER:
+        Notes: null
+      LOGICAL_POOL:
+        Notes: null
+      MAC:
+        Notes: null
+      MOVER:
+        Notes: null
+      NAMESPACE:
+        Notes: null
+      NETWORK:
+        Notes: null
+      NETWORKING_ENDPOINT:
+        Notes: null
+      OPERATOR:
+        Notes: null
+      PHYSICAL_MACHINE:
+        Notes: null
+      PORT:
+        Notes: null
+      PROCESSOR_POOL:
+        Notes: null
+      REGION:
+        Notes: null
+      RESERVED_INSTANCE:
+        Notes: null
+      RESERVED_INSTANCE_SPECIFICATION:
+        Notes: null
+      RESOURCE_GROUP:
+        Notes: null
+      RIGHT_SIZER:
+        Notes: null
+      SAVINGS:
+        Notes: null
+      SERVICE:
+        Notes: null
+      SERVICE_ENTITY_TEMPLATE:
+        Notes: null
+      SERVICE_PROVIDER:
+        Notes: null
+      STORAGE:
+        Notes: null
+      STORAGE_CLUSTER:
+        Notes: null
+      STORAGE_CONTROLLER:
+        Notes: null
+      STORAGE_TIER:
+        Notes: null
+      STORAGE_VOLUME:
+        Notes: null
+      SWITCH:
+        Notes: null
+      TARGET:
+        Notes: null
+      THIS_ENTITY:
+        Notes: null
+      THREE_TIER_APPLICATION:
+        Notes: null
+      VIEW_POD:
+        Notes: null
+      VIRTUAL_APPLICATION:
+        Notes: null
+      VIRTUAL_DATACENTER:
+        Notes: null
+      VIRTUAL_MACHINE:
+        Notes: null
+      VIRTUAL_VOLUME:
+        Notes: null
+      VLAN:
+        Notes: null
+      VM_SPEC:
+        Notes: null
+      VPOD:
+        Notes: null
+      WEB_SERVER:
+        Notes: null
+      WORKLOAD_CONTROLLER:
+        Notes: null
+      _NONE_:
+        Notes: null
+  environment_type:
+    intro: null
+    items:
+      CLOUD:
+        Notes: null
+      HYBRID:
+        Notes: null
+      ON_PREM:
+        Notes: null
+      UNKNOWN_ENV:
+        Notes: null
+  file_type:
+    intro: null
+    items:
+      CONFIGURATION:
+        Notes: null
+      DISK:
+        Notes: null
+      ESXCONSOLE:
+        Notes: null
+      ISO:
+        Notes: null
+      LOG:
+        Notes: null
+      MEMORY:
+        Notes: null
+      SNAPSHOT:
+        Notes: null
+      SWAP:
+        Notes: null
+  metric_type:
+    intro: null
+    items:
+      ACTIVE_SESSIONS:
+        Notes: null
+      BALLOONING:
+        Notes: null
+      BUFFER_COMMODITY:
+        Notes: null
+      CONNECTION:
+        Notes: null
+      COOLING:
+        Notes: null
+      CPU:
+        Notes: null
+      CPU_ALLOCATION:
+        Notes: null
+      CPU_HEADROOM:
+        Notes: null
+      CPU_PROVISIONED:
+        Notes: null
+      CPU_READY:
+        Notes: null
+      DB_CACHE_HIT_RATE:
+        Notes: null
+      DB_MEM:
+        Notes: null
+      DTU:
+        Notes: null
+      EXTENT:
+        Notes: null
+      FLOW:
+        Notes: null
+      FLOW_ALLOCATION:
+        Notes: null
+      HEAP:
+        Notes: null
+      IMAGE_CPU:
+        Notes: null
+      IMAGE_MEM:
+        Notes: null
+      IMAGE_STORAGE:
+        Notes: null
+      IO_THROUGHPUT:
+        Notes: null
+      MEM:
+        Notes: null
+      MEM_ALLOCATION:
+        Notes: null
+      MEM_HEADROOM:
+        Notes: null
+      MEM_PROVISIONED:
+        Notes: null
+      NET_THROUGHPUT:
+        Notes: null
+      POOL_CPU:
+        Notes: null
+      POOL_MEM:
+        Notes: null
+      POOL_STORAGE:
+        Notes: null
+      PORT_CHANEL:
+        Notes: null
+      POWER:
+        Notes: null
+      Q16_VCPU:
+        Notes: null
+      Q1_VCPU:
+        Notes: null
+      Q2_VCPU:
+        Notes: null
+      Q32_VCPU:
+        Notes: null
+      Q3_VCPU:
+        Notes: null
+      Q4_VCPU:
+        Notes: null
+      Q5_VCPU:
+        Notes: null
+      Q64_VCPU:
+        Notes: null
+      Q6_VCPU:
+        Notes: null
+      Q7_VCPU:
+        Notes: null
+      Q8_VCPU:
+        Notes: null
+      QN_VCPU:
+        Notes: null
+      REMAINING_GC_CAPACITY:
+        Notes: null
+      RESPONSE_TIME:
+        Notes: null
+      SLA_COMMODITY:
+        Notes: null
+      STORAGE_ACCESS:
+        Notes: null
+      STORAGE_ALLOCATION:
+        Notes: null
+      STORAGE_AMOUNT:
+        Notes: null
+      STORAGE_HEADROOM:
+        Notes: null
+      STORAGE_LATENCY:
+        Notes: null
+      STORAGE_PROVISIONED:
+        Notes: null
+      SWAPPING:
+        Notes: null
+      THREADS:
+        Notes: null
+      TOTAL_HEADROOM:
+        Notes: null
+      TOTAL_SESSIONS:
+        Notes: null
+      TRANSACTION:
+        Notes: null
+      TRANSACTION_LOG:
+        Notes: null
+      VCPU:
+        Notes: null
+      VCPU_LIMIT_QUOTA:
+        Notes: null
+      VCPU_REQUEST:
+        Notes: null
+      VCPU_REQUEST_QUOTA:
+        Notes: null
+      VMEM:
+        Notes: null
+      VMEM_LIMIT_QUOTA:
+        Notes: null
+      VMEM_REQUEST:
+        Notes: null
+      VMEM_REQUEST_QUOTA:
+        Notes: null
+      VSTORAGE:
+        Notes: null
+  severity:
+    intro: null
+    items:
+      CRITICAL:
+        Notes: null
+      MAJOR:
+        Notes: null
+      MINOR:
+        Notes: null
+      NORMAL:
+        Notes: null
+  terminal_state:
+    intro: null
+    items:
+      FAILED:
+        Notes: null
+      SUCCEEDED:
+        Notes: null
+  AttachmentState:
+    intro: null
+    items:
+      ATTACHED:
+        Notes: null
+      UNATTACHED:
+        Notes: null
+  OSType:
+    intro: null
+    items:
+      LINUX:
+        Notes: null
+      LINUX_WITH_SQL_ENTERPRISE:
+        Notes: null
+      LINUX_WITH_SQL_STANDARD:
+        Notes: null
+      LINUX_WITH_SQL_WEB:
+        Notes: null
+      RHEL:
+        Notes: null
+      SUSE:
+        Notes: null
+      UNKNOWN_OS:
+        Notes: null
+      WINDOWS:
+        Notes: null
+      WINDOWS_BYOL:
+        Notes: null
+      WINDOWS_WITH_SQL_ENTERPRISE:
+        Notes: null
+      WINDOWS_WITH_SQL_STANDARD:
+        Notes: null
+      WINDOWS_WITH_SQL_WEB:
+        Notes: null
+tables:
+  action_group:
+    intro: null
+    columns:
+      id:
+        Type: int
+        Nullable: true
+        Primary: true
+        Description: "ID DESCRIPTION"
+      type:
+        Type: /enums/action_type
+        Nullable: false
+        Primary: false
+        Description: "TYPE DESCRIPTION"
+      category:
+        Type: /enums/action_category
+        Nullable: false
+        Primary: false
+        Description: "CATEGORY DESCRIPTION"
+      state:
+        Type: /enums/action_state
+        Nullable: false
+        Primary: false
+        Description: null
+      mode:
+        Type: /enums/action_mode
+        Nullable: false
+        Primary: false
+        Description: null
+      risks:
+        Type: text[]
+        Nullable: true
+        Primary: false
+        Description: null
+  cloud_service_cost:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: true
+        Description: null
+      account_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      cloud_service_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      cost:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: null
+  completed_action:
+    intro: null
+    columns:
+      recommendation_time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      acceptance_time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      completion_time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      action_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/action_type
+        Nullable: false
+        Primary: false
+        Description: null
+      severity:
+        Type: /enums/severity
+        Nullable: false
+        Primary: false
+        Description: null
+      category:
+        Type: /enums/action_category
+        Nullable: false
+        Primary: false
+        Description: null
+      target_entity_id:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      involved_entities:
+        Type: bigint[]
+        Nullable: true
+        Primary: false
+        Description: null
+      description:
+        Type: text
+        Nullable: false
+        Primary: false
+        Description: null
+      savings:
+        Type: double precision
+        Nullable: false
+        Primary: false
+        Description: null
+      final_state:
+        Type: /enums/terminal_state
+        Nullable: false
+        Primary: false
+        Description: null
+      final_message:
+        Type: text
+        Nullable: false
+        Primary: false
+        Description: null
+      attrs:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+        Reference: /table_data/action.attrs
+  entity:
+    intro: null
+    columns:
+      oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+      name:
+        Type: text
+        Nullable: false
+        Primary: false
+        Description: null
+      environment:
+        Type: /enums/environment_type
+        Nullable: true
+        Primary: false
+        Description: null
+      attrs:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+        Reference: /shared/entity.attrs or /shared/group.attrs
+      first_seen:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      last_seen:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+  entity_cost:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      category:
+        Type: /enums/cost_category
+        Nullable: false
+        Primary: false
+        Description: null
+      source:
+        Type: /enums/cost_source
+        Nullable: false
+        Primary: false
+        Description: null
+      cost:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: null
+  entity_old:
+    intro: null
+    columns:
+      oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      hash:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+      name:
+        Type: text
+        Nullable: false
+        Primary: false
+        Description: null
+      environment:
+        Type: /enums/environment_type
+        Nullable: true
+        Primary: false
+        Description: null
+      state:
+        Type: /enums/entity_state
+        Nullable: true
+        Primary: false
+        Description: null
+      attrs:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+      scope:
+        Type: bigint[]
+        Nullable: true
+        Primary: false
+        Description: null
+      first_seen:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      last_seen:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+  entity_types_with_cost:
+    intro: null
+    columns:
+      type:
+        Type: /enums/entity_type
+        Nullable: true
+        Primary: false
+        Description: null
+  file:
+    intro: null
+    columns:
+      volume_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      path:
+        Type: text
+        Nullable: false
+        Primary: true
+        Description: null
+      type:
+        Type: /enums/file_type
+        Nullable: false
+        Primary: false
+        Description: null
+      file_size_kb:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      modification_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      storage_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      is_attached:
+        Type: boolean
+        Nullable: false
+        Primary: false
+        Description: null
+      hash:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+  historical_entity_attrs:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/attr_type
+        Nullable: false
+        Primary: false
+        Description: null
+      bool_value:
+        Type: boolean
+        Nullable: true
+        Primary: false
+        Description: null
+      int_value:
+        Type: int
+        Nullable: true
+        Primary: false
+        Description: null
+      long_value:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      double_value:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      string_value:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+      int_arr_value:
+        Type: int[]
+        Nullable: true
+        Primary: false
+        Description: null
+      long_arr_value:
+        Type: bigint[]
+        Nullable: true
+        Primary: false
+        Description: null
+      string_arr_value:
+        Type: text[]
+        Nullable: true
+        Primary: false
+        Description: null
+      double_arr_value:
+        Type: float8[]
+        Nullable: true
+        Primary: false
+        Description: null
+      json_value:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+  metric:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/metric_type
+        Nullable: false
+        Primary: false
+        Description: null
+      provider_oid:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      key:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+      current:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      capacity:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      utilization:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      consumed:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      peak_current:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      peak_consumed:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      entity_type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+  metric_old:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_hash:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/metric_type
+        Nullable: false
+        Primary: false
+        Description: null
+      current:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      capacity:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      utilization:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      consumed:
+        Type: double precision
+        Nullable: true
+        Primary: false
+        Description: null
+      provider_oid:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      key:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+  pending_action:
+    intro: null
+    columns:
+      recommendation_time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      action_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      type:
+        Type: /enums/action_type
+        Nullable: false
+        Primary: false
+        Description: null
+      severity:
+        Type: /enums/severity
+        Nullable: false
+        Primary: false
+        Description: null
+      category:
+        Type: /enums/action_category
+        Nullable: false
+        Primary: false
+        Description: null
+      target_entity_id:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      involved_entities:
+        Type: bigint[]
+        Nullable: true
+        Primary: false
+        Description: null
+      description:
+        Type: text
+        Nullable: false
+        Primary: false
+        Description: null
+      savings:
+        Type: double precision
+        Nullable: false
+        Primary: false
+        Description: null
+      attrs:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+        Reference: /table_data/action.attrs
+  pending_action_stats:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+      scope_oid:
+        Type: bigint
+        Nullable: false
+        Primary: false
+        Description: null
+      entity_type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+      environment_type:
+        Type: /enums/environment_type
+        Nullable: false
+        Primary: false
+        Description: null
+      action_group:
+        Type: int
+        Nullable: false
+        Primary: false
+        Description: null
+      prior_action_count:
+        Type: int
+        Nullable: false
+        Primary: false
+        Description: null
+      cleared_action_count:
+        Type: int
+        Nullable: false
+        Primary: false
+        Description: null
+      new_action_count:
+        Type: int
+        Nullable: false
+        Primary: false
+        Description: null
+      involved_entity_count:
+        Type: int
+        Nullable: false
+        Primary: false
+        Description: null
+      savings:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: null
+      investments:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: null
+  run_health_checks:
+    intro: null
+    columns:
+      check_name:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+      passed:
+        Type: boolean
+        Nullable: true
+        Primary: false
+        Description: null
+      messages:
+        Type: text[]
+        Nullable: true
+        Primary: false
+        Description: null
+  scope:
+    intro: null
+    columns:
+      seed_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      scoped_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      scoped_type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+      start:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: true
+        Description: null
+      finish:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+  scope_old:
+    intro: null
+    columns:
+      seed_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      scoped_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: null
+      scoped_type:
+        Type: /enums/entity_type
+        Nullable: false
+        Primary: false
+        Description: null
+      start:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: true
+        Description: null
+      finish:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+  scope_to:
+    intro: null
+    columns:
+      oid:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      from_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      to_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      seed:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+  scope_to_types:
+    intro: null
+    columns:
+      oid:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      from_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      to_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      seed:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      e_type:
+        Type: /enums/entity_type
+        Nullable: true
+        Primary: false
+        Description: null
+  wasted_file:
+    intro: null
+    columns:
+      path:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+      file_size_kb:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      modification_time:
+        Type: timestamp with time zone
+        Nullable: true
+        Primary: false
+        Description: null
+      storage_oid:
+        Type: bigint
+        Nullable: true
+        Primary: false
+        Description: null
+      storage_name:
+        Type: text
+        Nullable: true
+        Primary: false
+        Description: null
+shared:
+  entity.attrs:
+    intro: null
+    fields:
+      attachment_state:
+        Description: null
+        Type: /enums/AttachmentState
+        SupportedEntityTypes: VIRTUAL_VOLUME
+      connected_networks:
+        Description: null
+        Type: MULTI_TEXT
+        SupportedEntityTypes: VIRTUAL_MACHINE
+      cpu_model:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: PHYSICAL_MACHINE
+      guest_os_name:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: VIRTUAL_MACHINE
+      guest_os_type:
+        Description: null
+        Type: /enums/OSType
+        SupportedEntityTypes: VIRTUAL_MACHINE
+      is_local:
+        Description: null
+        Type: BOOLEAN
+        SupportedEntityTypes: STORAGE
+      model:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: PHYSICAL_MACHINE
+      num_cpus:
+        Description: null
+        Type: NUMBER
+        SupportedEntityTypes: VIRTUAL_MACHINE
+      tags:
+        Description: null
+        Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
+        SupportedEntityTypes: ALL
+      targets:
+        Description: null
+        Type: /shared/Target
+        SupportedEntityTypes: ALL
+        Repeated: true
+      timezone:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: PHYSICAL_MACHINE
+      vendor_id:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: VIRTUAL_VOLUME,BUSINESS_ACCOUNT
+  group.attrs:
+    intro: null
+    fields:
+      dynamic:
+        Description: null
+        Type: BOOLEAN
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
+      member_types:
+        Description: null
+        Type: MULTI_TEXT
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
+      origin:
+        Description: null
+        Type: TEXT
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
+      tags:
+        Description: null
+        Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
+        SupportedEntityTypes: GROUP,RESOURCE_GROUP,COMPUTE_CLUSTER,K8S_CLUSTER,STORAGE_CLUSTER,BILLING_FAMILY
+      targets:
+        Description: null
+        Type: /shared/Target
+        SupportedEntityTypes: GROUP,RESOURCE_GROUP,COMPUTE_CLUSTER,K8S_CLUSTER,STORAGE_CLUSTER,BILLING_FAMILY
+        Repeated: true
+  Target:
+    intro: null
+    fields:
+      category:
+        Description: null
+        Type: String
+      entityVendorId:
+        Description: null
+        Type: String
+      name:
+        Description: null
+        Type: String
+      oid:
+        Description: null
+        Type: Long
+      type:
+        Description: null
+        Type: String
+  ActionImpactedEntity:
+    intro: null
+    fields:
+      affectedCosts:
+        Description: null
+        Type: /shared/ActionImpactedCosts
+      affectedMetrics:
+        Description: null
+        Type: /shared/ImpactedMetric
+        MapKeyType: /enums/metric_type
+      name:
+        Description: null
+        Type: String
+      oid:
+        Description: null
+        Type: Long
+      settings:
+        Description: null
+        Type: /shared/EntitySettings
+      type:
+        Description: null
+        Type: /enums/entity_type
+  ActionImpactedCosts:
+    intro: null
+    fields:
+      afterActions:
+        Description: null
+        Type: /shared/ActionImpactedCost
+      beforeActions:
+        Description: null
+        Type: /shared/ActionImpactedCost
+  ImpactedMetric:
+    intro: null
+    fields:
+      afterActions:
+        Description: null
+        Type: /shared/ActionCommodity
+      beforeActions:
+        Description: null
+        Type: /shared/ActionCommodity
+  EntitySettings:
+    intro: null
+    fields:
+      percentileAggressiveness:
+        Description: null
+        Type: Integer
+      percentileObservationPeriodDays:
+        Description: null
+        Type: Integer
+  ActionImpactedCost:
+    intro: null
+    fields:
+      onDemandCost:
+        Description: null
+        Type: Float
+      onDemandRate:
+        Description: null
+        Type: Float
+      riCoveragePercentage:
+        Description: null
+        Type: Float
+  ActionCommodity:
+    intro: null
+    fields:
+      capacity:
+        Description: null
+        Type: float
+      percentileUtilization:
+        Description: null
+        Type: Double
+      used:
+        Description: null
+        Type: float
+      utilization:
+        Description: null
+        Type: float
+  BuyRiInfo:
+    intro: null
+    fields:
+      computeTier:
+        Description: null
+        Type: /shared/ActionEntity
+      count:
+        Description: null
+        Type: Integer
+      masterAccount:
+        Description: null
+        Type: /shared/ActionEntity
+      region:
+        Description: null
+        Type: /shared/ActionEntity
+      target:
+        Description: null
+        Type: /shared/ActionEntity
+  ActionEntity:
+    intro: null
+    fields:
+      oid:
+        Description: null
+        Type: Long
+      name:
+        Description: null
+        Type: String
+      type:
+        Description: null
+        Type: /enums/entity_type
+  MoveChange:
+    intro: null
+    fields:
+      from:
+        Description: null
+        Type: /shared/ActionImpactedEntity
+      resource:
+        Description: null
+        Type: /shared/ActionEntity
+        Repeated: true
+      to:
+        Description: null
+        Type: /shared/ActionImpactedEntity
+  CommodityChange:
+    intro: null
+    fields:
+      attribute:
+        Description: null
+        Type: String
+      commodityType:
+        Description: null
+        Type: /enums/metric_type
+      from:
+        Description: null
+        Type: Float
+      percentileChange:
+        Description: null
+        Type: /shared/CommodityPercentileChange
+      target:
+        Description: null
+        Type: /shared/ActionEntity
+      to:
+        Description: null
+        Type: Float
+      unit:
+        Description: null
+        Type: String
+  CommodityPercentileChange:
+    intro: null
+    fields:
+      after:
+        Description: null
+        Type: Double
+      aggressiveness:
+        Description: null
+        Type: Integer
+      before:
+        Description: null
+        Type: Double
+      observationPeriodDays:
+        Description: null
+        Type: Integer
+  DeleteInfo:
+    intro: null
+    fields:
+      filePath:
+        Description: null
+        Type: String
+      fileSize:
+        Description: null
+        Type: Double
+      lastModifiedTimestamp:
+        Description: null
+        Type: String
+        Format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      unattachedDays:
+        Description: null
+        Type: Integer
+      unit:
+        Description: null
+        Type: String
+table_data:
+  action.attrs:
+    intro: null
+    fields:
+      buyRiInfo:
+        Description: null
+        Type: /shared/BuyRiInfo
+      deleteInfo:
+        Description: null
+        Type: /shared/DeleteInfo
+      moveInfo:
+        Description: null
+        Type: /shared/MoveChange
+        MapKeyType: /enums/entity_type
+      resizeInfo:
+        Description: null
+        Type: /shared/CommodityChange
+        MapKeyType: /enums/metric_type
+      scaleInfo:
+        Description: null
+        Type: /shared/MoveChange
+        MapKeyType: /enums/entity_type
+      target:
+        Description: null
+        Type: /shared/ActionImpactedEntity
+exporter:
+  intro: null
+  fields:
+    action:
+      Description: null
+      Type: /exporter/Action
+    entity:
+      Description: null
+      Type: /exporter/Entity
+    group:
+      Description: null
+      Type: /exporter/Group
+    timestamp:
+      Description: null
+      Type: String
+      Format: yyyy-MM-dd'T'HH:mm:ss'Z'
+  Action:
+    intro: null
+    fields:
+      buyRiInfo:
+        Description: null
+        Type: /shared/BuyRiInfo
+      category:
+        Description: null
+        Type: /enums/action_category
+      creationTime:
+        Description: null
+        Type: String
+        Format: yyyy-MM-dd'T'HH:mm:ss'Z'
+      deleteInfo:
+        Description: null
+        Type: /shared/DeleteInfo
+      description:
+        Description: null
+        Type: String
+      explanation:
+        Description: null
+        Type: String
+      mode:
+        Description: null
+        Type: /enums/action_mode
+      moveInfo:
+        Description: null
+        Type: /shared/MoveChange
+      oid:
+        Description: null
+        Type: Long
+      related:
+        Description: null
+        Type: /exporter/RelatedEntity
+        MapKeyType: /enums/entity_type
+        Repeated: true
+      resizeInfo:
+        Description: null
+        Type: /shared/CommodityChange
+      savings:
+        Description: null
+        Type: /exporter/CostAmount
+      scaleInfo:
+        Description: null
+        Type: /shared/MoveChange
+      severity:
+        Description: null
+        Type: /enums/severity
+      state:
+        Description: null
+        Type: /enums/action_state
+      target:
+        Description: null
+        Type: /shared/ActionImpactedEntity
+      type:
+        Description: null
+        Type: /enums/action_type
+  Entity:
+    intro: null
+    fields:
+      accountExpenses:
+        Description: null
+        Type: /exporter/AccountExpenses
+      attrs:
+        Description: null
+        Type: /shared/entity.attrs
+      cost:
+        Description: null
+        Type: /exporter/EntityCost
+      environment:
+        Description: null
+        Type: /enums/environment_type
+      metric:
+        Description: null
+        Type: /exporter/Commodity
+        MapKeyType: /enums/metric_type
+      name:
+        Description: null
+        Type: String
+      oid:
+        Description: null
+        Type: Long
+      related:
+        Description: null
+        Type: /exporter/RelatedEntity
+        MapKeyType: /enums/entity_type
+        Repeated: true
+      state:
+        Description: null
+        Type: /enums/entity_state
+      type:
+        Description: null
+        Type: /enums/entity_type
+  Group:
+    intro: null
+    fields:
+      attrs:
+        Description: null
+        Type: /shared/group.attrs
+      name:
+        Description: null
+        Type: String
+      oid:
+        Description: null
+        Type: Long
+      type:
+        Description: null
+        Type: /enums/entity_type
+  RelatedEntity:
+    intro: null
+    fields:
+      name:
+        Description: null
+        Type: String
+      oid:
+        Description: null
+        Type: Long
+  CostAmount:
+    intro: null
+    fields:
+      amount:
+        Description: null
+        Type: Double
+      unit:
+        Description: null
+        Type: String
+  AccountExpenses:
+    intro: null
+    fields:
+      expenseDate:
+        Description: null
+        Type: String
+      serviceExpenses:
+        Description: null
+        Type: /exporter/CostAmount
+        MapKeyType: String
+      serviceList:
+        Description: null
+        Type: /exporter/String
+        Repeated: true
+  EntityCost:
+    intro: null
+    fields:
+      category:
+        Description: null
+        Type: /exporter/CostByCategory
+        MapKeyType: /enums/cost_category
+      total:
+        Description: null
+        Type: Float
+      unit:
+        Description: null
+        Type: String
+  Commodity:
+    intro: null
+    fields:
+      capacity:
+        Description: null
+        Type: Double
+      consumed:
+        Description: null
+        Type: Double
+      current:
+        Description: null
+        Type: Double
+      utilization:
+        Description: null
+        Type: Double
+  CostByCategory:
+    intro: null
+    fields:
+      source:
+        Description: null
+        Type: Float
+        MapKeyType: /enums/cost_source
+      total:
+        Description: null
+        Type: Float
