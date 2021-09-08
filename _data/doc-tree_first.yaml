@@ -4,15 +4,15 @@ enums:
     intro: null
     items:
       COMPLIANCE:
-        Notes: null
+        Notes: "The entity violates placement or access policies, or the entity is mis-configured in some way."
       EFFICIENCY_IMPROVEMENT:
-        Notes: null
+        Notes: "For an entity with underutilized resources, the recommended action consolidates operations."
       PERFORMANCE_ASSURANCE:
-        Notes: null
+        Notes: "Analysis detects conditions that directly put QoS at risk."
       PREVENTION:
-        Notes: null
+        Notes: "Analysis detects conditions that can move your environment out of the desired state."
       UNKNOWN:
-        Notes: null
+        Notes: "The cause for the action recommendation is unknown."
   action_mode:
     intro: null
     items:
@@ -337,206 +337,139 @@ enums:
     intro: null
     items:
       ACTIVE_SESSIONS:
-        Notes: <p>Count of the number of actively logged in sessions</p>
-        Unit: Count
+        Notes: null
       BALLOONING:
-        Notes: <p>Number of kb the host is dedicated for ballooning</p>
-        Unit: kilobytes
+        Notes: null
       BUFFER_COMMODITY:
-        Notes: <p>Utilization of a port buffer (fabric, UCS specific)</p>
-        Unit: megabytes
+        Notes: null
       CONNECTION:
-        Notes: <p>Number of connections onto the application</p>
-        Unit: Count
+        Notes: null
       COOLING:
         Notes: null
-        Unit: null
       CPU:
-        Notes: <p>For Physical machine - usage of CPU (current column)</p> <p>For VM - consumed CPU on the host (consumed column)</p>
-        Unit: MHz
+        Notes: null
       CPU_ALLOCATION:
-        Notes: <p>For VMs (consumed column) - VM buys from VDC or from desktop pool (VDI)</p><p>For PMs - PMs sells to VDCs</p>
-        Unit: MHz
+        Notes: null
       CPU_HEADROOM:
-        Notes: <p>Number of VMs that can fit in all of the available  CPU (on a cluster)</p>
-        Unit: Count
+        Notes: null
       CPU_PROVISIONED:
-        Notes: <p>Capacity is based on the over-provisioned value in policy</p>
-        Unit: MHz
+        Notes: null
       CPU_READY:
-        Notes: <p>Ready queue</p>
-        Unit: ms
+        Notes: null
       DB_CACHE_HIT_RATE:
-        Notes: <p>The percentage of accesses that result in cache hits.</p>
-        Unit: Percentage
+        Notes: null
       DB_MEM:
-        Notes: <p>DB mem utilization or DM capacity</p>
-        Unit: kilobytes
+        Notes: null
       DTU:
-        Notes: <p>Capacity defined in the cloud</p>
-        Unit: Count
+        Notes: null
       EXTENT:
-        Notes: <p>Internal</p>
-        Unit: NA
+        Notes: null
       FLOW:
-        Notes: <p>Amount of network traffic per second between two nodes</p>
-        Unit: kilobytes/sec
+        Notes: null
       FLOW_ALLOCATION:
-        Notes: <p></p>
-        Unit: bytes
+        Notes: null
       HEAP:
-        Notes: <p>Amount of heap configured for an application</p>
-        Unit: kilobytes
+        Notes: null
       IMAGE_CPU:
-        Notes: <p>For VDI, usage of the business user</p>
-        Unit: MHz
+        Notes: null
       IMAGE_MEM:
-        Notes: <p>For VDI, usage of the business user</p>
-        Unit: kilobytes
+        Notes: null
       IMAGE_STORAGE:
-        Notes: <p>For VDI, usage of the business user</p>
-        Unit: megabytes
+        Notes: null
       IO_THROUGHPUT:
-        Notes: <p>Amount of traffic through the IO adapter</p>
-        Unit: kilobytes/sec
+        Notes: null
       MEM:
-        Notes: <p>Physical machine - usage of memory</p><p>VM - consumed memory</p>
-        Unit: kilobytes
+        Notes: null
       MEM_ALLOCATION:
-        Notes: <p>Physical machine - what the host provides to VDCs</p><p>VM (consumed column) - what the VM buys from VDC or desktop pool</p>
-        Unit: kilobytes
+        Notes: null
       MEM_HEADROOM:
-        Notes: <p>Number of VMs that can fit in the available memory on the cluster</p>
-        Unit: Count
+        Notes: null
       MEM_PROVISIONED:
-        Notes: <p>Capacity, based on the over-provisioned value in policy</p>
-        Unit: kilobytes
+        Notes: null
       NET_THROUGHPUT:
-        Notes: <p>Amount of traffic through the Network adapter</p>
-        Unit: kilobytes/sec
+        Notes: null
       POOL_CPU:
-        Notes: <p>For VDI, usage of the desktop pool</p>
-        Unit: MHz
+        Notes: null
       POOL_MEM:
-        Notes: <p>For VDI, usage of the desktop pool</p>
-        Unit: kilobytes
+        Notes: null
       POOL_STORAGE:
-        Notes: <p>For VDI, usage of the desktop pool</p>
-        Unit: megabytes
+        Notes: null
       PORT_CHANEL:
-        Notes: <p>Traffic on ports for UCS Mgr/HPE1</p>
-        Unit: kilobytes/sec
+        Notes: null
       POWER:
-        Notes: <p>null</p>
-        Unit: null
+        Notes: null
       Q16_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q1_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q2_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q32_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q3_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q4_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q5_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q64_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q6_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q7_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       Q8_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       QN_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
-        Unit: ms
+        Notes: null
       REMAINING_GC_CAPACITY:
-        Notes: <p>Percentage of time not spent on garbage collection</p>
-        Unit: Percentage
+        Notes: null
       RESPONSE_TIME:
-        Notes: <p>Application response</p>
-        Unit: ms
+        Notes: null
       SLA_COMMODITY:
-        Notes: <p>User-defined value</p>
-        Unit: Number
+        Notes: null
       STORAGE_ACCESS:
-        Notes: <p>Count of the number of I/O (read + write) within two discovery cycles</p>
-        Unit: count
+        Notes: null
       STORAGE_ALLOCATION:
-        Notes: <p>Allocated storage</p>
-        Unit: megabytes
+        Notes: null
       STORAGE_AMOUNT:
-        Notes: <p>Used storage</p>
-        Unit: megabytes
+        Notes: null
       STORAGE_HEADROOM:
-        Notes: <p>Count of VM that can fit for the storage in a cluster in terms of storage</p>
-        Unit: Count
+        Notes: null
       STORAGE_LATENCY:
-        Notes: <p>Acceptable latency. User can set capacity for most storage, is discovered for NetApp.</p>
-        Unit: ms
+        Notes: null
       STORAGE_PROVISIONED:
-        Notes: <p>Capacity, based on the over-provisioned value in policy</p>
-        Unit: megabytes
+        Notes: null
       SWAPPING:
-        Notes: <p>Memory swapping</p>
-        Unit: bytes/sec
+        Notes: null
       THREADS:
-        Notes: <p>Threads in use</p>
-        Unit: Count
+        Notes: null
       TOTAL_HEADROOM:
-        Notes: <p>Min value of CPU, Mem, IO, of the headrooms</p>
-        Unit: Count
+        Notes: null
       TOTAL_SESSIONS:
-        Notes: <p>Total number of possible sessions</p>
-        Unit: Count
+        Notes: null
       TRANSACTION:
-        Notes: <p>Transactions for the application</p>
-        Unit: transactions/sec
+        Notes: null
       TRANSACTION_LOG:
-        Notes: <p>Size of the transaction log</p>
-        Unit: megabytes
+        Notes: null
       VCPU:
-        Notes: <p>CPU for the VM</p>
-        Unit: MHz
+        Notes: null
       VCPU_LIMIT_QUOTA:
-        Notes: <p>null</p>
-        Unit: millicores
+        Notes: null
       VCPU_REQUEST:
-        Notes: <p>null</p>
-        Unit: millicores
+        Notes: null
       VCPU_REQUEST_QUOTA:
-        Notes: <p>null</p>
-        Unit: millicores
+        Notes: null
       VMEM:
-        Notes: <p>Memory sold by a VM. Memory sold and bought for a container</p>
-        Unit: kilobytes
+        Notes: null
       VMEM_LIMIT_QUOTA:
-        Notes: <p>null</p>
-        Unit: kilobytes
+        Notes: null
       VMEM_REQUEST:
-        Notes: <p>null</p>
-        Unit: kilobytes
+        Notes: null
       VMEM_REQUEST_QUOTA:
-        Notes: <p>null</p>
-        Unit: kilobytes
+        Notes: null
       VSTORAGE:
-        Notes: <p>null</p>
-        Unit: megabytes
+        Notes: null
   severity:
     intro: null
     items:
@@ -595,40 +528,34 @@ tables:
     columns:
       id:
         Type: int
-        Nullable: false
-        Primary: false
-        Description: null
-        Reference: null
+        Nullable: true
+        Primary: true
+        Description: "WOOF ID DESCRIPTION"
       type:
-        Type: enum
+        Type: /enums/action_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_type
       category:
-        Type: enum
+        Type: /enums/action_category
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_category
       state:
-        Type: enum
+        Type: /enums/action_state
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_state
       mode:
-        Type: enum
+        Type: /enums/action_mode
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_mode
       risks:
         Type: text[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
   cloud_service_cost:
     intro: null
     columns:
@@ -637,25 +564,21 @@ tables:
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       account_oid:
         Type: bigint
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       cloud_service_oid:
         Type: bigint
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       cost:
         Type: real
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   completed_action:
     intro: null
     columns:
@@ -684,19 +607,19 @@ tables:
         Description: null
         Reference: null
       type:
-        Type: enum
+        Type: /enums/action_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_type
+        Reference: null
       severity:
-        Type: enum
+        Type: /enums/severity
         Nullable: false
         Primary: false
         Description: null
         Reference: /enums/severity
       category:
-        Type: enum
+        Type: /enums/action_category
         Nullable: false
         Primary: false
         Description: null
@@ -726,7 +649,7 @@ tables:
         Description: null
         Reference: null
       final_state:
-        Type: enum
+        Type: /enums/terminal_state
         Nullable: false
         Primary: false
         Description: null
@@ -736,7 +659,6 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       attrs:
         Type: jsonb
         Nullable: true
@@ -751,43 +673,37 @@ tables:
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
       name:
         Type: text
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       environment:
-        Type: enum
+        Type: /enums/environment_type
         Nullable: true
         Primary: false
         Description: null
-        Reference: /enums/environment_type
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
         Description: null
-        Reference: /shared/entity.attrs|/shared/group.attrs
+        Reference: /shared/entity.attrs or /shared/group.attrs
       first_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       last_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   entity_cost:
     intro: null
     columns:
@@ -796,31 +712,26 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       category:
-        Type: enum
+        Type: /enums/cost_category
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/cost_category
       source:
-        Type: enum
+        Type: /enums/cost_source
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/cost_source
       cost:
         Type: real
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   entity_old:
     intro: null
     columns:
@@ -829,70 +740,59 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       hash:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
       name:
         Type: text
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       environment:
-        Type: enum
+        Type: /enums/environment_type
         Nullable: true
         Primary: false
         Description: null
-        Reference: /enums/environment_type
       state:
-        Type: enum
+        Type: /enums/entity_state
         Nullable: true
         Primary: false
         Description: null
-        Reference: /enums/entity_state
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       scope:
         Type: bigint[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       first_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       last_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   entity_types_with_cost:
     intro: null
     columns:
       type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: true
         Primary: false
         Description: null
-        Reference: /enums/entity_type
   file:
     intro: null
     columns:
@@ -901,49 +801,41 @@ tables:
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       path:
         Type: text
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/file_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/file_type
       file_size_kb:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       modification_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       storage_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       is_attached:
         Type: boolean
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       hash:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   historical_entity_attrs:
     intro: null
     columns:
@@ -952,79 +844,66 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/attr_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/attr_type
       bool_value:
         Type: boolean
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       int_value:
         Type: int
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       long_value:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       double_value:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       string_value:
         Type: text
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       int_arr_value:
         Type: int[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       long_arr_value:
         Type: bigint[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       string_arr_value:
         Type: text[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       double_arr_value:
         Type: float8[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       json_value:
         Type: jsonb
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
   metric:
     intro: null
     columns:
@@ -1033,73 +912,61 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/metric_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/metric_type
       provider_oid:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       key:
         Type: text
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       current:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       capacity:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       utilization:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       consumed:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       peak_current:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       peak_consumed:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       entity_type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
   metric_old:
     intro: null
     columns:
@@ -1108,61 +975,51 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_hash:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/metric_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/metric_type
       current:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       capacity:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       utilization:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       consumed:
         Type: double precision
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       provider_oid:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       key:
         Type: text
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
   pending_action:
     intro: null
     columns:
@@ -1171,55 +1028,46 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       action_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       type:
-        Type: enum
+        Type: /enums/action_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_type
       severity:
-        Type: enum
+        Type: /enums/severity
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/severity
       category:
-        Type: enum
+        Type: /enums/action_category
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/action_category
       target_entity_id:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       involved_entities:
         Type: bigint[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       description:
         Type: text
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       savings:
         Type: double precision
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       attrs:
         Type: jsonb
         Nullable: true
@@ -1234,67 +1082,56 @@ tables:
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       scope_oid:
         Type: bigint
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       entity_type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
       environment_type:
-        Type: enum
+        Type: /enums/environment_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/environment_type
       action_group:
         Type: int
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       prior_action_count:
         Type: int
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       cleared_action_count:
         Type: int
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       new_action_count:
         Type: int
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       involved_entity_count:
         Type: int
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       savings:
         Type: real
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
       investments:
         Type: real
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   run_health_checks:
     intro: null
     columns:
@@ -1303,19 +1140,16 @@ tables:
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       passed:
         Type: boolean
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       messages:
         Type: text[]
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
   scope:
     intro: null
     columns:
@@ -1324,31 +1158,26 @@ tables:
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       scoped_oid:
         Type: bigint
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       scoped_type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
       start:
         Type: timestamp with time zone
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       finish:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   scope_old:
     intro: null
     columns:
@@ -1357,31 +1186,26 @@ tables:
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       scoped_oid:
         Type: bigint
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       scoped_type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: false
         Primary: false
         Description: null
-        Reference: /enums/entity_type
       start:
         Type: timestamp with time zone
         Nullable: false
         Primary: true
         Description: null
-        Reference: null
       finish:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
         Description: null
-        Reference: null
   scope_to:
     intro: null
     columns:
@@ -1390,25 +1214,21 @@ tables:
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       from_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       to_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       seed:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
   scope_to_types:
     intro: null
     columns:
@@ -1417,31 +1237,26 @@ tables:
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       from_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       to_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       seed:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       e_type:
-        Type: enum
+        Type: /enums/entity_type
         Nullable: true
         Primary: false
         Description: null
-        Reference: /enums/entity_type
   wasted_file:
     intro: null
     columns:
@@ -1450,31 +1265,26 @@ tables:
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       file_size_kb:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       modification_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       storage_oid:
         Type: bigint
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
       storage_name:
         Type: text
         Nullable: true
         Primary: false
         Description: null
-        Reference: null
 shared:
   entity.attrs:
     intro: null
@@ -1510,7 +1320,7 @@ shared:
       num_cpus:
         Description: null
         Type: NUMBER
-        SupportedEntityTypes: PHYSICAL_MACHINE
+        SupportedEntityTypes: VIRTUAL_MACHINE
       tags:
         Description: null
         Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
@@ -1534,15 +1344,15 @@ shared:
       dynamic:
         Description: null
         Type: BOOLEAN
-        SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
       member_types:
         Description: null
         Type: MULTI_TEXT
-        SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
       origin:
         Description: null
         Type: TEXT
-        SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedEntityTypes: BILLING_FAMILY,K8S_CLUSTER,COMPUTE_CLUSTER,RESOURCE_GROUP,GROUP,STORAGE_CLUSTER
       tags:
         Description: null
         Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
@@ -1570,57 +1380,6 @@ shared:
       type:
         Description: null
         Type: String
-  CommodityChange:
-    intro: null
-    fields:
-      attribute:
-        Description: null
-        Type: String
-      commodityType:
-        Description: null
-        Type: /enums/metric_type
-      from:
-        Description: null
-        Type: Float
-      percentileChange:
-        Description: null
-        Type: /shared/CommodityPercentileChange
-      target:
-        Description: null
-        Type: /shared/ActionEntity
-      to:
-        Description: null
-        Type: Float
-      unit:
-        Description: null
-        Type: String
-  CommodityPercentileChange:
-    intro: null
-    fields:
-      after:
-        Description: null
-        Type: Double
-      aggressiveness:
-        Description: null
-        Type: Integer
-      before:
-        Description: null
-        Type: Double
-      observationPeriodDays:
-        Description: null
-        Type: Integer
-  ActionEntity:
-    intro: null
-    fields:
-      oid:
-        Description: null
-        Type: Long
-      name:
-        Description: null
-        Type: String
-      type:
-        Description: null
-        Type: /enums/entity_type
   ActionImpactedEntity:
     intro: null
     fields:
@@ -1715,6 +1474,18 @@ shared:
       target:
         Description: null
         Type: /shared/ActionEntity
+  ActionEntity:
+    intro: null
+    fields:
+      oid:
+        Description: null
+        Type: Long
+      name:
+        Description: null
+        Type: String
+      type:
+        Description: null
+        Type: /enums/entity_type
   MoveChange:
     intro: null
     fields:
@@ -1728,6 +1499,45 @@ shared:
       to:
         Description: null
         Type: /shared/ActionImpactedEntity
+  CommodityChange:
+    intro: null
+    fields:
+      attribute:
+        Description: null
+        Type: String
+      commodityType:
+        Description: null
+        Type: /enums/metric_type
+      from:
+        Description: null
+        Type: Float
+      percentileChange:
+        Description: null
+        Type: /shared/CommodityPercentileChange
+      target:
+        Description: null
+        Type: /shared/ActionEntity
+      to:
+        Description: null
+        Type: Float
+      unit:
+        Description: null
+        Type: String
+  CommodityPercentileChange:
+    intro: null
+    fields:
+      after:
+        Description: null
+        Type: Double
+      aggressiveness:
+        Description: null
+        Type: Integer
+      before:
+        Description: null
+        Type: Double
+      observationPeriodDays:
+        Description: null
+        Type: Integer
   DeleteInfo:
     intro: null
     fields:
@@ -1926,7 +1736,7 @@ exporter:
         MapKeyType: String
       serviceList:
         Description: null
-        Type: String
+        Type: /exporter/String
         Repeated: true
   EntityCost:
     intro: null
