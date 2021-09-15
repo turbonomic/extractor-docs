@@ -337,205 +337,205 @@ enums:
     intro: null
     items:
       ACTIVE_SESSIONS:
-        Notes: <p>Count of the number of actively logged in sessions</p>
+        Notes:  Count of the number of actively logged in sessions 
         Unit: Count
       BALLOONING:
-        Notes: <p>Number of kb the host is dedicated for ballooning</p>
+        Notes:  Number of kb the host is dedicated for ballooning 
         Unit: kilobytes
       BUFFER_COMMODITY:
-        Notes: <p>Utilization of a port buffer (fabric, UCS specific)</p>
+        Notes:  Utilization of a port buffer (fabric, UCS specific) 
         Unit: megabytes
       CONNECTION:
-        Notes: <p>Number of connections onto the application</p>
+        Notes:  Number of connections onto the application 
         Unit: Count
       COOLING:
         Notes: null
         Unit: null
       CPU:
-        Notes: <p>For Physical machine - usage of CPU (current column)</p> <p>For VM - consumed CPU on the host (consumed column)</p>
+        Notes:  For Physical machine - usage of CPU (current column).    For VM - consumed CPU on the host (consumed column). 
         Unit: MHz
       CPU_ALLOCATION:
-        Notes: <p>For VMs (consumed column) - VM buys from VDC or from desktop pool (VDI)</p><p>For PMs - PMs sells to VDCs</p>
+        Notes:  For VMs (consumed column) - VM buys from VDC or from desktop pool (VDI).   For PMs - PMs sells to VDCs. 
         Unit: MHz
       CPU_HEADROOM:
-        Notes: <p>Number of VMs that can fit in all of the available  CPU (on a cluster)</p>
+        Notes:  Number of VMs that can fit in all of the available  CPU (on a cluster) 
         Unit: Count
       CPU_PROVISIONED:
-        Notes: <p>Capacity is based on the over-provisioned value in policy</p>
+        Notes:  Capacity is based on the over-provisioned value in policy 
         Unit: MHz
       CPU_READY:
-        Notes: <p>Ready queue</p>
+        Notes:  Ready queue 
         Unit: ms
       DB_CACHE_HIT_RATE:
-        Notes: <p>The percentage of accesses that result in cache hits.</p>
+        Notes:  The percentage of accesses that result in cache hits. 
         Unit: Percentage
       DB_MEM:
-        Notes: <p>DB mem utilization or DM capacity</p>
+        Notes:  DB mem utilization or DM capacity 
         Unit: kilobytes
       DTU:
-        Notes: <p>Capacity defined in the cloud</p>
+        Notes:  Capacity defined in the cloud 
         Unit: Count
       EXTENT:
-        Notes: <p>Internal</p>
+        Notes:  Internal 
         Unit: NA
       FLOW:
-        Notes: <p>Amount of network traffic per second between two nodes</p>
+        Notes:  Amount of network traffic per second between two nodes 
         Unit: kilobytes/sec
       FLOW_ALLOCATION:
-        Notes: <p></p>
+        Notes:   
         Unit: bytes
       HEAP:
-        Notes: <p>Amount of heap configured for an application</p>
+        Notes:  Amount of heap configured for an application 
         Unit: kilobytes
       IMAGE_CPU:
-        Notes: <p>For VDI, usage of the business user</p>
+        Notes:  For VDI, usage of the business user 
         Unit: MHz
       IMAGE_MEM:
-        Notes: <p>For VDI, usage of the business user</p>
+        Notes:  For VDI, usage of the business user 
         Unit: kilobytes
       IMAGE_STORAGE:
-        Notes: <p>For VDI, usage of the business user</p>
+        Notes:  For VDI, usage of the business user 
         Unit: megabytes
       IO_THROUGHPUT:
-        Notes: <p>Amount of traffic through the IO adapter</p>
+        Notes:  Amount of traffic through the IO adapter 
         Unit: kilobytes/sec
       MEM:
-        Notes: <p>Physical machine - usage of memory</p><p>VM - consumed memory</p>
+        Notes:  Physical machine - usage of memory.   VM - consumed memory. 
         Unit: kilobytes
       MEM_ALLOCATION:
-        Notes: <p>Physical machine - what the host provides to VDCs</p><p>VM (consumed column) - what the VM buys from VDC or desktop pool</p>
+        Notes:  Physical machine - what the host provides to VDCs.   VM (consumed column) - what the VM buys from VDC or desktop pool. 
         Unit: kilobytes
       MEM_HEADROOM:
-        Notes: <p>Number of VMs that can fit in the available memory on the cluster</p>
+        Notes:  Number of VMs that can fit in the available memory on the cluster 
         Unit: Count
       MEM_PROVISIONED:
-        Notes: <p>Capacity, based on the over-provisioned value in policy</p>
+        Notes:  Capacity, based on the over-provisioned value in policy 
         Unit: kilobytes
       NET_THROUGHPUT:
-        Notes: <p>Amount of traffic through the Network adapter</p>
+        Notes:  Amount of traffic through the Network adapter 
         Unit: kilobytes/sec
       POOL_CPU:
-        Notes: <p>For VDI, usage of the desktop pool</p>
+        Notes:  For VDI, usage of the desktop pool 
         Unit: MHz
       POOL_MEM:
-        Notes: <p>For VDI, usage of the desktop pool</p>
+        Notes:  For VDI, usage of the desktop pool 
         Unit: kilobytes
       POOL_STORAGE:
-        Notes: <p>For VDI, usage of the desktop pool</p>
+        Notes:  For VDI, usage of the desktop pool 
         Unit: megabytes
       PORT_CHANEL:
-        Notes: <p>Traffic on ports for UCS Mgr/HPE1</p>
+        Notes:  Traffic on ports for UCS Mgr/HPE1 
         Unit: kilobytes/sec
       POWER:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: null
       Q16_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q1_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q2_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q32_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q3_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q4_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q5_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q64_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q6_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q7_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       Q8_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       QN_VCPU:
-        Notes: <p>VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.</p><p>Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs.</p>
+        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
         Unit: ms
       REMAINING_GC_CAPACITY:
-        Notes: <p>Percentage of time not spent on garbage collection</p>
+        Notes:  Percentage of time not spent on garbage collection 
         Unit: Percentage
       RESPONSE_TIME:
-        Notes: <p>Application response</p>
+        Notes:  Application response 
         Unit: ms
       SLA_COMMODITY:
-        Notes: <p>User-defined value</p>
+        Notes:  User-defined value 
         Unit: Number
       STORAGE_ACCESS:
-        Notes: <p>Count of the number of I/O (read + write) within two discovery cycles</p>
+        Notes:  Count of the number of I/O (read + write) within two discovery cycles 
         Unit: count
       STORAGE_ALLOCATION:
-        Notes: <p>Allocated storage</p>
+        Notes:  Allocated storage 
         Unit: megabytes
       STORAGE_AMOUNT:
-        Notes: <p>Used storage</p>
+        Notes:  Used storage 
         Unit: megabytes
       STORAGE_HEADROOM:
-        Notes: <p>Count of VM that can fit for the storage in a cluster in terms of storage</p>
+        Notes:  Count of VM that can fit for the storage in a cluster in terms of storage 
         Unit: Count
       STORAGE_LATENCY:
-        Notes: <p>Acceptable latency. User can set capacity for most storage, is discovered for NetApp.</p>
+        Notes:  Acceptable latency. User can set capacity for most storage, is discovered for NetApp. 
         Unit: ms
       STORAGE_PROVISIONED:
-        Notes: <p>Capacity, based on the over-provisioned value in policy</p>
+        Notes:  Capacity, based on the over-provisioned value in policy 
         Unit: megabytes
       SWAPPING:
-        Notes: <p>Memory swapping</p>
+        Notes:  Memory swapping 
         Unit: bytes/sec
       THREADS:
-        Notes: <p>Threads in use</p>
+        Notes:  Threads in use 
         Unit: Count
       TOTAL_HEADROOM:
-        Notes: <p>Min value of CPU, Mem, IO, of the headrooms</p>
+        Notes:  Min value of CPU, Mem, IO, of the headrooms 
         Unit: Count
       TOTAL_SESSIONS:
-        Notes: <p>Total number of possible sessions</p>
+        Notes:  Total number of possible sessions 
         Unit: Count
       TRANSACTION:
-        Notes: <p>Transactions for the application</p>
+        Notes:  Transactions for the application 
         Unit: transactions/sec
       TRANSACTION_LOG:
-        Notes: <p>Size of the transaction log</p>
+        Notes:  Size of the transaction log 
         Unit: megabytes
       VCPU:
-        Notes: <p>CPU for the VM</p>
+        Notes:  CPU for the VM 
         Unit: MHz
       VCPU_LIMIT_QUOTA:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: millicores
       VCPU_REQUEST:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: millicores
       VCPU_REQUEST_QUOTA:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: millicores
       VMEM:
-        Notes: <p>Memory sold by a VM. Memory sold and bought for a container</p>
+        Notes:  Memory sold by a VM. Memory sold and bought for a container 
         Unit: kilobytes
       VMEM_LIMIT_QUOTA:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: kilobytes
       VMEM_REQUEST:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: kilobytes
       VMEM_REQUEST_QUOTA:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: kilobytes
       VSTORAGE:
-        Notes: <p>null</p>
+        Notes:  null 
         Unit: megabytes
   severity:
     intro: null
@@ -609,25 +609,25 @@ tables:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The category of the given action.
         Reference: /enums/action_category
       state:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: That action type.
         Reference: /enums/action_state
       mode:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action mode - automated, manual, etc.
         Reference: /enums/action_mode
       risks:
         Type: text[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: An array of strings to describe the risks that drive the action.
         Reference: null
   cloud_service_cost:
     intro: null
@@ -663,85 +663,85 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When analysis recommended the action.
         Reference: null
       acceptance_time:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: For manual actions, when the action was accepted for execution.
         Reference: null
       completion_time:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When the action completed. Can be for success or failure.
         Reference: null
       action_oid:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The ID of the action. Use this to get action details.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action type.
         Reference: /enums/action_type
       severity:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action severity.
         Reference: /enums/severity
       category:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action category.
         Reference: /enums/action_category
       target_entity_id:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The ID of the entity that the action affects. For example, for a VMem resize, the VM that is resized.
         Reference: null
       involved_entities:
         Type: bigint[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: An array of IDs for entities involved in the action. This includes the target entity.
         Reference: null
       description:
         Type: text
         Nullable: false
         Primary: false
-        Description: null
+        Description: The text description of the action.
         Reference: null
       savings:
         Type: double precision
         Nullable: false
         Primary: false
-        Description: null
+        Description: The cost savings this action results in. A negative savings indicates an investment.
         Reference: null
       final_state:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: Whether the action succeded or failed. 
         Reference: /enums/terminal_state
       final_message:
         Type: text
         Nullable: false
         Primary: false
-        Description: null
+        Description: A message for the final state. If the action failed, this should contain an error message.
         Reference: null
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: null
+        Description: Additional (often type-specific) info for the action. For example, in resizes this will contain the commodity type and from/to amounts.
         Reference: /table_data/action.attrs
   entity:
     intro: null
@@ -750,43 +750,43 @@ tables:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: The entity ID.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The entity type.
         Reference: /enums/entity_type
       name:
         Type: text
         Nullable: false
         Primary: false
-        Description: null
+        Description: The current display name for the entity. While display names may change over time, this is always the most recent display name.
         Reference: null
       environment:
         Type: enum
         Nullable: true
         Primary: false
-        Description: null
+        Description: Whether the entity is in an on-prem, cloud, or hybrid environment.
         Reference: /enums/environment_type
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: null
+        Description: Additional data for the entity.
         Reference: /shared/entity.attrs|/shared/group.attrs
       first_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When the entity was first discovered in the topology.
         Reference: null
       last_seen:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When the entity last existed in the topology. For an entity that still exists, the value is 9999-12-31T23:59:59.
         Reference: null
   entity_cost:
     intro: null
@@ -801,25 +801,25 @@ tables:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The entity ID
         Reference: null
       category:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The cost category - IP service, storage service, on-demand or RI compute, etc.
         Reference: /enums/cost_category
       source:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The billing data that provides the cost.
         Reference: /enums/cost_source
       cost:
         Type: real
         Nullable: false
         Primary: false
-        Description: null
+        Description: The calculated cost.
         Reference: null
   entity_old:
     intro: null
@@ -906,25 +906,25 @@ tables:
         Type: text
         Nullable: false
         Primary: true
-        Description: null
+        Description: The path to the file.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The file type.
         Reference: /enums/file_type
       file_size_kb:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: null
+        Description: The file size in kb.
         Reference: null
       modification_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
-        Description: null
+        Description: Whn the file was last modified.
         Reference: null
       storage_oid:
         Type: bigint
@@ -951,79 +951,79 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When this attribute was recorded.
         Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The ID of the entity this attribute pertains to.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The attribute type.
         Reference: /enums/attr_type
       bool_value:
         Type: boolean
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is boolean, the boolean value.
         Reference: null
       int_value:
         Type: int
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is an integer, the integer value. If the attribute is an enum, this is the OID of the enum in the pg_enum table (to guard against name or order changes). The int_value should be castable to the enum via a custom cast (e.g. int_value::entity_state = 'POWERED_ON').
         Reference: null
       long_value:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a long, the long value.
         Reference: null
       double_value:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a double, the double value.
         Reference: null
       string_value:
         Type: text
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a string, the string value.
         Reference: null
       int_arr_value:
         Type: int[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a list of ints, the list values. If the attribute is a list of enums, these are the OIDs of the enums in the pg_enum table (to guard against name or order changes).
         Reference: null
       long_arr_value:
         Type: bigint[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a list of longs, the long values.
         Reference: null
       string_arr_value:
         Type: text[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a list of strings, the string values.
         Reference: null
       double_arr_value:
         Type: float8[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a list of doubles, the double values.
         Reference: null
       json_value:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: null
+        Description: If the attribute is a JSON object, the given object.
         Reference: null
   metric:
     intro: null
@@ -1032,73 +1032,73 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When analysis discovered thIS metric. For headroom metrics, when the headroom plan was created.
         Reference: null
       entity_oid:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The ID of the entity this metric pertains to.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The metric type.
         Reference: /enums/metric_type
       provider_oid:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: null
+        Description: The ID of the entity that provides this metric. For example, for VMem, the ID of the host that provides the memory.
         Reference: null
       key:
         Type: text
         Nullable: true
         Primary: false
-        Description: null
+        Description: The commodity key. This value can be null if no key is present.
         Reference: null
       current:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: Current utilization of commodity in provider entity.
         Reference: null
       capacity:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: The capacity of the commodity in the provider entity.
         Reference: null
       utilization:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: Overall utilization of the commodity in the provider entity.
         Reference: null
       consumed:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: Amount of commodity currently used by consumer entity.
         Reference: null
       peak_current:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: Peak amount of current used commodity in the provider entity.
         Reference: null
       peak_consumed:
         Type: double precision
         Nullable: true
         Primary: false
-        Description: null
+        Description: Peak amount of commodity currently used by the consumer entity.
         Reference: null
       entity_type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The type of the consumer entity.
         Reference: /enums/entity_type
   metric_old:
     intro: null
@@ -1170,61 +1170,61 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: When analysis recommended this action.
         Reference: null
       action_oid:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action ID. Use this to get more action details.
         Reference: null
       type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: the action type.
         Reference: /enums/action_type
       severity:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action severity
         Reference: /enums/severity
       category:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The action category
         Reference: /enums/action_category
       target_entity_id:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: The ID of the entity this action affects.
         Reference: null
       involved_entities:
         Type: bigint[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: An array of IDs for all the entities involved in the action. Includes the target entity.
         Reference: null
       description:
         Type: text
         Nullable: false
         Primary: false
-        Description: null
+        Description: The text description of the action.
         Reference: null
       savings:
         Type: double precision
         Nullable: false
         Primary: false
-        Description: null
+        Description: The cost savings this action results in. A negative savings indicates an investment.
         Reference: null
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: null
+        Description: Additional (often type-specific) info for the action. For example, in resizes this will contain the commodity type and from/to amounts.
         Reference: /table_data/action.attrs
   pending_action_stats:
     intro: null
@@ -1302,19 +1302,19 @@ tables:
         Type: text
         Nullable: true
         Primary: false
-        Description: null
+        Description: The display name of the health check.
         Reference: null
       passed:
         Type: boolean
         Nullable: true
         Primary: false
-        Description: null
+        Description: Whether the health check passed or failed.
         Reference: null
       messages:
         Type: text[]
         Nullable: true
         Primary: false
-        Description: null
+        Description: The text description of the health check results.
         Reference: null
   scope:
     intro: null
@@ -1323,31 +1323,31 @@ tables:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: The ID of the entity whose scope is the subject of the given record. For example, for a cluster-to-host relationship, the seed can be the cluster, and the scoped entity would be the host.
         Reference: null
       scoped_oid:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: ID of the entity that is part of the seed scope.
         Reference: null
       scoped_type:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: Entity type for the scoped entity.
         Reference: /enums/entity_type
       start:
         Type: timestamp with time zone
         Nullable: false
         Primary: true
-        Description: null
+        Description: When this relationship first appeared in the topology. This covers the initial appearance, or an appearance after a gap (the relationship was temporarily broken). 
         Reference: null
       finish:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: null
+        Description: WHEN this relationship LAST appeared IN THE TOPOLOGY. A value of 9999-12-31T23:59:59 means the relationship is not yet known to have terminated.
         Reference: null
   scope_old:
     intro: null
@@ -1449,79 +1449,79 @@ tables:
         Type: text
         Nullable: true
         Primary: false
-        Description: null
+        Description: The file path.
         Reference: null
       file_size_kb:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: null
+        Description: The file size.
         Reference: null
       modification_time:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
-        Description: null
+        Description: When the file was last modified.
         Reference: null
       storage_oid:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: null
+        Description: The ID of the storage that contains the file.
         Reference: null
       storage_name:
         Type: text
         Nullable: true
         Primary: false
-        Description: null
+        Description: The name of the storage (denormalized for reporting).
         Reference: null
 shared:
   entity.attrs:
     intro: null
     fields:
       attachment_state:
-        Description: null
+        Description: Whether a given volume is attached or unattached.
         Type: /enums/AttachmentState
         SupportedEntityTypes: VIRTUAL_VOLUME
       connected_networks:
-        Description: null
+        Description: A list of network names that a given VM is connected to.
         Type: MULTI_TEXT
         SupportedEntityTypes: VIRTUAL_MACHINE
       cpu_model:
-        Description: null
+        Description: For a physical host, the model of CPU on that host.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
       guest_os_name:
-        Description: null
+        Description: The name of the OS running on a given VM.
         Type: TEXT
         SupportedEntityTypes: VIRTUAL_MACHINE
       guest_os_type:
-        Description: null
+        Description: The specific type for the OS running on a given VM.
         Type: /enums/OSType
         SupportedEntityTypes: VIRTUAL_MACHINE
       is_local:
-        Description: null
+        Description: Whether a storage is local to the machine, or networked.
         Type: BOOLEAN
         SupportedEntityTypes: STORAGE
       model:
-        Description: null
+        Description: The specific model of the given physical host.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
       num_cpus:
-        Description: null
+        Description: The number of CPUs on the given physical host.
         Type: NUMBER
         SupportedEntityTypes: PHYSICAL_MACHINE
       tags:
-        Description: null
+        Description: A list of tags that are assigned to the given entity. 
         Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
         SupportedEntityTypes: ALL
       targets:
-        Description: null
+        Description: The target that manages the given entity.
         Type: /shared/Target
         SupportedEntityTypes: ALL
         Repeated: true
       timezone:
-        Description: null
+        Description: The timezone that is set for the clock on the physical machine.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
       vendor_id:
