@@ -12,25 +12,9 @@
     
     <xsl:template match="Type">
         <xsl:element name="html">
-            
             <xsl:element name="body">
                 <xsl:apply-templates/>
-                <!--
-                <xsl:choose>
-                    <xsl:when test="./@type='exporter' or ./@type='shared' or ./@type='table_data' or ./@type='tables'">
-                        
-                        <xsl:element name="h1">
-                            <xsl:value-of select="./Title"/>
-                        </xsl:element>
-                        
-                        <xsl:apply-templates/>
-                        
-                    </xsl:when>
-                    <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
-                </xsl:choose>
-                -->
             </xsl:element>
-            
         </xsl:element>
     </xsl:template>
     
@@ -116,18 +100,6 @@
                     <xsl:apply-templates/>
                 </xsl:element>
             </xsl:when>
-            <!--
-            <xsl:when test="../../@type='table'">
-                <xsl:element name="tr">
-                    <xsl:element name="td">
-                        <xsl:element name="p">
-                            <xsl:value-of select="@name" />
-                        </xsl:element>
-                    </xsl:element>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:when>
-            -->
             
             
             <xsl:when test="../../@type='table'">
@@ -187,12 +159,17 @@
                 <xsl:element name="a">
                     <xsl:variable name="ref" select="substring-after(., '/')"/>
                     <xsl:variable name="name" select="substring-after($ref, '/')"/>
-                    <xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
-                    <!--
-                    <xsl:attribute name="href"><xsl:text>../</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
-                    -->
-                    <!--<xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>-->
+                    
+                    <xsl:choose>
+                        <xsl:when test="ancestor::Type/@level='page'">
+                            <xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:attribute name="href"><xsl:text>../</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:value-of select="$name"/>
+                    
                 </xsl:element>
             </xsl:when>
             
@@ -208,19 +185,16 @@
     <xsl:template match="xref">
         <xsl:element name="a">
             <xsl:variable name="ref" select="@href"/>
-            <xsl:attribute name="href"><xsl:text>..</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
-            <!--
+            
+            
             <xsl:choose>
-                <xsl:when test="starts-with(@href, '/')">
-                    <xsl:variable name="ref" select="substring-after(@href, '/')"/>
-                    <xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                <xsl:when test="ancestor::Type/@level='page'">
+                    <xsl:attribute name="href"><xsl:text>.</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:variable name="ref" select="@href"/>
-                    <xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                    <xsl:attribute name="href"><xsl:text>..</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
                 </xsl:otherwise>
             </xsl:choose>
-            -->
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
@@ -234,28 +208,3 @@
     
     
 </xsl:transform>
-
-<!--
-    <xsl:template match="Item">
-        <xsl:element name="li">
-            <xsl:element name="p">
-                <xsl:value-of select="@name" />
-            </xsl:element>
-            <xsl:element name="ul">
-                <xsl:apply-templates/>
-            </xsl:element>
-        </xsl:element>
-    </xsl:template>
-    
-    <xsl:template match="Field">
-        <xsl:element name="li">
-            <xsl:element name="p">
-                <xsl:value-of select="@name" />
-            </xsl:element>
-            <xsl:element name="p">
-                <xsl:apply-templates/>
-            </xsl:element>
-            <xsl:apply-templates/>
-        </xsl:element>
-    </xsl:template>
-    -->

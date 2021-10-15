@@ -1980,6 +1980,7 @@ exporter:
       Type: String
       Format: yyyy-MM-dd'T'HH:mm:ss'Z'
   Action:
+    level: page
     intro: null
     fields:
       buyRiInfo:
@@ -2101,6 +2102,7 @@ exporter:
         MapKeyType: null
         Reference: /enums/action_type
   Entity:
+    level: page
     intro: null
     fields:
       accountExpenses:
