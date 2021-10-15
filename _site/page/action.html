@@ -5,7 +5,7 @@
   <title page-title>Data Exporter</title>
   
   
-  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  <link href="http://localhost:4001/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -135,8 +135,305 @@ two top-level fields:</p>
 </pre>
 </details>
 
-<h2 id="common-entity-object-fields">Common Entity Object Fields</h2>
+<h2 id="common-action-object-fields">Common Action Object Fields</h2>
 <p>Every <code class="language-plaintext highlighter-rouge">action</code> object includes the following fields:</p>
+
+<html><body>
+  
+  <table><tbody><tr><th>JSON Object</th><th>Description</th><th>Type</th><th>Repeated</th><th>Format</th><th>MapKeyType</th><th>Reference</th></tr>
+    <tr><td>buyRiInfo</td>
+      <td></td>
+      <td>
+        <p><a href="shared/BuyRiInfo">BuyRiInfo</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/BuyRiInfo.html">BuyRiInfo</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>category</td>
+      <td>
+        <p>The category of action.</p>
+      </td>
+      <td>
+        <p><a href="enums/action_category">action_category</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../enums/action_category.html">action_category</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>creationTime</td>
+      <td>
+        <p>When analysis created the action.</p>
+      </td>
+      <td>
+        <p>String</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>yyyy-MM-dd'T'HH:mm:ss'Z'</p>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr><td>deleteInfo</td>
+      <td></td>
+      <td>
+        <p><a href="shared/DeleteInfo">DeleteInfo</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/DeleteInfo.html">DeleteInfo</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>description</td>
+      <td>
+        <p>The description that analysis generates for the action.</p>
+      </td>
+      <td>
+        <p>String</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr><td>explanation</td>
+      <td>
+        <p>The condition that the action is addressing. For example, Q2 VCPU CONGESTION.</p>
+      </td>
+      <td>
+        <p>String</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr><td>mode</td>
+      <td>
+        <p>The mode for the action execution.</p>
+      </td>
+      <td>
+        <p><a href="enums/action_mode">action_mode</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../enums/action_mode.html">action_mode</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>moveInfo</td>
+      <td>
+        <p>Information to describe a MOVE action.</p>
+      </td>
+      <td>
+        <p><a href="shared/MoveChange">MoveChange</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/MoveChange.html">MoveChange</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>oid</td>
+      <td>
+        <p>The action object identifier.</p>
+      </td>
+      <td>
+        <p>Long</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr><td>related</td>
+      <td>
+        <p>An array of entities or groups that are related to the target entity.</p>
+      </td>
+      <td>
+        <p><a href="exporter/RelatedEntity">RelatedEntity</a></p>
+      </td>
+      <td>
+        <p><a href="enums/entity_type">entity_type</a></p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>
+          <a href="../exporter/RelatedEntity.html">RelatedEntity</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>resizeInfo</td>
+      <td>
+        <p>Information to describe a RESIZE action.</p>
+      </td>
+      <td>
+        <p><a href="shared/CommodityChange">CommodityChange</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/CommodityChange.html">CommodityChange</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>savings</td>
+      <td>
+        <p>The cost change for the action.</p>
+      </td>
+      <td>
+        <p><a href="exporter/CostAmount">CostAmount</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../exporter/CostAmount.html">CostAmount</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>scaleInfo</td>
+      <td>
+        <p>Information to describe a SCALE action.</p>
+      </td>
+      <td>
+        <p><a href="shared/MoveChange">MoveChange</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/MoveChange.html">MoveChange</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>severity</td>
+      <td>
+        <p>For a given action, the severity of the issue that it addresses.</p>
+      </td>
+      <td>
+        <p><a href="enums/severity">severity</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../enums/severity.html">severity</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>state</td>
+      <td>
+        <p>The different states for the action, such as completed or pending.</p>
+      </td>
+      <td>
+        <p><a href="enums/action_state">action_state</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../enums/action_state.html">action_state</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>target</td>
+      <td>
+        <p>The entity that the action operates on.</p>
+      </td>
+      <td>
+        <p><a href="shared/ActionImpactedEntity">ActionImpactedEntity</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../shared/ActionImpactedEntity.html">ActionImpactedEntity</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>type</td>
+      <td>
+        <p>The action type.</p>
+      </td>
+      <td>
+        <p><a href="enums/action_type">action_type</a></p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <p>
+          <a href="../enums/action_type.html">action_type</a>
+        </p>
+      </td>
+    </tr>
+  </tbody></table>
+</body></html>
+
+<!--
 <details>
 <summary>Click to Show/Hide:</summary>
 <ul>
@@ -144,135 +441,150 @@ two top-level fields:</p>
 <li><p><code>creationTime</code>: When Turbonomic created the action.</p></li>
 <li><p><code>type</code>: The action type. Can be one of:</p>
 <html><body>
-	
-	<ul>
-		<li><p><code>ACTIVATE</code>:
-			
-		</p></li>
-		<li><p><code>ALLOCATE</code>:
-			
-		</p></li>
-		<li><p><code>BUY_RI</code>:
-			
-		</p></li>
-		<li><p><code>DEACTIVATE</code>:
-			
-		</p></li>
-		<li><p><code>DELETE</code>:
-			
-		</p></li>
-		<li><p><code>MOVE</code>:
-			
-		</p></li>
-		<li><p><code>NONE</code>:
-			
-		</p></li>
-		<li><p><code>PROVISION</code>:
-			
-		</p></li>
-		<li><p><code>RECONFIGURE</code>:
-			
-		</p></li>
-		<li><p><code>RESIZE</code>:
-			
-		</p></li>
-		<li><p><code>SCALE</code>:
-			
-		</p></li>
-		<li><p><code>START</code>:
-			
-		</p></li>
-		<li><p><code>SUSPEND</code>:
-			
-		</p></li>
-	</ul>
+  
+  <ul>
+    <li><p><code>ACTIVATE</code>:</p>
+      
+    </li>
+    <li><p><code>ALLOCATE</code>:</p>
+      
+    </li>
+    <li><p><code>BUY_RI</code>:</p>
+      
+    </li>
+    <li><p><code>DEACTIVATE</code>:</p>
+      
+    </li>
+    <li><p><code>DELETE</code>:</p>
+      
+    </li>
+    <li><p><code>MOVE</code>:</p>
+      
+    </li>
+    <li><p><code>NONE</code>:</p>
+      
+    </li>
+    <li><p><code>PROVISION</code>:</p>
+      
+    </li>
+    <li><p><code>RECONFIGURE</code>:</p>
+      
+    </li>
+    <li><p><code>RESIZE</code>:</p>
+      
+    </li>
+    <li><p><code>SCALE</code>:</p>
+      
+    </li>
+    <li><p><code>START</code>:</p>
+      
+    </li>
+    <li><p><code>SUSPEND</code>:</p>
+      
+    </li>
+  </ul>
 </body></html>
 </li>
 <li><p><code>state</code>: The state the action is in at the time the JASON object is created. Can be one of:</p></li>
 <html><body>
-	
-	<ul>
-		<li><p><code>ACCEPTED</code>:
-			
-		</p></li>
-		<li><p><code>CLEARED</code>:
-			
-		</p></li>
-		<li><p><code>FAILED</code>:
-			
-		</p></li>
-		<li><p><code>FAILING</code>:
-			
-		</p></li>
-		<li><p><code>IN_PROGRESS</code>:
-			
-		</p></li>
-		<li><p><code>POST_IN_PROGRESS</code>:
-			
-		</p></li>
-		<li><p><code>PRE_IN_PROGRESS</code>:
-			
-		</p></li>
-		<li><p><code>QUEUED</code>:
-			
-		</p></li>
-		<li><p><code>READY</code>:
-			
-		</p></li>
-		<li><p><code>REJECTED</code>:
-			
-		</p></li>
-		<li><p><code>SUCCEEDED</code>:
-			
-		</p></li>
-	</ul>
+  
+  <ul>
+    <li><p><code>ACCEPTED</code>:</p>
+      
+    </li>
+    <li><p><code>CLEARED</code>:</p>
+      
+    </li>
+    <li><p><code>FAILED</code>:</p>
+      
+    </li>
+    <li><p><code>FAILING</code>:</p>
+      
+    </li>
+    <li><p><code>IN_PROGRESS</code>:</p>
+      
+    </li>
+    <li><p><code>POST_IN_PROGRESS</code>:</p>
+      
+    </li>
+    <li><p><code>PRE_IN_PROGRESS</code>:</p>
+      
+    </li>
+    <li><p><code>QUEUED</code>:</p>
+      
+    </li>
+    <li><p><code>READY</code>:</p>
+      
+    </li>
+    <li><p><code>REJECTED</code>:</p>
+      
+    </li>
+    <li><p><code>SUCCEEDED</code>:</p>
+      
+    </li>
+  </ul>
 </body></html>
 <li><p><code>mode</code>: The mode for the action execution. Can be one of:</p>
-<ul>
-<li><p><code>AUTOMATIC</code></p></li>
-<li><p><code>MANUAL</code></p></li>
-<li><p><code>RECOMMEND</code></p></li>
-</ul>
+<html><body>
+  
+  <ul>
+    <li><p><code>AUTOMATIC</code>:</p>
+      
+    </li>
+    <li><p><code>DISABLED</code>:</p>
+      
+    </li>
+    <li><p><code>EXTERNAL_APPROVAL</code>:</p>
+      
+    </li>
+    <li><p><code>MANUAL</code>:</p>
+      
+    </li>
+    <li><p><code>RECOMMEND</code>:</p>
+      
+    </li>
+  </ul>
+</body></html>
 </li>
 <li><p><code>category</code>: The category of action. Can be one of:</p>
 <html><body>
-	
-	<ul>
-		<li><p><code>COMPLIANCE</code>:
-			
-		</p></li>
-		<li><p><code>EFFICIENCY_IMPROVEMENT</code>:
-			
-		</p></li>
-		<li><p><code>PERFORMANCE_ASSURANCE</code>:
-			
-		</p></li>
-		<li><p><code>PREVENTION</code>:
-			
-		</p></li>
-		<li><p><code>UNKNOWN</code>:
-			
-		</p></li>
-	</ul>
+  
+  <ul>
+    <li><p><code>COMPLIANCE</code>:</p>
+      
+    </li>
+    <li><p><code>EFFICIENCY_IMPROVEMENT</code>:</p>
+      
+    </li>
+    <li><p><code>PERFORMANCE_ASSURANCE</code>:</p>
+      
+    </li>
+    <li><p><code>PREVENTION</code>:</p>
+      
+    </li>
+    <li><p><code>UNKNOWN</code>:</p>
+      
+    </li>
+  </ul>
 </body></html>
 </li>
 <li><p><code>severity</code>: The severity of the action.  Can be one of:</p>
 <html><body>
-	
-	<ul>
-		<li><p><code>CRITICAL</code>:
-			
-		</p></li>
-		<li><p><code>MAJOR</code>:
-			
-		</p></li>
-		<li><p><code>MINOR</code>:
-			
-		</p></li>
-		<li><p><code>NORMAL</code>:
-			
-		</p></li>
-	</ul>
+  
+  <ul>
+    <li><p><code>CRITICAL</code>:</p>
+      
+    </li>
+    <li><p><code>MAJOR</code>:</p>
+      
+    </li>
+    <li><p><code>MINOR</code>:</p>
+      
+    </li>
+    <li><p><code>NORMAL</code>:</p>
+      
+    </li>
+  </ul>
 </body></html>
 </li>
 
@@ -306,6 +618,7 @@ two top-level fields:</p>
 </ul>
 
 </details>
+-->
 
 
           
@@ -323,27 +636,27 @@ two top-level fields:</p>
                 <ul>
                   
                   
-                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  <h5><a href="http://localhost:4001/index.html">DOCUMENTATION HOME</a></h5>
                   
                   
                   <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
+                        <li><a href="http://localhost:4001/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                          <li><a href="http://localhost:4001/page/entity-cost.html">Entity Cost Data</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
+                        <li><a href="http://localhost:4001/page/action.html">Action Object</a></li> 
                         
                         <ul>
                           
@@ -357,24 +670,24 @@ two top-level fields:</p>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        <li><a href="http://localhost:4001/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                          <li><a href="http://localhost:4001/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                          <li><a href="http://localhost:4001/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        <li><a href="http://localhost:4001/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
                         
                         <ul>
                           
@@ -388,7 +701,7 @@ two top-level fields:</p>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        <li><a href="http://localhost:4001/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

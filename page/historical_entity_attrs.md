@@ -4,7 +4,7 @@ title: historical_entity_attrs Table
 ---
 
 This table tracks the historical attributes associated with an entity. Each row represents the value of a particular attribute of an entity at a particular point in time. New rows are written when the value of a property changes between topologies, and at regular intervals (e.g. daily) to keep a recent value available within a reasonable time range.
-{% include genFiles/historical_entity_attrs.html %}
+{% include genFiles/tables/historical_entity_attrs.html %}
 
 ## Sample Use Cases
 

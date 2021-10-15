@@ -14,9 +14,11 @@
         <xsl:element name="html">
             
             <xsl:element name="body">
-                
+                <xsl:apply-templates/>
+                <!--
                 <xsl:choose>
                     <xsl:when test="./@type='exporter' or ./@type='shared' or ./@type='table_data' or ./@type='tables'">
+                        
                         <xsl:element name="h1">
                             <xsl:value-of select="./Title"/>
                         </xsl:element>
@@ -26,7 +28,7 @@
                     </xsl:when>
                     <xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
                 </xsl:choose>
-                
+                -->
             </xsl:element>
             
         </xsl:element>
@@ -185,7 +187,10 @@
                 <xsl:element name="a">
                     <xsl:variable name="ref" select="substring-after(., '/')"/>
                     <xsl:variable name="name" select="substring-after($ref, '/')"/>
+                    <xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                    <!--
                     <xsl:attribute name="href"><xsl:text>../</xsl:text><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>
+                    -->
                     <!--<xsl:attribute name="href"><xsl:value-of select="replace($ref, '.xml', '.html')"/></xsl:attribute>-->
                     <xsl:value-of select="$name"/>
                 </xsl:element>

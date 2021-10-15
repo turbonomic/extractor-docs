@@ -5,7 +5,7 @@
   <title page-title>Data Exporter</title>
   
   
-  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  <link href="http://localhost:4001/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -30,41 +30,88 @@
           <p>The Scope table tracks the association of two entities as they are related in each other’s scope. The <code class="language-plaintext highlighter-rouge">seed_oid</code> identifies the containing entity (the entity that defines the scope), and the <code class="language-plaintext highlighter-rouge">scoped_oid</code> identifies the entity that is within the given scope. This table is updated with each market cycle.</p>
 
 <html><body>
-	
-	<ul>
-		<li><p><code>seed_oid</code>: 
-			
-			
-			
-			oid of the entity whose scope is the subject of this record.
-		</p></li>
-		<li><p><code>scoped_oid</code>: 
-			
-			
-			
-			oid of the entity that is part of that scope.
-		</p></li>
-		<li><p><code>scoped_type</code>: 
-			
-			
-			
-			The type of entity.
-		</p></li>
-		<li><p><code>start</code>: 
-			
-			
-			
-			A timestamp for the first topology in which this relationship appeared. This covers the initial appearance, or a
-				reappearance after the relationship was temporarily broken.
-		</p></li>
-		<li><p><code>finish</code>: 
-			
-			
-			
-			A timestamp of last topology in which this relationship appeared. A value of 9999-12-31T23:59:59 means
-				the relationship is not yet known to have terminated.
-		</p></li>
-	</ul>
+  
+  <table><tbody><tr><th>Data Object</th><th>Type</th><th>Nullable</th><th>Primary</th><th>Description</th><th>Reference</th></tr>
+    <tr><td>seed_oid</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>The ID of the entity whose scope is the subject of the given record. For example, for a cluster-to-host relationship, the seed can be the cluster, and the scoped entity would be the host.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>scoped_oid</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>ID of the entity that is part of the seed scope.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>scoped_type</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Entity type for the scoped entity.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/entity_type.html">entity_type</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>start</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>When this relationship first appeared in the topology. This covers the initial appearance, or an appearance after a gap (the relationship was temporarily broken).</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>finish</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>WHEN this relationship LAST appeared IN THE TOPOLOGY. A value of 9999-12-31T23:59:59 means the relationship is not yet known to have terminated.</p>
+      </td>
+      <td></td>
+    </tr>
+  </tbody></table>
 </body></html>
 
 <h2 id="examples">Examples</h2>
@@ -190,27 +237,27 @@ group by cluster_name
                 <ul>
                   
                   
-                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  <h5><a href="http://localhost:4001/index.html">DOCUMENTATION HOME</a></h5>
                   
                   
                   <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
+                        <li><a href="http://localhost:4001/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                          <li><a href="http://localhost:4001/page/entity-cost.html">Entity Cost Data</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
+                        <li><a href="http://localhost:4001/page/action.html">Action Object</a></li> 
                         
                         <ul>
                           
@@ -224,24 +271,24 @@ group by cluster_name
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        <li><a href="http://localhost:4001/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                          <li><a href="http://localhost:4001/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                          <li><a href="http://localhost:4001/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        <li><a href="http://localhost:4001/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
                         
                         <ul>
                           
@@ -255,7 +302,7 @@ group by cluster_name
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        <li><a href="http://localhost:4001/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

@@ -5,7 +5,7 @@
   <title page-title>Data Exporter</title>
   
   
-  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  <link href="http://localhost:4001/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -31,104 +31,239 @@
 
 <p>This table does not contain “in progress” or “queued” actions.</p>
 <html><body>
-	
-	<ul>
-		<li><p><code>recommendation_time</code>: 
-			
-			
-			
-			The time the action was
-				recommended.
-		</p></li>
-		<li><p><code>acceptance_time</code>: 
-			
-			
-			
-			The time the action was accepted
-				for execution.
-		</p></li>
-		<li><p><code>completion_time</code>: 
-			
-			
-			
-			The time the action was completed.
-		</p></li>
-		<li><p><code>action_oid</code>: 
-			
-			
-			
-			The oid of the action in the system.
-		</p></li>
-		<li><p><code>type</code>: 
-			
-			
-			
-			The type of the action.
-		</p></li>
-		<li><p><code>severity</code>: 
-			
-			
-			
-			The severity of the action.
-		</p></li>
-		<li><p><code>category</code>: 
-			
-			
-			
-			The category of the action.
-		</p></li>
-		<li><p><code>target_entity_id</code>: 
-			
-			
-			
-			The oid of the target entity.
-		</p></li>
-		<li><p><code>involved_entities</code>: 
-			
-			
-			
-			The oids of the involved entities
-				(includes the target entity).
-		</p></li>
-		<li><p><code>description</code>: 
-			
-			
-			
-			The text description of the action.
-		</p></li>
-		<li><p><code>savings</code>: 
-			
-			
-			
-			Savings (or, if negative, investment) of the action.
-		</p></li>
-		<li><p><code>final_state</code>: 
-			
-			
-			
-			The final state of the action.
-		</p></li>
-		<li><p><code>final_message</code>: 
-			
-			
-			
-			Message associated with the final
-				state. Should contain an error
-				message if the action failed.
-		</p></li>
-		<li><p><code>attrs</code>: 
-			
-			
-			
-			Additional (often type-specific) information
-				for the action. For example, in
-					resizes this will contain the
-					commodity type and from/to
-					amounts.
-				
-				
-		</p></li>
-	</ul>
+  
+  <table><tbody><tr><th>Data Object</th><th>Type</th><th>Nullable</th><th>Primary</th><th>Description</th><th>Reference</th></tr>
+    <tr><td>recommendation_time</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>When analysis recommended the action.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>acceptance_time</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>For manual actions, when the action was accepted for execution.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>completion_time</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>When the action completed. Can be for success or failure.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>action_oid</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The ID of the action. Use this to get action details.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>type</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The action type.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/action_type.html">action_type</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>severity</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The action severity.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/severity.html">severity</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>category</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The action category.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/action_category.html">action_category</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>target_entity_id</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The ID of the entity that the action affects. For example, for a VMem resize, the VM that is resized.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>involved_entities</td>
+      <td>
+        <p>bigint[]</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>An array of IDs for entities involved in the action. This includes the target entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>description</td>
+      <td>
+        <p>text</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The text description of the action.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>savings</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The cost savings this action results in. A negative savings indicates an investment.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>final_state</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Whether the action succeded or failed.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/terminal_state.html">terminal_state</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>final_message</td>
+      <td>
+        <p>text</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>A message for the final state. If the action failed, this should contain an error message.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>attrs</td>
+      <td>
+        <p>jsonb</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Additional (often type-specific) info for the action. For example, in resizes this will contain the commodity type and from/to amounts.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../table_data/action.attrs.html">action.attrs</a>
+        </p>
+      </td>
+    </tr>
+  </tbody></table>
 </body></html>
 
 <h2 id="sample-use-cases">Sample Use Cases</h2>
@@ -150,27 +285,27 @@
                 <ul>
                   
                   
-                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  <h5><a href="http://localhost:4001/index.html">DOCUMENTATION HOME</a></h5>
                   
                   
                   <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
+                        <li><a href="http://localhost:4001/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                          <li><a href="http://localhost:4001/page/entity-cost.html">Entity Cost Data</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
+                        <li><a href="http://localhost:4001/page/action.html">Action Object</a></li> 
                         
                         <ul>
                           
@@ -184,24 +319,24 @@
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        <li><a href="http://localhost:4001/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                          <li><a href="http://localhost:4001/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                          <li><a href="http://localhost:4001/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        <li><a href="http://localhost:4001/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
                         
                         <ul>
                           
@@ -215,7 +350,7 @@
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        <li><a href="http://localhost:4001/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

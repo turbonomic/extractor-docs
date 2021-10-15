@@ -20,11 +20,15 @@ entity object has two top-level fields:
 
 ## Common Entity Object Fields
 Every `entity` object includes the following fields:
+
+{% include genFiles/exporter/Entity.html %}
+
+<!--
 <details>
 <summary>Click to Show/Hide:</summary>
-{% include genFiles/entity.html %}
+{% include genFiles/exporter/Entity.html %}
 </details>
-
+-->
 
 
 
@@ -33,7 +37,7 @@ Every `entity` object includes the following fields:
 {{ site.data.vars.Product_Short }} can export data for the following types of entities.
 <details>
 <summary>Click to Show/Hide:</summary>
-{% include genFiles/entity_type.html %}
+{% include genFiles/enums/entity_type.html %}
 </details>
 
 ## Metric Types:
@@ -42,7 +46,7 @@ For a given entity object, you will get the metric data that is appropriate for 
 This list is all the metric types that the Data Exporter supports.
 <details>
 <summary>Click to Show/Hide:</summary>
-{% include genFiles/metric_type.html %}
+{% include genFiles/enums/metric_type.html %}
 </details>
 
 
@@ -54,7 +58,7 @@ entities. The supported related types can be any of the supported entities, or a
 the group types listed here.
 <details>
 <summary>Click to Show/Hide:</summary>
-{% include genFiles/related_types.html %}
+{% include genFiles/exporter/RelatedEntity.html %}
 </details>
 
 

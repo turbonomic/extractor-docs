@@ -303,6 +303,8 @@ enums:
         Notes: null
       _NONE_:
         Notes: null
+      NODE_POOL:
+        Notes: null
   environment_type:
     intro: null
     items:
@@ -337,205 +339,245 @@ enums:
     intro: null
     items:
       ACTIVE_SESSIONS:
-        Notes:  Count of the number of actively logged in sessions 
+        Notes: Count of the number of actively logged in sessions
         Unit: Count
       BALLOONING:
-        Notes:  Number of kb the host is dedicated for ballooning 
+        Notes: Number of kb the host is dedicated for ballooning
         Unit: kilobytes
       BUFFER_COMMODITY:
-        Notes:  Utilization of a port buffer (fabric, UCS specific) 
+        Notes: Utilization of a port buffer (fabric, UCS specific)
         Unit: megabytes
       CONNECTION:
-        Notes:  Number of connections onto the application 
+        Notes: Number of connections onto the application
         Unit: Count
       COOLING:
         Notes: null
         Unit: null
       CPU:
-        Notes:  For Physical machine - usage of CPU (current column).    For VM - consumed CPU on the host (consumed column). 
+        Notes: For Physical machine - usage of CPU (current column).    For VM - consumed
+          CPU on the host (consumed column).
         Unit: MHz
       CPU_ALLOCATION:
-        Notes:  For VMs (consumed column) - VM buys from VDC or from desktop pool (VDI).   For PMs - PMs sells to VDCs. 
+        Notes: For VMs (consumed column) - VM buys from VDC or from desktop pool (VDI).   For
+          PMs - PMs sells to VDCs.
         Unit: MHz
       CPU_HEADROOM:
-        Notes:  Number of VMs that can fit in all of the available  CPU (on a cluster) 
+        Notes: Number of VMs that can fit in all of the available  CPU (on a cluster)
         Unit: Count
       CPU_PROVISIONED:
-        Notes:  Capacity is based on the over-provisioned value in policy 
+        Notes: Capacity is based on the over-provisioned value in policy
         Unit: MHz
       CPU_READY:
-        Notes:  Ready queue 
+        Notes: Ready queue
         Unit: ms
       DB_CACHE_HIT_RATE:
-        Notes:  The percentage of accesses that result in cache hits. 
+        Notes: The percentage of accesses that result in cache hits.
         Unit: Percentage
       DB_MEM:
-        Notes:  DB mem utilization or DM capacity 
+        Notes: DB mem utilization or DM capacity
         Unit: kilobytes
       DTU:
-        Notes:  Capacity defined in the cloud 
+        Notes: Capacity defined in the cloud
         Unit: Count
       EXTENT:
-        Notes:  Internal 
+        Notes: Internal
         Unit: NA
       FLOW:
-        Notes:  Amount of network traffic per second between two nodes 
+        Notes: Amount of network traffic per second between two nodes
         Unit: kilobytes/sec
       FLOW_ALLOCATION:
-        Notes:   
+        Notes: null
         Unit: bytes
       HEAP:
-        Notes:  Amount of heap configured for an application 
+        Notes: Amount of heap configured for an application
         Unit: kilobytes
       IMAGE_CPU:
-        Notes:  For VDI, usage of the business user 
+        Notes: For VDI, usage of the business user
         Unit: MHz
       IMAGE_MEM:
-        Notes:  For VDI, usage of the business user 
+        Notes: For VDI, usage of the business user
         Unit: kilobytes
       IMAGE_STORAGE:
-        Notes:  For VDI, usage of the business user 
+        Notes: For VDI, usage of the business user
         Unit: megabytes
       IO_THROUGHPUT:
-        Notes:  Amount of traffic through the IO adapter 
+        Notes: Amount of traffic through the IO adapter
         Unit: kilobytes/sec
       MEM:
-        Notes:  Physical machine - usage of memory.   VM - consumed memory. 
+        Notes: Physical machine - usage of memory.   VM - consumed memory.
         Unit: kilobytes
       MEM_ALLOCATION:
-        Notes:  Physical machine - what the host provides to VDCs.   VM (consumed column) - what the VM buys from VDC or desktop pool. 
+        Notes: Physical machine - what the host provides to VDCs.   VM (consumed column)
+          - what the VM buys from VDC or desktop pool.
         Unit: kilobytes
       MEM_HEADROOM:
-        Notes:  Number of VMs that can fit in the available memory on the cluster 
+        Notes: Number of VMs that can fit in the available memory on the cluster
         Unit: Count
       MEM_PROVISIONED:
-        Notes:  Capacity, based on the over-provisioned value in policy 
+        Notes: Capacity, based on the over-provisioned value in policy
         Unit: kilobytes
       NET_THROUGHPUT:
-        Notes:  Amount of traffic through the Network adapter 
+        Notes: Amount of traffic through the Network adapter
         Unit: kilobytes/sec
       POOL_CPU:
-        Notes:  For VDI, usage of the desktop pool 
+        Notes: For VDI, usage of the desktop pool
         Unit: MHz
       POOL_MEM:
-        Notes:  For VDI, usage of the desktop pool 
+        Notes: For VDI, usage of the desktop pool
         Unit: kilobytes
       POOL_STORAGE:
-        Notes:  For VDI, usage of the desktop pool 
+        Notes: For VDI, usage of the desktop pool
         Unit: megabytes
       PORT_CHANEL:
-        Notes:  Traffic on ports for UCS Mgr/HPE1 
+        Notes: Traffic on ports for UCS Mgr/HPE1
         Unit: kilobytes/sec
       POWER:
-        Notes:  null 
+        Notes: null
         Unit: null
       Q16_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q1_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q2_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q32_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q3_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q4_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q5_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q64_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q6_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q7_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       Q8_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       QN_VCPU:
-        Notes:  VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize the value, divide it by the number of vCPU.   Host - Average of the underlying Ready Queue values from all of the corresponding VMs with the same number of vCPUs. 
+        Notes: VM - Sum of the Ready Queue usage of all of the CPU on the VM. To normalize
+          the value, divide it by the number of vCPU.   Host - Average of the underlying
+          Ready Queue values from all of the corresponding VMs with the same number
+          of vCPUs.
         Unit: ms
       REMAINING_GC_CAPACITY:
-        Notes:  Percentage of time not spent on garbage collection 
+        Notes: Percentage of time not spent on garbage collection
         Unit: Percentage
       RESPONSE_TIME:
-        Notes:  Application response 
+        Notes: Application response
         Unit: ms
       SLA_COMMODITY:
-        Notes:  User-defined value 
+        Notes: User-defined value
         Unit: Number
       STORAGE_ACCESS:
-        Notes:  Count of the number of I/O (read + write) within two discovery cycles 
+        Notes: Count of the number of I/O (read + write) within two discovery cycles
         Unit: count
       STORAGE_ALLOCATION:
-        Notes:  Allocated storage 
+        Notes: Allocated storage
         Unit: megabytes
       STORAGE_AMOUNT:
-        Notes:  Used storage 
+        Notes: Used storage
         Unit: megabytes
       STORAGE_HEADROOM:
-        Notes:  Count of VM that can fit for the storage in a cluster in terms of storage 
+        Notes: Count of VM that can fit for the storage in a cluster in terms of storage
         Unit: Count
       STORAGE_LATENCY:
-        Notes:  Acceptable latency. User can set capacity for most storage, is discovered for NetApp. 
+        Notes: Acceptable latency. User can set capacity for most storage, is discovered
+          for NetApp.
         Unit: ms
       STORAGE_PROVISIONED:
-        Notes:  Capacity, based on the over-provisioned value in policy 
+        Notes: Capacity, based on the over-provisioned value in policy
         Unit: megabytes
       SWAPPING:
-        Notes:  Memory swapping 
+        Notes: Memory swapping
         Unit: bytes/sec
       THREADS:
-        Notes:  Threads in use 
+        Notes: Threads in use
         Unit: Count
       TOTAL_HEADROOM:
-        Notes:  Min value of CPU, Mem, IO, of the headrooms 
+        Notes: Min value of CPU, Mem, IO, of the headrooms
         Unit: Count
       TOTAL_SESSIONS:
-        Notes:  Total number of possible sessions 
+        Notes: Total number of possible sessions
         Unit: Count
       TRANSACTION:
-        Notes:  Transactions for the application 
+        Notes: Transactions for the application
         Unit: transactions/sec
       TRANSACTION_LOG:
-        Notes:  Size of the transaction log 
+        Notes: Size of the transaction log
         Unit: megabytes
       VCPU:
-        Notes:  CPU for the VM 
+        Notes: CPU for the VM
         Unit: MHz
       VCPU_LIMIT_QUOTA:
-        Notes:  null 
+        Notes: null
         Unit: millicores
       VCPU_REQUEST:
-        Notes:  null 
+        Notes: null
         Unit: millicores
       VCPU_REQUEST_QUOTA:
-        Notes:  null 
+        Notes: null
         Unit: millicores
       VMEM:
-        Notes:  Memory sold by a VM. Memory sold and bought for a container 
+        Notes: Memory sold by a VM. Memory sold and bought for a container
         Unit: kilobytes
       VMEM_LIMIT_QUOTA:
-        Notes:  null 
+        Notes: null
         Unit: kilobytes
       VMEM_REQUEST:
-        Notes:  null 
+        Notes: null
         Unit: kilobytes
       VMEM_REQUEST_QUOTA:
-        Notes:  null 
+        Notes: null
         Unit: kilobytes
       VSTORAGE:
-        Notes:  null 
+        Notes: null
         Unit: megabytes
   severity:
     intro: null
@@ -589,6 +631,19 @@ enums:
         Notes: null
       WINDOWS_WITH_SQL_WEB:
         Notes: null
+      UBUNTU_PRO:
+        Notes: null
+  savings_type:
+    intro: null
+    items:
+      MISSED_INVESTMENTS:
+        Notes: "Actions you could have taken that would inscrease your investment to provide more resources to your applications."
+      MISSED_SAVINGS:
+        Notes: "Actions you could have taken that could have reduced your costs."
+      REALIZED_INVESTMENTS:
+        Notes: "Actions you have taken that inscrease your investment to provide more resources to your applications."
+      REALIZED_SAVINGS:
+        Notes: "Actions you have taken that have reduced your costs."
 tables:
   action_group:
     intro: null
@@ -705,13 +760,15 @@ tables:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: The ID of the entity that the action affects. For example, for a VMem resize, the VM that is resized.
+        Description: The ID of the entity that the action affects. For example, for
+          a VMem resize, the VM that is resized.
         Reference: null
       involved_entities:
         Type: bigint[]
         Nullable: true
         Primary: false
-        Description: An array of IDs for entities involved in the action. This includes the target entity.
+        Description: An array of IDs for entities involved in the action. This includes
+          the target entity.
         Reference: null
       description:
         Type: text
@@ -723,25 +780,28 @@ tables:
         Type: double precision
         Nullable: false
         Primary: false
-        Description: The cost savings this action results in. A negative savings indicates an investment.
+        Description: The cost savings this action results in. A negative savings indicates
+          an investment.
         Reference: null
       final_state:
         Type: enum
         Nullable: false
         Primary: false
-        Description: Whether the action succeded or failed. 
+        Description: Whether the action succeded or failed.
         Reference: /enums/terminal_state
       final_message:
         Type: text
         Nullable: false
         Primary: false
-        Description: A message for the final state. If the action failed, this should contain an error message.
+        Description: A message for the final state. If the action failed, this should
+          contain an error message.
         Reference: null
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: Additional (often type-specific) info for the action. For example, in resizes this will contain the commodity type and from/to amounts.
+        Description: Additional (often type-specific) info for the action. For example,
+          in resizes this will contain the commodity type and from/to amounts.
         Reference: /table_data/action.attrs
   entity:
     intro: null
@@ -762,7 +822,8 @@ tables:
         Type: text
         Nullable: false
         Primary: false
-        Description: The current display name for the entity. While display names may change over time, this is always the most recent display name.
+        Description: The current display name for the entity. While display names
+          may change over time, this is always the most recent display name.
         Reference: null
       environment:
         Type: enum
@@ -786,7 +847,8 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: When the entity last existed in the topology. For an entity that still exists, the value is 9999-12-31T23:59:59.
+        Description: When the entity last existed in the topology. For an entity that
+          still exists, the value is 9999-12-31T23:59:59.
         Reference: null
   entity_cost:
     intro: null
@@ -807,7 +869,8 @@ tables:
         Type: enum
         Nullable: false
         Primary: false
-        Description: The cost category - IP service, storage service, on-demand or RI compute, etc.
+        Description: The cost category - IP service, storage service, on-demand or
+          RI compute, etc.
         Reference: /enums/cost_category
       source:
         Type: enum
@@ -975,7 +1038,10 @@ tables:
         Type: int
         Nullable: true
         Primary: false
-        Description: If the attribute is an integer, the integer value. If the attribute is an enum, this is the OID of the enum in the pg_enum table (to guard against name or order changes). The int_value should be castable to the enum via a custom cast (e.g. int_value::entity_state = 'POWERED_ON').
+        Description: If the attribute is an integer, the integer value. If the attribute
+          is an enum, this is the OID of the enum in the pg_enum table (to guard against
+          name or order changes). The int_value should be castable to the enum via
+          a custom cast (e.g. int_value::entity_state = 'POWERED_ON').
         Reference: null
       long_value:
         Type: bigint
@@ -999,7 +1065,9 @@ tables:
         Type: int[]
         Nullable: true
         Primary: false
-        Description: If the attribute is a list of ints, the list values. If the attribute is a list of enums, these are the OIDs of the enums in the pg_enum table (to guard against name or order changes).
+        Description: If the attribute is a list of ints, the list values. If the attribute
+          is a list of enums, these are the OIDs of the enums in the pg_enum table
+          (to guard against name or order changes).
         Reference: null
       long_arr_value:
         Type: bigint[]
@@ -1032,7 +1100,8 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: When analysis discovered thIS metric. For headroom metrics, when the headroom plan was created.
+        Description: When analysis discovered thIS metric. For headroom metrics, when
+          the headroom plan was created.
         Reference: null
       entity_oid:
         Type: bigint
@@ -1050,7 +1119,8 @@ tables:
         Type: bigint
         Nullable: true
         Primary: false
-        Description: The ID of the entity that provides this metric. For example, for VMem, the ID of the host that provides the memory.
+        Description: The ID of the entity that provides this metric. For example,
+          for VMem, the ID of the host that provides the memory.
         Reference: null
       key:
         Type: text
@@ -1206,7 +1276,8 @@ tables:
         Type: bigint[]
         Nullable: true
         Primary: false
-        Description: An array of IDs for all the entities involved in the action. Includes the target entity.
+        Description: An array of IDs for all the entities involved in the action.
+          Includes the target entity.
         Reference: null
       description:
         Type: text
@@ -1218,13 +1289,15 @@ tables:
         Type: double precision
         Nullable: false
         Primary: false
-        Description: The cost savings this action results in. A negative savings indicates an investment.
+        Description: The cost savings this action results in. A negative savings indicates
+          an investment.
         Reference: null
       attrs:
         Type: jsonb
         Nullable: true
         Primary: false
-        Description: Additional (often type-specific) info for the action. For example, in resizes this will contain the commodity type and from/to amounts.
+        Description: Additional (often type-specific) info for the action. For example,
+          in resizes this will contain the commodity type and from/to amounts.
         Reference: /table_data/action.attrs
   pending_action_stats:
     intro: null
@@ -1323,7 +1396,9 @@ tables:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: The ID of the entity whose scope is the subject of the given record. For example, for a cluster-to-host relationship, the seed can be the cluster, and the scoped entity would be the host.
+        Description: The ID of the entity whose scope is the subject of the given
+          record. For example, for a cluster-to-host relationship, the seed can be
+          the cluster, and the scoped entity would be the host.
         Reference: null
       scoped_oid:
         Type: bigint
@@ -1341,13 +1416,16 @@ tables:
         Type: timestamp with time zone
         Nullable: false
         Primary: true
-        Description: When this relationship first appeared in the topology. This covers the initial appearance, or an appearance after a gap (the relationship was temporarily broken). 
+        Description: When this relationship first appeared in the topology. This covers
+          the initial appearance, or an appearance after a gap (the relationship was
+          temporarily broken).
         Reference: null
       finish:
         Type: timestamp with time zone
         Nullable: false
         Primary: false
-        Description: WHEN this relationship LAST appeared IN THE TOPOLOGY. A value of 9999-12-31T23:59:59 means the relationship is not yet known to have terminated.
+        Description: WHEN this relationship LAST appeared IN THE TOPOLOGY. A value
+          of 9999-12-31T23:59:59 means the relationship is not yet known to have terminated.
         Reference: null
   scope_old:
     intro: null
@@ -1475,6 +1553,33 @@ tables:
         Primary: false
         Description: The name of the storage (denormalized for reporting).
         Reference: null
+  entity_savings:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: true
+        Description: 
+        Reference: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: The object ID for the entity that has seen a saving or investment.
+        Reference: null
+      savings_type:
+        Type: enum
+        Nullable: false
+        Primary: true
+        Description: Whether the action resulted in an investment or saving, and whether the action executed or not.
+        Reference: /enums/savings_type
+      stats_value:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: The value of the investment or saving for the related action.
+        Reference: null
 shared:
   entity.attrs:
     intro: null
@@ -1483,75 +1588,111 @@ shared:
         Description: Whether a given volume is attached or unattached.
         Type: /enums/AttachmentState
         SupportedEntityTypes: VIRTUAL_VOLUME
+        Repeated: false
+        Reference: /enums/AttachmentState
       connected_networks:
         Description: A list of network names that a given VM is connected to.
         Type: MULTI_TEXT
         SupportedEntityTypes: VIRTUAL_MACHINE
+        Repeated: true
+        Reference: null
       cpu_model:
         Description: For a physical host, the model of CPU on that host.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
+        Repeated: false
+        Reference: null
       guest_os_name:
         Description: The name of the OS running on a given VM.
         Type: TEXT
         SupportedEntityTypes: VIRTUAL_MACHINE
+        Repeated: false
+        Reference: null
       guest_os_type:
         Description: The specific type for the OS running on a given VM.
         Type: /enums/OSType
         SupportedEntityTypes: VIRTUAL_MACHINE
+        Repeated: false
+        Reference: /enums/OSType
       is_local:
         Description: Whether a storage is local to the machine, or networked.
         Type: BOOLEAN
         SupportedEntityTypes: STORAGE
+        Repeated: false
+        Reference: null
       model:
         Description: The specific model of the given physical host.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
+        Repeated: false
+        Reference: null
       num_cpus:
         Description: The number of CPUs on the given physical host.
         Type: NUMBER
         SupportedEntityTypes: PHYSICAL_MACHINE
+        Repeated: false
+        Reference: null
       tags:
-        Description: A list of tags that are assigned to the given entity. 
+        Description: A list of tags that are assigned to the given entity.
         Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
         SupportedEntityTypes: ALL
+        Repeated: false
+        Reference: null
       targets:
         Description: The target that manages the given entity.
         Type: /shared/Target
         SupportedEntityTypes: ALL
         Repeated: true
+        Reference: /shared/Target
       timezone:
         Description: The timezone that is set for the clock on the physical machine.
         Type: TEXT
         SupportedEntityTypes: PHYSICAL_MACHINE
+        Repeated: false
+        Reference: null
       vendor_id:
         Description: null
         Type: TEXT
         SupportedEntityTypes: VIRTUAL_VOLUME,BUSINESS_ACCOUNT
+        Repeated: Reference
   group.attrs:
     intro: null
     fields:
       dynamic:
         Description: null
         Type: BOOLEAN
+        Repeated: false
+        Reference: null
         SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedGroupTypes: RESOURCE_GROUP,COMPUTE_CLUSTER,BILLING_FAMILY,GROUP,K8S_CLUSTER,STORAGE_CLUSTER
       member_types:
         Description: null
         Type: MULTI_TEXT
+        Repeated: true
+        Reference: null
         SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedGroupTypes: RESOURCE_GROUP,COMPUTE_CLUSTER,BILLING_FAMILY,GROUP,K8S_CLUSTER,STORAGE_CLUSTER
       origin:
         Description: null
         Type: TEXT
+        Repeated: false
+        Reference: null
         SupportedEntityTypes: STORAGE_CLUSTER,COMPUTE_CLUSTER,GROUP,K8S_CLUSTER,BILLING_FAMILY,RESOURCE_GROUP
+        SupportedGroupTypes: RESOURCE_GROUP,COMPUTE_CLUSTER,BILLING_FAMILY,GROUP,K8S_CLUSTER,STORAGE_CLUSTER
       tags:
         Description: null
         Type: TEXT_MULTIMAP (Embedded Reporting) or List (Data Exporter)
+        Repeated: false
+        Reference: null
         SupportedEntityTypes: GROUP,RESOURCE_GROUP,COMPUTE_CLUSTER,K8S_CLUSTER,STORAGE_CLUSTER,BILLING_FAMILY
+        SupportedGroupTypes: ALL
       targets:
         Description: null
         Type: /shared/Target
+        Repeated: false
+        Reference: /shared/Target
         SupportedEntityTypes: GROUP,RESOURCE_GROUP,COMPUTE_CLUSTER,K8S_CLUSTER,STORAGE_CLUSTER,BILLING_FAMILY
-        Repeated: true
+        SupportedGroupTypes: ALL
   Target:
     intro: null
     fields:
@@ -1576,24 +1717,31 @@ shared:
       attribute:
         Description: null
         Type: String
+        Reference: null
       commodityType:
         Description: null
         Type: /enums/metric_type
+        Reference: /enums/metric_type
       from:
         Description: null
         Type: Float
+        Reference: null
       percentileChange:
         Description: null
         Type: /shared/CommodityPercentileChange
+        Reference: /shared/CommodityPercentileChange
       target:
         Description: null
         Type: /shared/ActionEntity
+        Reference: /shared/ActionEntity
       to:
         Description: null
         Type: Float
+        Reference: null
       unit:
         Description: null
         Type: String
+        Reference: null
   CommodityPercentileChange:
     intro: null
     fields:
@@ -1615,52 +1763,70 @@ shared:
       oid:
         Description: null
         Type: Long
+        Reference: null
       name:
         Description: null
         Type: String
+        Reference: null
       type:
         Description: null
         Type: /enums/entity_type
+        Reference: /enums/entity_type
   ActionImpactedEntity:
     intro: null
     fields:
       affectedCosts:
         Description: null
         Type: /shared/ActionImpactedCosts
+        MapKeyType: null
+        Reference: /shared/ActionImpactedCosts
       affectedMetrics:
         Description: null
         Type: /shared/ImpactedMetric
         MapKeyType: /enums/metric_type
+        Reference: /shared/ImpactedMetric
       name:
         Description: null
         Type: String
+        MapKeyType: null
+        MapKeyType: null
       oid:
         Description: null
         Type: Long
+        MapKeyType: null
+        MapKeyType: null
       settings:
         Description: null
         Type: /shared/EntitySettings
+        MapKeyType: null
+        Reference: /shared/EntitySettings
       type:
         Description: null
         Type: /enums/entity_type
+        MapKeyType: null
+        Reference: /enums/entity_type
   ActionImpactedCosts:
     intro: null
     fields:
       afterActions:
         Description: null
         Type: /shared/ActionImpactedCost
+        Reference: /shared/ActionImpactedCost
       beforeActions:
         Description: null
         Type: /shared/ActionImpactedCost
+        Reference: /shared/ActionImpactedCost
   ImpactedMetric:
     intro: null
     fields:
       afterActions:
         Description: null
         Type: /shared/ActionCommodity
+        Reference: /shared/ActionCommodity
       beforeActions:
         Description: null
         Type: /shared/ActionCommodity
+        Reference: /shared/ActionCommodity
   EntitySettings:
     intro: null
     fields:
@@ -1703,40 +1869,51 @@ shared:
       computeTier:
         Description: null
         Type: /shared/ActionEntity
+        Reference: /shared/ActionEntity
       count:
         Description: null
         Type: Integer
       masterAccount:
         Description: null
         Type: /shared/ActionEntity
+        Reference: /shared/ActionEntity
       region:
         Description: null
         Type: /shared/ActionEntity
+        Reference: /shared/ActionEntity
       target:
         Description: null
         Type: /shared/ActionEntity
+        Reference: /shared/ActionEntity
   MoveChange:
     intro: null
     fields:
       from:
         Description: null
         Type: /shared/ActionImpactedEntity
+        Repeated: false
+        Reference: /shared/ActionImpactedEntity
       resource:
         Description: null
         Type: /shared/ActionEntity
         Repeated: true
+        Reference: /shared/ActionEntity
       to:
         Description: null
         Type: /shared/ActionImpactedEntity
+        Repeated: false
+        Reference: /shared/ActionImpactedEntity
   DeleteInfo:
     intro: null
     fields:
       filePath:
         Description: null
         Type: String
+        Format: null
       fileSize:
         Description: null
         Type: Double
+        Format: null
       lastModifiedTimestamp:
         Description: null
         Type: String
@@ -1744,9 +1921,11 @@ shared:
       unattachedDays:
         Description: null
         Type: Integer
+        Format: null
       unit:
         Description: null
         Type: String
+        Format: null
 table_data:
   action.attrs:
     intro: null
@@ -1754,36 +1933,48 @@ table_data:
       buyRiInfo:
         Description: null
         Type: /shared/BuyRiInfo
+        MapKeyType: null
+        Reference: /shared/BuyRiInfo
       deleteInfo:
         Description: null
         Type: /shared/DeleteInfo
+        MapKeyType: null
+        Reference: /shared/DeleteInfo
       moveInfo:
         Description: null
         Type: /shared/MoveChange
         MapKeyType: /enums/entity_type
+        Reference: /shared/MoveChange
       resizeInfo:
         Description: null
         Type: /shared/CommodityChange
         MapKeyType: /enums/metric_type
+        Reference: /shared/CommodityChange
       scaleInfo:
         Description: null
         Type: /shared/MoveChange
         MapKeyType: /enums/entity_type
+        Reference: /shared/MoveChange
       target:
         Description: null
         Type: /shared/ActionImpactedEntity
+        MapKeyType: null
+        Reference: /shared/ActionImpactedEntity
 exporter:
   intro: null
   fields:
     action:
       Description: null
       Type: /exporter/Action
+      Reference: /exporter/Action
     entity:
       Description: null
       Type: /exporter/Entity
+      Reference: /exporter/Entity
     group:
       Description: null
       Type: /exporter/Group
+      Reference: /exporter/Group
     timestamp:
       Description: null
       Type: String
@@ -1794,99 +1985,192 @@ exporter:
       buyRiInfo:
         Description: null
         Type: /shared/BuyRiInfo
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/BuyRiInfo
       category:
-        Description: null
+        Description: The category of action.
         Type: /enums/action_category
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /enums/action_category
       creationTime:
-        Description: null
+        Description: When analysis created the action.
         Type: String
+        Repeated: false
         Format: yyyy-MM-dd'T'HH:mm:ss'Z'
+        MapKeyType: null
+        reference: null
       deleteInfo:
         Description: null
         Type: /shared/DeleteInfo
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/DeleteInfo
       description:
-        Description: null
+        Description: The description that analysis generates for the action.
         Type: String
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: null
       explanation:
-        Description: null
+        Description: The condition that the action is addressing. For example, Q2 VCPU CONGESTION.
         Type: String
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: null
       mode:
-        Description: null
+        Description: The mode for the action execution.
         Type: /enums/action_mode
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /enums/action_mode
       moveInfo:
-        Description: null
+        Description: Information to describe a MOVE action.
         Type: /shared/MoveChange
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/MoveChange
       oid:
-        Description: null
+        Description: The action object identifier.
         Type: Long
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: null
       related:
-        Description: null
+        Description: An array of entities or groups that are related to the target entity.
         Type: /exporter/RelatedEntity
         MapKeyType: /enums/entity_type
         Repeated: true
+        Reference: /exporter/RelatedEntity
       resizeInfo:
-        Description: null
+        Description: Information to describe a RESIZE action.
         Type: /shared/CommodityChange
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/CommodityChange
       savings:
-        Description: null
+        Description: The cost change for the action.
         Type: /exporter/CostAmount
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /exporter/CostAmount
       scaleInfo:
-        Description: null
+        Description: Information to describe a SCALE action.
         Type: /shared/MoveChange
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/MoveChange
       severity:
-        Description: null
+        Description: For a given action, the severity of the issue that it addresses.
         Type: /enums/severity
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /enums/severity
       state:
-        Description: null
+        Description: The different states for the action, such as completed or pending.
         Type: /enums/action_state
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /enums/action_state
       target:
-        Description: null
+        Description: The entity that the action operates on.
         Type: /shared/ActionImpactedEntity
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /shared/ActionImpactedEntity
       type:
-        Description: null
+        Description: The action type.
         Type: /enums/action_type
+        Repeated: false
+        Format: null
+        MapKeyType: null
+        Reference: /enums/action_type
   Entity:
     intro: null
     fields:
       accountExpenses:
         Description: null
         Type: /exporter/AccountExpenses
+        Repeated: false
+        MapKeyType: null
+        Reference: /exporter/AccountExpenses
       attrs:
         Description: null
         Type: /shared/entity.attrs
+        Repeated: false
+        MapKeyType: null
+        Reference: /shared/entity.attrs
       cost:
         Description: null
         Type: /exporter/EntityCost
+        Repeated: false
+        MapKeyType: null
+        Reference: /exporter/EntityCost
       environment:
         Description: null
         Type: /enums/environment_type
+        Repeated: false
+        MapKeyType: null
+        Reference: /enums/environment_type
       metric:
         Description: null
         Type: /exporter/Commodity
+        Repeated: false
+        MapKeyType: null
         MapKeyType: /enums/metric_type
+        Reference: /exporter/Commodity
       name:
         Description: null
         Type: String
+        Repeated: false
+        MapKeyType: null
+        Reference: null
       oid:
         Description: null
         Type: Long
+        Repeated: false
+        MapKeyType: null
+        Reference: null
       related:
         Description: null
         Type: /exporter/RelatedEntity
         MapKeyType: /enums/entity_type
         Repeated: true
+        Reference: /exporter/RelatedEntity
       state:
         Description: null
         Type: /enums/entity_state
+        Repeated: false
+        MapKeyType: null
+        Reference: /enums/entity_state
       type:
         Description: null
         Type: /enums/entity_type
+        Repeated: false
+        MapKeyType: null
+        Reference: /enums/entity_type
   Group:
     intro: null
     fields:
       attrs:
         Description: null
         Type: /shared/group.attrs
+        Reference: /shared/group.attrs
       name:
         Description: null
         Type: String
@@ -1896,6 +2180,7 @@ exporter:
       type:
         Description: null
         Type: /enums/entity_type
+        Reference: /enums/entity_type
   RelatedEntity:
     intro: null
     fields:
@@ -1920,14 +2205,21 @@ exporter:
       expenseDate:
         Description: null
         Type: String
+        Repeated: false
+        MapKeyType: null
+        Reference: null
       serviceExpenses:
         Description: null
         Type: /exporter/CostAmount
+        Repeated: false
         MapKeyType: String
+        Reference: /exporter/CostAmount
       serviceList:
         Description: null
         Type: String
         Repeated: true
+        MapKeyType: null
+        Reference: null
   EntityCost:
     intro: null
     fields:
@@ -1935,12 +2227,17 @@ exporter:
         Description: null
         Type: /exporter/CostByCategory
         MapKeyType: /enums/cost_category
+        Reference: /exporter/CostByCategory
       total:
         Description: null
         Type: Float
+        MapKeyType: null
+        Reference: null
       unit:
         Description: null
         Type: String
+        MapKeyType: null
+        Reference: null
   Commodity:
     intro: null
     fields:
@@ -1966,3 +2263,4 @@ exporter:
       total:
         Description: null
         Type: Float
+        MapKeyType: null

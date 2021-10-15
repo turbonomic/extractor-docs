@@ -5,7 +5,7 @@
   <title page-title>Data Exporter</title>
   
   
-  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  <link href="http://localhost:4001/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -26,102 +26,204 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>metric Table</h1>
+          <h1>metric</h1>
           <p>This object contains metric values for entity objects. 
 Most metrics are values associated with commodities bought or sold by the entity. 
 Bought and sold commodities appear in separate objects - one for the buyer and one 
 for the seller. In addition to topology metrics, a metric contains headroom properties, 
 which are generated daily by headroom plans.</p>
 <html><body>
-	
-	<ul>
-		<li><p><code>time</code>: 
-			
-			
-			
-			Timestamp on the topology from
-				which this metric was obtained. For
-				headroom metrics this is the time at
-				which the headroom plan was
-				created.
-		</p></li>
-		<li><p><code>entity_oid</code>: 
-			
-			
-			
-			Oid of the entity to which the metric
-				applies.
-		</p></li>
-		<li><p><code>type</code>: 
-			
-			
-			
-			The type of the metric.
-		</p></li>
-		<li><p><code>provider_oid</code>: 
-			
-			
-			
-			Oid of the seller of this commodity.
-			
-		</p></li>
-		<li><p><code>key</code>: 
-			
-			
-			
-			The commodity key. This value can
-				be null if no key is present.
-		</p></li>
-		<li><p><code>current</code>: 
-			
-			
-			
-			Current utilization of the commodity on the selling entity
-		</p></li>
-		<li><p><code>capacity</code>: 
-			
-			
-			
-			Capacity of the commodity on the selling
-				entity
-		</p></li>
-		<li><p><code>utilization</code>: 
-			
-			
-			
-			Utilization of the commodity on the selling
-				entity.
-			
-		</p></li>
-		<li><p><code>consumed</code>: 
-			
-			
-			
-			Amount of the commodity currently
-				used by the buying entity
-		</p></li>
-		<li><p><code>peak_current</code>: 
-			
-			
-			
-			Peak amount of the
-				commodity of the selling entity
-		</p></li>
-		<li><p><code>peak_consumed</code>: 
-			
-			
-			
-			Peak amount of the commodity
-				currently used by the buying entity
-			
-		</p></li>
-		<li><p><code>entity_type</code>: 
-			
-			
-			
-			The type of the entity in the entity_oid column.
-		</p></li>
-	</ul>
+  
+  <table><tbody><tr><th>Data Object</th><th>Type</th><th>Nullable</th><th>Primary</th><th>Description</th><th>Reference</th></tr>
+    <tr><td>time</td>
+      <td>
+        <p>timestamp with time zone</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>When analysis discovered thIS metric. For headroom metrics, when the headroom plan was created.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>entity_oid</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The ID of the entity this metric pertains to.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>type</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The metric type.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/metric_type.html">metric_type</a>
+        </p>
+      </td>
+    </tr>
+    <tr><td>provider_oid</td>
+      <td>
+        <p>bigint</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The ID of the entity that provides this metric. For example, for VMem, the ID of the host that provides the memory.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>key</td>
+      <td>
+        <p>text</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The commodity key. This value can be null if no key is present.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>current</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Current utilization of commodity in provider entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>capacity</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The capacity of the commodity in the provider entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>utilization</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Overall utilization of the commodity in the provider entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>consumed</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Amount of commodity currently used by consumer entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>peak_current</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Peak amount of current used commodity in the provider entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>peak_consumed</td>
+      <td>
+        <p>double precision</p>
+      </td>
+      <td>
+        <p>True</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>Peak amount of commodity currently used by the consumer entity.</p>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td>entity_type</td>
+      <td>
+        <p>enum</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>False</p>
+      </td>
+      <td>
+        <p>The type of the consumer entity.</p>
+      </td>
+      <td>
+        <p>
+          <a href="../enums/entity_type.html">entity_type</a>
+        </p>
+      </td>
+    </tr>
+  </tbody></table>
 </body></html>
 
 
@@ -140,27 +242,27 @@ which are generated daily by headroom plans.</p>
                 <ul>
                   
                   
-                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
+                  <h5><a href="http://localhost:4001/index.html">DOCUMENTATION HOME</a></h5>
                   
                   
                   <h5 style="margin-bottom:1px;">Data Extractor Objects</h5>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
+                        <li><a href="http://localhost:4001/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
+                          <li><a href="http://localhost:4001/page/entity-cost.html">Entity Cost Data</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
+                        <li><a href="http://localhost:4001/page/action.html">Action Object</a></li> 
                         
                         <ul>
                           
@@ -174,24 +276,24 @@ which are generated daily by headroom plans.</p>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        <li><a href="http://localhost:4001/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                          <li><a href="http://localhost:4001/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                          <li><a href="http://localhost:4001/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        <li><a href="http://localhost:4001/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
                         
                         <ul>
                           
@@ -205,7 +307,7 @@ which are generated daily by headroom plans.</p>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        <li><a href="http://localhost:4001/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

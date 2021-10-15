@@ -21,31 +21,32 @@ two top-level fields:
 </details>
 
 
-
-## Common Entity Object Fields
+## Common Action Object Fields
 Every `action` object includes the following fields:
+
+{% include genFiles/exporter/Action.html %}
+
+
+
+<!--
 <details>
 <summary>Click to Show/Hide:</summary>
 <ul>
 <li><p><code>oid</code>: The action object identifier.</p></li>
 <li><p><code>creationTime</code>: When {{ site.data.vars.Product_Short }} created the action.</p></li>
 <li><p><code>type</code>: The action type. Can be one of:</p>
-{% include genFiles/action_type.html %}
+{% include genFiles/enums/action_type.html %}
 </li>
 <li><p><code>state</code>: The state the action is in at the time the JASON object is created. Can be one of:</p></li>
-{% include genFiles/action_state.html %}
+{% include genFiles/enums/action_state.html %}
 <li><p><code>mode</code>: The mode for the action execution. Can be one of:</p>
-<ul>
-<li><p><code>AUTOMATIC</code></p></li>
-<li><p><code>MANUAL</code></p></li>
-<li><p><code>RECOMMEND</code></p></li>
-</ul>
+{% include genFiles/enums/action_mode.html %}
 </li>
 <li><p><code>category</code>: The category of action. Can be one of:</p>
-{% include genFiles/action_category.html %}
+{% include genFiles/enums/action_category.html %}
 </li>
 <li><p><code>severity</code>: The severity of the action.  Can be one of:</p>
-{% include genFiles/severity.html %}
+{% include genFiles/enums/severity.html %}
 </li>
 
 <li><p><code>description</code>: The description that {{ site.data.vars.Product_Short }} generates for the action.</p></li>
@@ -78,7 +79,6 @@ Every `action` object includes the following fields:
 </ul>
 
 </details>
-
-
+-->
 
 

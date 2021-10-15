@@ -5,7 +5,7 @@ title: wasted_file Table
 
 This table stores the paths to the current wasted files in the environment, as well as properties of the files such as last modification or file size. 
 
-{% include genFiles/wasted_file.html %}
+{% include genFiles/tables/wasted_file.html %}
 
 ## Sample Use Cases
 
