@@ -207,4 +207,18 @@
     </xsl:template>
     
     
+    
+    
+    <xsl:template match="ul">
+        <xsl:element name="ul">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="li">
+        <xsl:element name="li">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    
 </xsl:transform>

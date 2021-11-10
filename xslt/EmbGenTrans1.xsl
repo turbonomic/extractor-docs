@@ -167,12 +167,7 @@
                     <xsl:apply-templates/>
                 </xsl:if>
             </xsl:when>
-            
-            
-            
         </xsl:choose>
-        
-        
     </xsl:template>
     
     <xsl:template match="p">
@@ -181,7 +176,6 @@
             <xsl:when test="../@name='Unit'">
                 <xsl:text>Units: </xsl:text><xsl:value-of select="."/>
             </xsl:when>
-            
             
             <xsl:when test="starts-with(., '/')">
                 <xsl:element name="a">
@@ -192,8 +186,6 @@
                     <xsl:value-of select="$name"/>
                 </xsl:element>
             </xsl:when>
-            
-            
             
             <xsl:otherwise>
                 <xsl:apply-templates/>
@@ -225,6 +217,17 @@
     <xsl:template match="a">
         <xsl:element name="a">
             <xsl:attribute name="href"><xsl:value-of select="@href" /></xsl:attribute>
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    
+    <xsl:template match="ul">
+        <xsl:element name="ul">
+            <xsl:apply-templates/>
+        </xsl:element>
+    </xsl:template>
+    <xsl:template match="li">
+        <xsl:element name="li">
             <xsl:apply-templates/>
         </xsl:element>
     </xsl:template>
