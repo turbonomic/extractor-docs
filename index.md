@@ -16,7 +16,7 @@ you can choose to enable when you install the platform. The Data Exporter stream
    * Pending actions: Published every 6 hours. You can configure this via the `actionExtractionIntervalMins` variable.
    * Executed actions: Published immediately after the action completes, either with success or failure.
  
- You can load the exported data into search and analytics services such as Elasticsearch, and use thoose 
+ You can load the exported data into search and analytics services such as Elasticsearch, and use those 
  services to visualize or analyze the entities and actions n your {{ site.data.vars.Product_Short }} 
  environment.
  
