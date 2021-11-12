@@ -83,7 +83,7 @@ data.
 
    Search the listing for the extractor pod, and use that as the pod name.  Then delete the pod 
    to force it to restart. For the example above, enter the command:   
-   `kubectl delete extractor-5f41dd61c4-4d6lq`  
+   `kubectl delete pod extractor-5f41dd61c4-4d6lq`  
    
 6. Verify that the extractor component is running.  
    Give the platform enough time to restart the components. Then execute the command:  
