@@ -30,30 +30,35 @@
           <p>The Turbonomic platform includes the Data Exporter, which 
 you can choose to enable when you install the platform. The Data Exporter streams 
  Turbonomic data about entities and actions as JSON documents that it 
- then publishes to a Kafka topic. 
- 
- The exporter publishes at different frequencies, depending on the type of data:
- 
- * Entity data: Published every 10 minutes.
- 
- * Actions data:
-   * Pending actions: Published every 6 hours. You can configure this via the `actionExtractionIntervalMins` variable.
-   * Executed actions: Published immediately after the action completes, either with success or failure.
- 
- You can load the exported data into search and analytics services such as Elasticsearch, and use thoose 
- services to visualize or analyze the entities and actions n your Turbonomic 
- environment.
- 
- With the Data Exporter you can build custom tracking of changes to your environment, 
- and follow the details as Turbonomic keeps your applications 
- healthy.
+ then publishes to a Kafka topic.</p>
 
+<p>The exporter publishes at different frequencies, depending on the type of data:</p>
+
+<ul>
+  <li>
+    <p>Entity data: Published every 10 minutes.</p>
+  </li>
+  <li>
+    <p>Actions data:</p>
+    <ul>
+      <li>Pending actions: Published every 6 hours. You can configure this via the <code class="language-plaintext highlighter-rouge">actionExtractionIntervalMins</code> variable.</li>
+      <li>Executed actions: Published immediately after the action completes, either with success or failure.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>You can load the exported data into search and analytics services such as Elasticsearch, and use thoose 
+ services to visualize or analyze the entities and actions n your Turbonomic 
+ environment.</p>
+
+<p>With the Data Exporter you can build custom tracking of changes to your environment, 
+ and follow the details as Turbonomic keeps your applications 
+ healthy.</p>
 
 <p>This document describes the Turbonomic Data Exporter. 
 For general information information about Turbonomic, 
 see the full Turbonomic documentation 
 <a href="https://docs.turbonomic.com/">HERE</a>.</p>
-</p>
 
           
         </article>

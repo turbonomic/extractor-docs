@@ -3,7 +3,7 @@ layout: default
 title: Using the Data Exporter
 ---
 
-<p>The {{ site.data.vars.Product_Short }} platform includes the Data Exporter, which 
+The {{ site.data.vars.Product_Short }} platform includes the Data Exporter, which 
 you can choose to enable when you install the platform. The Data Exporter streams 
  {{ site.data.vars.Product_Short }} data about entities and actions as JSON documents that it 
  then publishes to a Kafka topic. 
