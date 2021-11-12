@@ -26,28 +26,89 @@
       
       <div id="topicDiv">
         <article id ='topicArt' class="topic">
-          <h1>Enabling the Data Exporter</h1>
-          <p>To support the Data Exporter, Turbonomic provides an extractor component 
-that can stream data to a standard format. You can load that data into search and analytics 
-services such as Elasticsearch.</p>
+          <h1>Configuring Data Export Intervals</h1>
+          <p>By default, the Data Exporter sends JSON data for entities, actions, and groups at 10-minute intervals. 
+This usually gives a good flow of data that your data search and analysis services can ingest.</p>
 
-<p>To enable the Data Exporter, you must:</p>
+<p>For very large environments, it is possible that the quantity of data can overwhelm the ability of your 
+service to ingest it at 10-minute intervals. In the worst case, this can result in Out Of Memory 
+errors in your service connector. If this occurs, lengthening the interval can reduce the overall 
+volume of data your service has to ingest.</p>
 
-<ul>
+<p>You can configure the data export interval in the extractor component for action data and entity and group 
+data.</p>
+
+<ol>
   <li>
-    <p>Enable the extractor component.<br />
-The extractor is a component that runs as part your Turbonomic 
-installation. The extractor is not enabled by default.</p>
+    <p>Open an SSH terminal session to your Turbonomic instance.<br />
+Log in with the System Administrator that you set up when you installed Turbonomic:</p>
+
+    <p>Username: <code class="language-plaintext highlighter-rouge">turbo</code><br />
+ Password: <code class="language-plaintext highlighter-rouge">[your_private_password]</code></p>
   </li>
   <li>
-    <p>Deploy a connector that delivers the extractor’s stream to your data service.<br />
-The extractor publishes Turbonomic data as Kafka topics. The connector 
-enables your data service to consume the data topic. This document includes a deployment file 
-for a sample Elasticsearch connector.</p>
+    <p>Edit the cr.yaml file to add export intervals to the extractor component.<br />
+In the same SSH session, open the cr.yaml file for editing. For example:<br />
+<code class="language-plaintext highlighter-rouge">vi /opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml</code></p>
   </li>
-</ul>
+  <li>Edit the entry for the extractor properties.<br />
+Search for the extractor properties entry in the cr.yaml file. It should appear as:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> properties:
+   extractor:
+     enableDataExtraction: true
+</code></pre></div>    </div>
+  </li>
+  <li>Add the properties to control the export intervals.
+By default, the extractor exports data every 10 minutes.  You can add properties to the 
+extractor to change the interval. Each setting is in units of minutes.<br />
+With these settings, you can specify intervals:
+    <ul>
+      <li>Globally<br />
+<code class="language-plaintext highlighter-rouge">globalExtractionIntervalMins</code><br />
+If you want to change the interval for all extractor data exports, use this<br />
+property.</li>
+      <li>For Entities and Groups<br />
+<code class="language-plaintext highlighter-rouge">entityExtractionIntervalMins</code><br />
+To specify an export interval for entity and group data, use this property. If it is present in 
+the extractor properties, this setting takes precedence for entities and groups.</li>
+      <li>For Actions <br />
+<code class="language-plaintext highlighter-rouge">actionExtractionIntervalMins</code><br />
+To specify an export interval for actions data, use this property. If it is present in 
+the extractor properties, this setting takes precedence for actions.</li>
+    </ul>
 
-<p>​</p>
+    <p>For example, the following specification sets a 30-minute interval on entities and groups, and 
+a 15-minute interval on actions:</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> properties:
+   extractor:
+     enableDataExtraction: true
+     entityExtractionIntervalMins: 30
+     actionExtractionIntervalMins: 15
+</code></pre></div>    </div>
+  </li>
+  <li>Save and apply your changes to the platform.<br />
+After you save your changes, use <code class="language-plaintext highlighter-rouge">kubectl</code> to apply the changes:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply -f \
+/opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml  
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify that the extractor component is running.<br />
+Give the platform enough time to restart the components. Then execute the command:<br />
+<code class="language-plaintext highlighter-rouge">kubectl get pods -n turbonomic</code></p>
+
+    <p>You should see output similar to the following:</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>NAME                                         READY   STATUS    RESTARTS 
+...
+extractor-5f41dd61c4-4d6lq                   1/1     Running   0   
+...
+</code></pre></div>    </div>
+    <p>Look for an entry for the <code class="language-plaintext highlighter-rouge">extractor</code> component. If the entry is present, ready, and running, then the 
+extractor component is installed and running.</p>
+  </li>
+</ol>
+
 
           
         </article>

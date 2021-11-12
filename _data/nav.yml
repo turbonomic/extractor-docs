@@ -1,5 +1,5 @@
 toc:
-  - title: Data Extractor Objects
+  - title: Data Exporter Objects
     subItems:
     - page: Entity Object
       url: entity.html
@@ -37,6 +37,9 @@ toc:
     - page: Increasing the Elasticsearch Field Limit
       url: increase-field-limit.html
       dir: page/config/increase-field-limit.html
+    - page: Configuring Data Export Intervals
+      url: extactor-export-intervals.html
+      dir: page/config/extactor-export-intervals.html
         
   - title: Appendix
     subItems:
