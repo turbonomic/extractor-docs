@@ -43,9 +43,6 @@ The first step to enabling the Data Exporter is to enable the extractor componen
    kubectl apply -f \
    /opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml  
    ```
-
-6. Restart the extractor component.     
-   `kubectl delete extractor`  
       
 7. Verify that the extractor component is running.  
    Give the platform enough time to restart the components. Then execute the command:  

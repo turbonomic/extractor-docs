@@ -68,11 +68,9 @@ data.
    /opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml  
    ```
 
-5. Restart the extractor component.     
-   `kubectl delete extractor`  
-   
-6. Verify that the extractor component is running.  
-   Give the platform enough time to restart the components. Then execute the command:  
+5. Restart the extractor component.  
+     
+   First, get the name of the extractor pod:
    `kubectl get pods -n turbonomic`  
    
    You should see output similar to the following:  
@@ -81,9 +79,17 @@ data.
    ...
    extractor-5f41dd61c4-4d6lq                   1/1     Running   0   
    ...
-   ```  
-   Look for an entry for the `extractor` component. If the entry is present, ready, and running, then the 
-   extractor component is installed and running.
+   ```     
+
+   Search the listing for the extractor pod, and use that as the pod name.  Then delete the pod 
+   to force it to restart. For the example above, enter the command:   
+   `kubectl delete extractor-5f41dd61c4-4d6lq`  
+   
+6. Verify that the extractor component is running.  
+   Give the platform enough time to restart the components. Then execute the command:  
+   `kubectl get pods -n turbonomic`  
+   
+   You should see the extractor pod in the listing, and its status should be `RUNNING`.
    
 
 

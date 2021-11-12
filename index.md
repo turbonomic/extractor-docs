@@ -17,7 +17,7 @@ you can choose to enable when you install the platform. The Data Exporter stream
    * Executed actions: Published immediately after the action completes, either with success or failure.
  
  You can load the exported data into search and analytics services such as Elasticsearch, and use those 
- services to visualize or analyze the entities and actions n your {{ site.data.vars.Product_Short }} 
+ services to visualize or analyze the entities and actions in your {{ site.data.vars.Product_Short }} 
  environment.
  
  With the Data Exporter you can build custom tracking of changes to your environment, 

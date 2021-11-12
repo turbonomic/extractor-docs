@@ -95,12 +95,9 @@ After you save your changes, use <code class="language-plaintext highlighter-rou
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Restart the extractor component.   <br />
-<code class="language-plaintext highlighter-rouge">kubectl delete extractor</code></p>
-  </li>
-  <li>
-    <p>Verify that the extractor component is running.<br />
-Give the platform enough time to restart the components. Then execute the command:<br />
+    <p>Restart the extractor component.</p>
+
+    <p>First, get the name of the extractor pod:
 <code class="language-plaintext highlighter-rouge">kubectl get pods -n turbonomic</code></p>
 
     <p>You should see output similar to the following:</p>
@@ -109,8 +106,17 @@ Give the platform enough time to restart the components. Then execute the comman
 extractor-5f41dd61c4-4d6lq                   1/1     Running   0   
 ...
 </code></pre></div>    </div>
-    <p>Look for an entry for the <code class="language-plaintext highlighter-rouge">extractor</code> component. If the entry is present, ready, and running, then the 
-extractor component is installed and running.</p>
+
+    <p>Search the listing for the extractor pod, and use that as the pod name.  Then delete the pod 
+to force it to restart. For the example above, enter the command: <br />
+<code class="language-plaintext highlighter-rouge">kubectl delete extractor-5f41dd61c4-4d6lq</code></p>
+  </li>
+  <li>
+    <p>Verify that the extractor component is running.<br />
+Give the platform enough time to restart the components. Then execute the command:<br />
+<code class="language-plaintext highlighter-rouge">kubectl get pods -n turbonomic</code></p>
+
+    <p>You should see the extractor pod in the listing, and its status should be <code class="language-plaintext highlighter-rouge">RUNNING</code>.</p>
   </li>
 </ol>
 
