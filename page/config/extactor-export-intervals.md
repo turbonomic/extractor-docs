@@ -3,15 +3,15 @@ layout: default
 title: Configuring Data Export Intervals
 ---
 
-By default, the Data Exporter sends JSON data for entities, actions, and groups at 10-minute intervals. 
+By default, the Data Exporter sends JSON data for entities and groups at 10-minute intervals. 
 This usually gives a good flow of data that your data search and analysis services can ingest.
 
 For very large environments, it is possible that the quantity of data can overwhelm the ability of your 
-service to ingest it at 10-minute intervals. In the worst case, this can result in Out Of Memory 
-errors in your service connector. If this occurs, lengthening the interval can reduce the overall 
+service to ingest it. In the worst case, this can result in Out Of Memory 
+errors in your service connector. If this occurs, lengthening the export interval can reduce the overall 
 volume of data your service has to ingest.
 
-You can configure the data export interval in the extractor component for action data and entity and group 
+You can configure the data export interval in the extractor component for action data and for entity and group 
 data.  
 
 
