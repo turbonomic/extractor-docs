@@ -33,13 +33,14 @@ data.
         enableDataExtraction: true
     ```    
 4. Add the properties to control the export intervals.
-   By default, the extractor exports data every 10 minutes.  You can add properties to the 
+   By default, the extractor exports entity and group data every 10 minutes, and action data 
+   every 6 hours.  You can add properties to the 
    extractor to change the interval. Each setting is in units of minutes.  
    With these settings, you can specify intervals:
    - Globally  
      `globalExtractionIntervalMins`  
-     If you want to change the interval for all extractor data exports, use this  
-     property. 
+     If you want to set a single interval for all extractor data exports (entities, groups, and actions), 
+     use this property.   
    - For Entities and Groups  
      `entityExtractionIntervalMins`  
      To specify an export interval for entity and group data, use this property. If it is present in 
@@ -50,14 +51,14 @@ data.
      the extractor properties, this setting takes precedence for actions. 
      
    For example, the following specification sets a 30-minute interval on entities and groups, and 
-   a 15-minute interval on actions:    
+   a one-hour interval on actions:    
    
     ```
     properties:
       extractor:
         enableDataExtraction: true
         entityExtractionIntervalMins: 30
-        actionExtractionIntervalMins: 15
+        actionExtractionIntervalMins: 60
     ```    
    
 4. Save and apply your changes to the platform.  
@@ -66,7 +67,11 @@ data.
    kubectl apply -f \
    /opt/turbonomic/kubernetes/operator/deploy/crds/charts_v1alpha1_xl_cr.yaml  
    ```
-5. Verify that the extractor component is running.  
+
+5. Restart the extractor component.     
+   `kubectl delete extractor`  
+   
+6. Verify that the extractor component is running.  
    Give the platform enough time to restart the components. Then execute the command:  
    `kubectl get pods -n turbonomic`  
    
