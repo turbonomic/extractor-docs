@@ -5,7 +5,7 @@
   <title page-title>Data Exporter</title>
   
   
-  <link href="http://localhost:4001/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
+  <link href="http://localhost:4000/css/FourD_CSS/vmtHelp.css" rel="stylesheet" type="text/css"/>
   
   
   <body>
@@ -46,7 +46,9 @@
       </td>
     </tr>
     <tr><td>attrs</td>
-      <td></td>
+      <td>
+        <p>Additional descriptions for a given entity. The values of this are different for different entity types.</p>
+      </td>
       <td>
         <p><a href="shared/entity.attrs">entity.attrs</a></p>
       </td>
@@ -76,7 +78,9 @@
       </td>
     </tr>
     <tr><td>environment</td>
-      <td></td>
+      <td>
+        <p>The environment type - Hybrid, Cloud, On-prem, etc.</p>
+      </td>
       <td>
         <p><a href="enums/environment_type">environment_type</a></p>
       </td>
@@ -91,7 +95,9 @@
       </td>
     </tr>
     <tr><td>metric</td>
-      <td></td>
+      <td>
+        <p>For the given metric type, the utilization and capacity of the commodity.</p>
+      </td>
       <td>
         <p><a href="exporter/Commodity">Commodity</a></p>
       </td>
@@ -108,7 +114,9 @@
       </td>
     </tr>
     <tr><td>name</td>
-      <td></td>
+      <td>
+        <p>The entity name.</p>
+      </td>
       <td>
         <p>String</p>
       </td>
@@ -119,7 +127,9 @@
       <td></td>
     </tr>
     <tr><td>oid</td>
-      <td></td>
+      <td>
+        <p>The entity ID.</p>
+      </td>
       <td>
         <p>Long</p>
       </td>
@@ -130,7 +140,9 @@
       <td></td>
     </tr>
     <tr><td>related</td>
-      <td></td>
+      <td>
+        <p>For the current entity, another entity that is connected to it in the supply chain.</p>
+      </td>
       <td>
         <p><a href="exporter/RelatedEntity">RelatedEntity</a></p>
       </td>
@@ -147,7 +159,9 @@
       </td>
     </tr>
     <tr><td>state</td>
-      <td></td>
+      <td>
+        <p>The current state of the entity - POWERED_ON, SUSPENDED, MAINTENANCE, etc.</p>
+      </td>
       <td>
         <p><a href="enums/entity_state">entity_state</a></p>
       </td>
@@ -162,7 +176,9 @@
       </td>
     </tr>
     <tr><td>type</td>
-      <td></td>
+      <td>
+        <p>The entity type.</p>
+      </td>
       <td>
         <p><a href="enums/entity_type">entity_type</a></p>
       </td>
@@ -194,27 +210,27 @@
                 <ul>
                   
                   
-                  <h5><a href="http://localhost:4001/index.html">DOCUMENTATION HOME</a></h5>
+                  <h5><a href="http://localhost:4000/index.html">DOCUMENTATION HOME</a></h5>
                   
                   
                   <h5 style="margin-bottom:1px;">Data Exporter Objects</h5>
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/entity.html">Entity Object</a></li> 
+                        <li><a href="http://localhost:4000/page/entity.html">Entity Object</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4001/page/entity-cost.html">Entity Cost Data</a></li>
+                          <li><a href="http://localhost:4000/page/entity-cost.html">Entity Cost Data</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/action.html">Action Object</a></li> 
+                        <li><a href="http://localhost:4000/page/action.html">Action Object</a></li> 
                         
                         <ul>
                           
@@ -228,24 +244,24 @@
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
+                        <li><a href="http://localhost:4000/page/config/enabling-exporter.html">Enabling the Data Exporter</a></li> 
                         
                         <ul>
                           
                           
                             
-                          <li><a href="http://localhost:4001/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
+                          <li><a href="http://localhost:4000/page/config/enable-extractor-component.html">Enabling the the Extractor Component</a></li>
                             
                           
                             
-                          <li><a href="http://localhost:4001/page/config/deploy-connector.html">Deploying a Connector</a></li>
+                          <li><a href="http://localhost:4000/page/config/deploy-connector.html">Deploying a Connector</a></li>
                             
                           
                           
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
+                        <li><a href="http://localhost:4000/page/config/increase-field-limit.html">Increasing the Elasticsearch Field Limit</a></li> 
                         
                         <ul>
                           
@@ -254,7 +270,7 @@
                         </ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/config/extactor-export-intervals.html">Configuring Data Export Intervals</a></li> 
+                        <li><a href="http://localhost:4000/page/config/extactor-export-intervals.html">Configuring Data Export Intervals</a></li> 
                         
                         <ul>
                           
@@ -268,7 +284,7 @@
                     <ul>
                     
                         
-                        <li><a href="http://localhost:4001/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
+                        <li><a href="http://localhost:4000/page/appendix/yamlTips.html">YAML File Editing Tips</a></li> 
                         
                         <ul>
                           

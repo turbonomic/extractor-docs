@@ -237,6 +237,8 @@ enums:
         Notes: null
       NETWORKING_ENDPOINT:
         Notes: null
+      NODE_POOL:
+        Notes: null
       OPERATOR:
         Notes: null
       PHYSICAL_MACHINE:
@@ -302,8 +304,6 @@ enums:
       WORKLOAD_CONTROLLER:
         Notes: null
       _NONE_:
-        Notes: null
-      NODE_POOL:
         Notes: null
   environment_type:
     intro: null
@@ -619,6 +619,8 @@ enums:
         Notes: null
       SUSE:
         Notes: null
+      UBUNTU_PRO:
+        Notes: null
       UNKNOWN_OS:
         Notes: null
       WINDOWS:
@@ -631,19 +633,19 @@ enums:
         Notes: null
       WINDOWS_WITH_SQL_WEB:
         Notes: null
-      UBUNTU_PRO:
-        Notes: null
   savings_type:
     intro: null
     items:
       MISSED_INVESTMENTS:
-        Notes: "Actions you could have taken that would inscrease your investment to provide more resources to your applications."
+        Notes: Actions you could have taken that would inscrease your investment to
+          provide more resources to your applications.
       MISSED_SAVINGS:
-        Notes: "Actions you could have taken that could have reduced your costs."
+        Notes: Actions you could have taken that could have reduced your costs.
       REALIZED_INVESTMENTS:
-        Notes: "Actions you have taken that inscrease your investment to provide more resources to your applications."
+        Notes: Actions you have taken that inscrease your investment to provide more
+          resources to your applications.
       REALIZED_SAVINGS:
-        Notes: "Actions you have taken that have reduced your costs."
+        Notes: Actions you have taken that have reduced your costs.
 tables:
   action_group:
     intro: null
@@ -658,7 +660,7 @@ tables:
         Type: enum
         Nullable: false
         Primary: false
-        Description: null
+        Description: The specific action type - Provision, Reconfigure, Scale, etc.
         Reference: /enums/action_type
       category:
         Type: enum
@@ -697,19 +699,19 @@ tables:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: The ID of the cloud account or subscription this service is associated with.
         Reference: null
       cloud_service_oid:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: The ID of the cloud service.
         Reference: null
       cost:
         Type: real
         Nullable: false
         Primary: false
-        Description: null
+        Description: The cost of the service.
         Reference: null
   completed_action:
     intro: null
@@ -863,20 +865,20 @@ tables:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: The entity ID
+        Description: The entity ID.
         Reference: null
       category:
         Type: enum
         Nullable: false
         Primary: false
-        Description: The cost category - IP service, storage service, on-demand or
+        Description: The category of service cost - IP service, storage service, on-demand or
           RI compute, etc.
         Reference: /enums/cost_category
       source:
         Type: enum
         Nullable: false
         Primary: false
-        Description: The billing data that provides the cost.
+        Description: The type of billing data that provides the cost data.
         Reference: /enums/cost_source
       cost:
         Type: real
@@ -947,6 +949,34 @@ tables:
         Primary: false
         Description: null
         Reference: null
+  entity_savings:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: true
+        Description: For a realized saving or investment, when the action was executed. For a missed saving or investment, when the action was last recommended.
+        Reference: null
+      entity_oid:
+        Type: bigint
+        Nullable: false
+        Primary: true
+        Description: The object ID for the entity that has seen a saving or investment.
+        Reference: null
+      savings_type:
+        Type: enum
+        Nullable: false
+        Primary: true
+        Description: Whether the action resulted in an investment or saving, and whether
+          the action executed or not.
+        Reference: /enums/savings_type
+      stats_value:
+        Type: real
+        Nullable: false
+        Primary: false
+        Description: The value of the investment or saving for the related action.
+        Reference: null
   entity_types_with_cost:
     intro: null
     columns:
@@ -954,7 +984,7 @@ tables:
         Type: enum
         Nullable: true
         Primary: false
-        Description: null
+        Description: The entity type.
         Reference: /enums/entity_type
   file:
     intro: null
@@ -963,7 +993,7 @@ tables:
         Type: bigint
         Nullable: false
         Primary: true
-        Description: null
+        Description: If present, the ID of the volume that stores this file.
         Reference: null
       path:
         Type: text
@@ -975,7 +1005,7 @@ tables:
         Type: enum
         Nullable: false
         Primary: false
-        Description: The file type.
+        Description: The file type - ISO, log file, snapshot, etc.
         Reference: /enums/file_type
       file_size_kb:
         Type: bigint
@@ -987,19 +1017,19 @@ tables:
         Type: timestamp with time zone
         Nullable: true
         Primary: false
-        Description: Whn the file was last modified.
+        Description: When the file was last modified.
         Reference: null
       storage_oid:
         Type: bigint
         Nullable: false
         Primary: false
-        Description: null
+        Description: If present, the ID of the disk that stores this file.
         Reference: null
       is_attached:
         Type: boolean
         Nullable: false
         Primary: false
-        Description: null
+        Description: Whether the file is attached or unattached.
         Reference: null
       hash:
         Type: bigint
@@ -1520,6 +1550,21 @@ tables:
         Primary: false
         Description: null
         Reference: /enums/entity_type
+  topology_stats:
+    intro: null
+    columns:
+      time:
+        Type: timestamp with time zone
+        Nullable: false
+        Primary: false
+        Description: null
+        Reference: null
+      attrs:
+        Type: jsonb
+        Nullable: true
+        Primary: false
+        Description: null
+        Reference: null
   wasted_file:
     intro: null
     columns:
@@ -1552,33 +1597,6 @@ tables:
         Nullable: true
         Primary: false
         Description: The name of the storage (denormalized for reporting).
-        Reference: null
-  entity_savings:
-    intro: null
-    columns:
-      time:
-        Type: timestamp with time zone
-        Nullable: false
-        Primary: true
-        Description: 
-        Reference: null
-      entity_oid:
-        Type: bigint
-        Nullable: false
-        Primary: true
-        Description: The object ID for the entity that has seen a saving or investment.
-        Reference: null
-      savings_type:
-        Type: enum
-        Nullable: false
-        Primary: true
-        Description: Whether the action resulted in an investment or saving, and whether the action executed or not.
-        Reference: /enums/savings_type
-      stats_value:
-        Type: real
-        Nullable: false
-        Primary: false
-        Description: The value of the investment or saving for the related action.
         Reference: null
 shared:
   entity.attrs:
@@ -1659,7 +1677,7 @@ shared:
     intro: null
     fields:
       dynamic:
-        Description: null
+        Description: Whether this group is static or dynamic. true for dynamic.
         Type: BOOLEAN
         Repeated: false
         Reference: null
@@ -1719,89 +1737,89 @@ shared:
         Type: String
         Reference: null
       commodityType:
-        Description: null
+        Description: The type of commodity the action will change - MEM, IO_THROUGHPUT, etc.
         Type: /enums/metric_type
         Reference: /enums/metric_type
       from:
-        Description: null
+        Description: The commodity value before the action executes.
         Type: Float
         Reference: null
       percentileChange:
-        Description: null
+        Description: For entities and commodities that support percentile calculations, the before and after values for percentile utilization and settings.
         Type: /shared/CommodityPercentileChange
         Reference: /shared/CommodityPercentileChange
       target:
-        Description: null
+        Description: A description of the entity this action will change.
         Type: /shared/ActionEntity
         Reference: /shared/ActionEntity
       to:
-        Description: null
+        Description: The commodity value after the action executes.
         Type: Float
         Reference: null
       unit:
-        Description: null
+        Description: The disp;layed units of measurement.
         Type: String
         Reference: null
   CommodityPercentileChange:
     intro: null
     fields:
       after:
-        Description: null
+        Description: The percentile utilization after the action executes
         Type: Double
       aggressiveness:
-        Description: null
+        Description: The aggressiveness setting used to calculate the percentile.
         Type: Integer
       before:
-        Description: null
+        Description: The percentile utilization before the action executes.
         Type: Double
       observationPeriodDays:
-        Description: null
+        Description: The observation period used to calculate the percentile.
         Type: Integer
   ActionEntity:
     intro: null
     fields:
       oid:
-        Description: null
+        Description: The ID of the entity.
         Type: Long
         Reference: null
       name:
-        Description: null
+        Description: THe entity name. This corresponds to the name that displays in the user interface.
         Type: String
         Reference: null
       type:
-        Description: null
+        Description: The entity type.
         Type: /enums/entity_type
         Reference: /enums/entity_type
   ActionImpactedEntity:
     intro: null
     fields:
       affectedCosts:
-        Description: null
+        Description: A description of the before and after costs for this entity.
         Type: /shared/ActionImpactedCosts
         MapKeyType: null
         Reference: /shared/ActionImpactedCosts
       affectedMetrics:
-        Description: null
+        Description: A description of the before and after metrics for this entity.
         Type: /shared/ImpactedMetric
         MapKeyType: /enums/metric_type
         Reference: /shared/ImpactedMetric
       name:
-        Description: null
+        Description: The entity name.
         Type: String
         MapKeyType: null
-        MapKeyType: null
+        Reference: null
       oid:
-        Description: null
+        Description: The entity ID.
         Type: Long
         MapKeyType: null
-        MapKeyType: null
+        Reference: null
       settings:
-        Description: null
+        Description: For entities that support percentile calculations, the aggressiveness and observation period for this entity.
         Type: /shared/EntitySettings
         MapKeyType: null
         Reference: /shared/EntitySettings
       type:
-        Description: null
+        Description: The entity type.
         Type: /enums/entity_type
         MapKeyType: null
         Reference: /enums/entity_type
@@ -1809,87 +1827,88 @@ shared:
     intro: null
     fields:
       afterActions:
-        Description: null
+        Description: A description of what the cost will be after the action executes.
         Type: /shared/ActionImpactedCost
         Reference: /shared/ActionImpactedCost
       beforeActions:
-        Description: null
+        Description: A description of the current cost, before the action executes.
         Type: /shared/ActionImpactedCost
         Reference: /shared/ActionImpactedCost
   ImpactedMetric:
     intro: null
     fields:
       afterActions:
-        Description: null
+        Description: A description of what the metric utilization will be after the action executes.
         Type: /shared/ActionCommodity
         Reference: /shared/ActionCommodity
       beforeActions:
-        Description: null
+        Description: A description of the current utilization, before the action executes.
         Type: /shared/ActionCommodity
         Reference: /shared/ActionCommodity
   EntitySettings:
     intro: null
     fields:
       percentileAggressiveness:
-        Description: null
+        Description: The current aggressiveness setting.
         Type: Integer
       percentileObservationPeriodDays:
-        Description: null
+        Description: The current observation period.
         Type: Integer
   ActionImpactedCost:
     intro: null
     fields:
       onDemandCost:
-        Description: null
+        Description: For on-demand billing, the entity cost.
         Type: Float
       onDemandRate:
-        Description: null
+        Description: For on-demand billing, the rate of cost.
         Type: Float
       riCoveragePercentage:
-        Description: null
+        Description: For RIs, the percentage of RI coverage.
         Type: Float
   ActionCommodity:
     intro: null
     fields:
       capacity:
-        Description: null
+        Description: The available capacity of the given commodity.
         Type: float
       percentileUtilization:
-        Description: null
+        Description: For entities and resources that support it, the calculated percentile of utilization.
         Type: Double
       used:
-        Description: null
+        Description: The amount of the resource currently in use.
         Type: float
       utilization:
-        Description: null
+        Description: The percentage of capacity in use.
         Type: float
   BuyRiInfo:
     intro: null
     fields:
       computeTier:
-        Description: null
+        Description: The compute tier, or workload family for the action. The ActionEntity object will be for an entity of type COMPUTE_TIER.
         Type: /shared/ActionEntity
         Reference: /shared/ActionEntity
       count:
         Description: null
         Type: Integer
+        Reference: null
       masterAccount:
-        Description: null
+        Description: The account that manages the RI billing.
         Type: /shared/ActionEntity
         Reference: /shared/ActionEntity
       region:
-        Description: null
+        Description: The region that will host the RIs. 
         Type: /shared/ActionEntity
         Reference: /shared/ActionEntity
       target:
-        Description: null
+        Description: The cloud account or subscription that will manage the RIs.
         Type: /shared/ActionEntity
         Reference: /shared/ActionEntity
   MoveChange:
     intro: null
     fields:
       from:
-        Description: null
+        Description: Where the entity will move from.
         Type: /shared/ActionImpactedEntity
         Repeated: false
         Reference: /shared/ActionImpactedEntity
@@ -1899,7 +1918,7 @@ shared:
         Repeated: true
         Reference: /shared/ActionEntity
       to:
-        Description: null
+        Description: Where the entity will move to.
         Type: /shared/ActionImpactedEntity
         Repeated: false
         Reference: /shared/ActionImpactedEntity
@@ -1907,23 +1926,23 @@ shared:
     intro: null
     fields:
       filePath:
-        Description: null
+        Description: The path to the file.
         Type: String
         Format: null
       fileSize:
-        Description: null
+        Description: The size of the file.
         Type: Double
         Format: null
       lastModifiedTimestamp:
-        Description: null
+        Description: When the file was last modified.
         Type: String
         Format: yyyy-MM-dd'T'HH:mm:ss'Z'
       unattachedDays:
-        Description: null
+        Description: How many days the file has been unattached.
         Type: Integer
         Format: null
       unit:
-        Description: null
+        Description: The displayed unit of measure for the file size.
         Type: String
         Format: null
 table_data:
@@ -1931,32 +1950,32 @@ table_data:
     intro: null
     fields:
       buyRiInfo:
-        Description: null
+        Description: For an action to buy RIs, additional information about the RIs.
         Type: /shared/BuyRiInfo
         MapKeyType: null
         Reference: /shared/BuyRiInfo
       deleteInfo:
-        Description: null
+        Description: For an action to delete a file, a description of that file.
         Type: /shared/DeleteInfo
         MapKeyType: null
         Reference: /shared/DeleteInfo
       moveInfo:
-        Description: null
+        Description: For a move action, a description of from and to for the move.
         Type: /shared/MoveChange
         MapKeyType: /enums/entity_type
         Reference: /shared/MoveChange
       resizeInfo:
-        Description: null
+        Description: For a resize action, a description of the commodity changes.
         Type: /shared/CommodityChange
         MapKeyType: /enums/metric_type
         Reference: /shared/CommodityChange
       scaleInfo:
-        Description: null
+        Description: For scaling a cloud VM, a description of the from and to for the VM move.
         Type: /shared/MoveChange
         MapKeyType: /enums/entity_type
         Reference: /shared/MoveChange
       target:
-        Description: null
+        Description: Extra information about the entity this action impacts.
         Type: /shared/ActionImpactedEntity
         MapKeyType: null
         Reference: /shared/ActionImpactedEntity
@@ -1984,7 +2003,7 @@ exporter:
     intro: null
     fields:
       buyRiInfo:
-        Description: null
+        Description: Data that analysis uses to calculate Buy RI actions.
         Type: /shared/BuyRiInfo
         Repeated: false
         Format: null
@@ -2005,7 +2024,7 @@ exporter:
         MapKeyType: null
         reference: null
       deleteInfo:
-        Description: null
+        Description: A description of a file is unattached and should be deleted.
         Type: /shared/DeleteInfo
         Repeated: false
         Format: null
@@ -2019,7 +2038,8 @@ exporter:
         MapKeyType: null
         Reference: null
       explanation:
-        Description: The condition that the action is addressing. For example, Q2 VCPU CONGESTION.
+        Description: The condition that the action is addressing. For example, Q2
+          VCPU CONGESTION.
         Type: String
         Repeated: false
         Format: null
@@ -2047,7 +2067,8 @@ exporter:
         MapKeyType: null
         Reference: null
       related:
-        Description: An array of entities or groups that are related to the target entity.
+        Description: An array of entities or groups that are related to the target
+          entity.
         Type: /exporter/RelatedEntity
         Repeated: true
         Format: null
@@ -2113,7 +2134,7 @@ exporter:
         MapKeyType: null
         Reference: /exporter/AccountExpenses
       attrs:
-        Description: null
+        Description: Additional descriptions for a given entity. The values of this are different for different entity types.
         Type: /shared/entity.attrs
         Repeated: false
         MapKeyType: null
@@ -2125,44 +2146,43 @@ exporter:
         MapKeyType: null
         Reference: /exporter/EntityCost
       environment:
-        Description: null
+        Description: The environment type - Hybrid, Cloud, On-prem, etc.
         Type: /enums/environment_type
         Repeated: false
         MapKeyType: null
         Reference: /enums/environment_type
       metric:
-        Description: null
+        Description: For the given metric type, the utilization and capacity of the commodity.
         Type: /exporter/Commodity
         Repeated: false
-        MapKeyType: null
         MapKeyType: /enums/metric_type
         Reference: /exporter/Commodity
       name:
-        Description: null
+        Description: The entity name.
         Type: String
         Repeated: false
         MapKeyType: null
         Reference: null
       oid:
-        Description: null
+        Description: The entity ID.
         Type: Long
         Repeated: false
         MapKeyType: null
         Reference: null
       related:
-        Description: null
+        Description: For the current entity, another entity that is connected to it in the supply chain.
         Type: /exporter/RelatedEntity
         MapKeyType: /enums/entity_type
         Repeated: true
         Reference: /exporter/RelatedEntity
       state:
-        Description: null
+        Description: The current state of the entity - POWERED_ON, SUSPENDED, MAINTENANCE, etc.
         Type: /enums/entity_state
         Repeated: false
         MapKeyType: null
         Reference: /enums/entity_state
       type:
-        Description: null
+        Description: The entity type.
         Type: /enums/entity_type
         Repeated: false
         MapKeyType: null
@@ -2177,9 +2197,11 @@ exporter:
       name:
         Description: null
         Type: String
+        Reference: null
       oid:
         Description: null
         Type: Long
+        Reference: null
       type:
         Description: null
         Type: /enums/entity_type
